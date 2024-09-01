@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="extra.css">
+</head>
+
+<body>
+    <div class="FirstPage">
+        <div class="TeamName">RIT VEX U Robotics</div>
+        <br>
+        <div class="Title">
+            {{.Notebook}} Notebook
+        </div>
+        <br>
+        <br>
+        <div class="Season">
+            2024-2025
+        </div>
+
+
+    </div>
+
+    <br class="pagebreak">
+
+    {{range $entry := .Entries}}
+
+    <h1>
+        {{.Data.Title}}
+        <div class='entry-topic'>
+            <br>
+            focus: <b>{{.Data.Focus}}</b>
+        </div>
+    </h1>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            {{range $index, $auth := .Data.Authors}}
+            <b>{{.}}</b>
+            {{end}}
+        </div>
+        <div class="flR">
+            reviewed by: {{range $index, $auth := .Data.Proofreaders}} {{if $index}},{{end}} <b>{{.}}</b> {{end}}
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        {{.Html}}
+    </div>
+    {{end}}
+
+
+</body>
+
+</html>
