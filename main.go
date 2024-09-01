@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io/fs"
 	"os"
@@ -61,14 +62,20 @@ func getAllFiles(root string) []string {
 	return files
 }
 
-type Entry struct {
-	Data Metadata
+type RenderedEntry struct {
+	Data Note
 	Html string
+}
+
+type FocusGroup struct {
+	Focus   string
+	Entries []Note
 }
 
 type Notebook struct {
 	Notebook string
-	Entries  []Entry
+	Entries  []RenderedEntry
+	ByFocus  []FocusGroup
 }
 
 func main() {
@@ -76,11 +83,14 @@ func main() {
 	// log.Println(args)
 	files := getAllFiles(args.VaultPath)
 	// log.Println(files)
-	mds := []Metadata{}
+	mds := []Note{}
 	errs := []error{}
+
 	for _, file := range files {
 		m, err := getMetadata(file)
-		if err != nil {
+		if errors.Is(err, ErrNotEntry) {
+			continue
+		} else if err != nil {
 			errs = append(errs, err)
 		} else {
 			mds = append(mds, m)
@@ -90,39 +100,60 @@ func main() {
 		fmt.Println(errs)
 	}
 
-	wanted := listOfFilesInThisNotebook(mds, args.Notebook)
+	wanted_entries := listOfFilesInThisNotebook(mds, args.Notebook)
 
 	// fmt.Println(wanted)
 
 	f, err := os.OpenFile("Out/index.html", os.O_WRONLY|os.O_CREATE, 0666)
+	must(err)
+	err = f.Truncate(0)
 	must(err)
 	defer f.Close()
 
 	t, err := template.ParseFiles("page.tmpl.html")
 	must(err)
 
-	entries := []Entry{}
+	entries := []RenderedEntry{}
 
 	errs = []error{}
-	for _, w := range wanted {
+	byFocus := map[string][]Note{}
+
+	for _, metadata := range wanted_entries {
+		if l, exists := byFocus[metadata.Focus]; exists {
+			byFocus[metadata.Focus] = append(l, metadata)
+		} else {
+			byFocus[metadata.Focus] = []Note{metadata}
+		}
+
 		buf := bytes.NewBuffer([]byte{})
 
-		err = NotebookRender().Render(buf, w.Src, w.Doc)
+		err = NotebookRender().Render(buf, metadata.Src, metadata.Doc)
 		if err != nil {
 			errs = append(errs, err)
 		}
-		entries = append(entries, Entry{
-			Data: w,
+		entries = append(entries, RenderedEntry{
+			Data: metadata,
 			Html: buf.String(),
 		})
 	}
 	if len(errs) > 0 {
 		fmt.Println(errs)
 	}
-	t.Execute(f, Notebook{
+
+	focusList := []FocusGroup{}
+	for focus, entries := range byFocus {
+		focusList = append(focusList, FocusGroup{
+			Focus:   focus,
+			Entries: entries,
+		})
+	}
+
+	err = t.Execute(f, Notebook{
 		Notebook: args.Notebook,
 		Entries:  entries,
+		ByFocus:  focusList,
 	})
+	must(err)
 
 }
 

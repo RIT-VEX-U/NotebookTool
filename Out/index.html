@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="extra.css">
+
+
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+        integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+        integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Entries By Date</h1>
+    <div class="TableOfContents">
+        <ul>
+            
+            <li class="tocentry">
+                07/01/2024
+                <a class="toclink" href="#vex-debug-board-07-01-2024">Vex Debug Board</a>:
+                <pre class="process-tag">identify-problem</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/07/2024
+                <a class="toclink" href="#vex-debug-protocol-07-07-2024">Vex Debug Protocol</a>:
+                <pre class="process-tag">identify-problem</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/08/2024
+                <a class="toclink" href="#serial-line-internet-protocol-07-08-2024">Serial Line Internet Protocol</a>:
+                <pre class="process-tag">brainstorm</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/08/2024
+                <a class="toclink" href="#modbus-07-08-2024">Modbus</a>:
+                <pre class="process-tag">brainstorm</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/09/2024
+                <a class="toclink" href="#custom-protocol-07-09-2024">Custom Protocol</a>:
+                <pre class="process-tag">brainstorm</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/10/2024
+                <a class="toclink" href="#vex-debug-protocol-07-10-2024">Vex Debug Protocol</a>:
+                <pre class="process-tag">select-best</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/13/2024
+                <a class="toclink" href="#initial-web-server-07-13-2024">Initial Web Server</a>:
+                <pre class="process-tag">update</pre>
+            </li>
+            
+            <li class="tocentry">
+                07/19/2024
+                <a class="toclink" href="#custom-protocol-07-19-2024">Custom Protocol</a>:
+                <pre class="process-tag">update</pre>
+            </li>
+            
+            <li class="tocentry">
+                08/12/2024
+                <a class="toclink" href="#custom-protocol-08-12-2024">Custom Protocol</a>:
+                <pre class="process-tag">update</pre>
+            </li>
+            
+            <li class="tocentry">
+                08/14/2024
+                <a class="toclink" href="#v5-interface-board-08-14-2024">V5 Interface Board</a>:
+                <pre class="process-tag">identify-problem</pre>
+            </li>
+            
+        </ul>
+    </div>
+
+    <h1>Entries By Project</h1>
+    <div class="TableOfContents">
+        <ul>
+            <li>
+                
+                V5 Debug Board
+                <ul>
+                    
+                    <li class="tocentry">07/01/2024
+                        <a class="toclink" href="#vex-debug-board-07-01-2024">Vex Debug Board</a>: identify-problem
+                        <pre class="process-tag">identify-problem</pre>
+                    </li>
+                    
+                    <li class="tocentry">07/13/2024
+                        <a class="toclink" href="#initial-web-server-07-13-2024">Initial Web Server</a>: update
+                        <pre class="process-tag">update</pre>
+                    </li>
+                    
+                </ul>
+                
+                Vex Debug Protocol
+                <ul>
+                    
+                    <li class="tocentry">07/07/2024
+                        <a class="toclink" href="#vex-debug-protocol-07-07-2024">Vex Debug Protocol</a>: identify-problem
+                        <pre class="process-tag">identify-problem</pre>
+                    </li>
+                    
+                    <li class="tocentry">07/08/2024
+                        <a class="toclink" href="#serial-line-internet-protocol-07-08-2024">Serial Line Internet Protocol</a>: brainstorm
+                        <pre class="process-tag">brainstorm</pre>
+                    </li>
+                    
+                    <li class="tocentry">07/08/2024
+                        <a class="toclink" href="#modbus-07-08-2024">Modbus</a>: brainstorm
+                        <pre class="process-tag">brainstorm</pre>
+                    </li>
+                    
+                    <li class="tocentry">07/09/2024
+                        <a class="toclink" href="#custom-protocol-07-09-2024">Custom Protocol</a>: brainstorm
+                        <pre class="process-tag">brainstorm</pre>
+                    </li>
+                    
+                    <li class="tocentry">07/10/2024
+                        <a class="toclink" href="#vex-debug-protocol-07-10-2024">Vex Debug Protocol</a>: select-best
+                        <pre class="process-tag">select-best</pre>
+                    </li>
+                    
+                    <li class="tocentry">07/19/2024
+                        <a class="toclink" href="#custom-protocol-07-19-2024">Custom Protocol</a>: update
+                        <pre class="process-tag">update</pre>
+                    </li>
+                    
+                    <li class="tocentry">08/12/2024
+                        <a class="toclink" href="#custom-protocol-08-12-2024">Custom Protocol</a>: update
+                        <pre class="process-tag">update</pre>
+                    </li>
+                    
+                </ul>
+                
+                V5 Interface Board
+                <ul>
+                    
+                    <li class="tocentry">08/14/2024
+                        <a class="toclink" href="#v5-interface-board-08-14-2024">V5 Interface Board</a>: identify-problem
+                        <pre class="process-tag">identify-problem</pre>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+        </ul>
+    </div>
+
+
+    <br class="pagebreak">
+
+    
+
+    <section id="vex-debug-board-07-01-2024"></section>
+    <div class="entry-header">
+        <h1>Vex Debug Board</h1>
+        <div class='entry-topic'>
+            focus: <b>V5 Debug Board</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>$$2+4 +\sqrt{3}$$
+hi $5=2$</p>
+<details data-callout="caution" open>
+<summary>
+Missing Documentation
+</summary>
+<div class="callout-content">
+<p>The electrical and hardware design of the Vex Debug Board was done in a previous year, by a member no longer with us, before the team emphasized formal and complete documentation. As such, some information about original design decisions does not appear in this notebook.</p>
+</div>
+</details>
+<p>Developing robot control systems requires accurate data of what the robot is experiences. In the past, we would use one of two options to get a view into what the robot was seeing.</p>
+<p>Originally, the best path we could take was to print out values in a comma separated value format from the brain, through the control into our IDE. Then we would import this data into a spreadsheet and graph or otherwise analyze it. This solution was slow, clunky, and often failed if we tried to print too much data. The serial link would randomly drop characters which could render a line completely useless meaning the programmer would have to edit out lines manually further adding to the slow time from data to analysis.</p>
+<p><img src="Assets/Pasted%20image%2020240710193336.png" alt="center|500">
+<em>Tuning a flywheel control system using Google Docs</em></p>
+<p>To remedy this unpleasant situation, we developed a graphing widget for the brain screen. This allowed a faster, qualitative view into the system - we could easily see an oscillation in the control system as it happened. However, it offered nothing in terms of raw numbers and there was no quantitative data past what we could make out. Additionally, when tuning a drive train, the robot is moving and members would have to follow it around trying to see how it performed. While  providing a better feedback time, this was not an all around solution.</p>
+<p><img src="Assets/Pasted%20image%2020240710195354.png" alt="center|400">
+<em>Tuning a PID controller on the brain screen</em></p>
+<p>As a true fix for this issue, we developed an idea for a &quot;Vex Debug Board&quot; (VDB) that would allow the brain to transmit information wirelessly to a computer where the data could be analyzed in real time or saved for later analysis. Live telemetry achieved this way could then be fed to a visualization platform such as RViz from the ROS project or Foxglove Studio, a standalone application for visualizing robotics systems.</p>
+<p><img src="Assets/Pasted%20image%2020240710195952.png" alt="center|500">
+<em>An example of Foxglove used for developing a robotic arm</em></p>
+<p>With fast, live, error-free telemetry, quantitative measurements of the robot could be made and control algorithms could be more quickly tuned. While we could do these before, the generational leap in speed that the VDB provides will dramatically lessen iteration time meaning better algorithms can be developed in less time.</p>
+<h1>Hardware</h1>
+<p>The Vex Debug Board is an ESP32 based system. The ESP32's built in support for WiFi and Bluetooth simplifies the circuit significantly compared to an external radio. Alongside this micro controller, there s a USB-C port for programming, a Vex &quot;Smart Port&quot;, status LEDs, and an SD card slot. The board can be powered either from the USB port or through the &quot;Smart Port&quot; simplifying integration into a robot.</p>
+<p><img src="Assets/Pasted%20image%2020240707184510.png" alt="center|600"></p>
+<p><img src="Assets/Pasted%20image%2020240707184442.png" alt="center|600"></p>
+
+    </div>
+    
+
+    <section id="vex-debug-protocol-07-07-2024"></section>
+    <div class="entry-header">
+        <h1>Vex Debug Protocol</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <p>The communications from the Vex Debug Board (VDB) to the users computer is determined by the visualization software we choose to use. However, the application-level protocol used to communicate from the VDB to the brain over the RS-485 connection is not forced upon us.</p>
+<p>This protocol must accomplish the following:</p>
+<ul>
+<li>Have minimal overhead - the serial port is not the fastest and every byte saved counts</li>
+<li>Runtime adaptability - It would be a hassle have to re-flash the VDB everytime you want new data. The protocol should be able to handle changing data requirements when the robot programmer decides to send different data.</li>
+<li>Ease of use - the protocol should be easy enough to add and remove from robot code. Robot programmers should not have to know the ins and outs of the protocol in order to get benefits from using this tool.</li>
+<li>Bidirectional communication - Not only would we like telemetry from the robot, sending tuning parameters without having to rebuild and redeploy the project saves valuable time.</li>
+</ul>
+
+    </div>
+    
+
+    <section id="serial-line-internet-protocol-07-08-2024"></section>
+    <div class="entry-header">
+        <h1>Serial Line Internet Protocol</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <p>Serial Line Internet Protocol (SLIP) is a protocol that defines a standard for a full Internet Protocol over a serial connection. This effectively would allow the brain itself access to the internet and devices connected to the ESP32's network could see and interact with it. In our case, for example, we could operate the foxglove websocket protocol from the brain, using the Vex Debug Board as nothing more than a router. A full TCP/IP stack would give pretty much unlimited flexibility in terms of what we want to accomplish without ever having to update the code on the ESP32 - so long as it correctly routed packets between its serial connection and its wireless connection, it would never need changing. This flexibility was quite enticing to certain programmers who saw exciting and fun uses for this technology.</p>
+<p>However, this approach comes with major downsides:</p>
+<ul>
+<li>A full internet stack on the brain would be quite a complex piece of software somewhat unrelated to robotics. Our code base would balloon in size without all that much benefit</li>
+<li>While the Internet Protocol provides incredible flexibility, there is overhead and it could incur substantial performance penalties as the robot struggles to keep up with communicating rather than doing robot things.</li>
+</ul>
+
+    </div>
+    
+
+    <section id="modbus-07-08-2024"></section>
+    <div class="entry-header">
+        <h1>Modbus</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <p>The Modbus communications protocol is commonly used for programmable logic controllers (PLCs) in industrial settings. It can be implemented on an RS-485 connection, the same that we have, as well as over a TCP/IP. The Modbus protocol is driven by a controller that can initiate a transaction to many peripherals who can then respond with data or with an error when necessary.</p>
+<p>There are two forms of the Modbus protocol: RTU or ASCII. In our scenario, we can send arbitrary binary data so we would most likely use the RTU version.</p>
+<table>
+<thead>
+<tr>
+<th>start</th>
+<th>address</th>
+<th>function</th>
+<th>data</th>
+<th>crc</th>
+<th>end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>at least 3.5 chars</td>
+<td>8 its</td>
+<td>8 bits</td>
+<td>n * 8 bits</td>
+<td>16 bits</td>
+<td>at least 3.5 chars</td>
+</tr>
+</tbody>
+</table>
+<p><em>Modbus RTU Frame Format</em></p>
+<p>While this is a fairly simple, recognized standard, this protocol presents some issues.</p>
+<ul>
+<li>It only supports 16 bit and 1 bit data by default. While other data types can be added on top, it does add complexity.</li>
+<li>It the one controller multiple peripherals does not lend itself to easy bidirectional communication. A polling approach could be taken to check for updates on either side but a symmetric protocol makes more sense.</li>
+<li>The biggest of all - it is not clear how to make the protocol easily adaptable to changing data types and data channels. We would have to do a fair amount of custom work on top, it may be easier to just define a fully custom protocol.</li>
+</ul>
+
+    </div>
+    
+
+    <section id="custom-protocol-07-09-2024"></section>
+    <div class="entry-header">
+        <h1>Custom Protocol</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>A custom protocol offers maximal flexibility in terms of what we want the robot to communicate to the Vex Debug Board(VDB). Importantly, it allows us to strip out all strictly unnecessary overhead sending only absolutely necessary bytes to make maximum use of our limited bandwidth. The incredible domain specificity of this protocol allows us to make many choices that would simply be invalid for a more general use protocol.</p>
+<p>The broad outline of our plan is a bidirectional, two phase, binary protocol. Both the brain and the VDB can send and receive information to each other - only constrained by what shapes of data can be constructed by build in primitives.
+The first phase consists of the Vex Debug Board and Brain finding each other and advertising <strong>channels</strong>. <strong>Channels</strong> are a source of statically typed data and both sides of the communication maintain their own list of channels they can receive and channels they will send. The advertising of a channel consists of each party sending an <strong>Advertise</strong> message containing a list of <strong>schemas</strong>. These <strong>schemas</strong> contain the human readable names for data within the channel as well as containing information about how to decode the forthcoming <strong>Data</strong> messages.</p>
+<p>The second phase takes up most of the time that the robot is running wherein both parties can send <strong>Data</strong> messages consisting of raw binary packets. These packets are not self-describing so the advertising of channels must have happened before <strong>Data</strong> packets can be sent. The lack of self description does make the protocol slightly more complicated as compared to other protocols where the data needed to decode a message is contained inside the message meaning no advertising is needed. However, the two phase approach allows for less bandwidth used as we do not need to re-transmit the information needed to decode data, just the data itself meaning faster update rates or larger data packets on the same amount of bandwidth.</p>
+<p>At this point, though not every byte of the protocol has been decided on, some prototypes have been constructed showing that this is possible and provides an API that is fairly easy to use. These prototypes do not yet have the &quot;header&quot; bytes that tells what channel number this is for example, nor do they contain any framing mechanism for splitting apart packets. These features will come later.</p>
+<p>The biggest con of this method is that we must handle all layers of the OSI model ourselves. That is, from the physical layer up we must implement all the code needed to frame packets, detect errors, and decode information.</p>
+<h2>Schema Packet Prototype</h2>
+<pre><code>Schema Packet:
+
+00 4d 6f 74 6f 72 20 31 00 05 00 00 00 03 50 6f 
+73 69 74 69 6f 6e 28 64 65 67 29 00 03 76 65 6c 
+6f 63 69 74 79 28 64 70 73 29 00 04 54 65 6d 70 
+65 72 61 74 75 72 65 28 43 29 00 03 56 6f 6c 74 
+61 67 65 28 56 29 00 03 43 75 72 72 65 6e 74 28 
+25 29 00 
+Advertise Message Size (bytes): 83
+</code></pre>
+<pre><code>Schema:
+Motor 1: record[5]{
+  Position(deg):        float
+  velocity(dps):        float
+  Temperature(C):       uint8
+  Voltage(V):   float
+  Current(%):   float
+}
+</code></pre>
+<h2>Data Packet Prototype</h2>
+<pre><code>Data Packet:
+9a 99 89 42 33 33 11 43 23 81 95 f3 3f 48 e1 2a 41 
+
+Data Message Size (bytes): 17
+</code></pre>
+<pre><code>Data (Decoded with information from schema):
+Motor 1: record[5]{
+  Position(deg):        0.8
+  velocity(dps):        86.4
+  Temperature(C):       35
+  Voltage(V):   1.645
+  Current(%):   5.96
+}
+</code></pre>
+
+    </div>
+    
+
+    <section id="vex-debug-protocol-07-10-2024"></section>
+    <div class="entry-header">
+        <h1>Vex Debug Protocol</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>After considering the options, we have decided to implement a custom protocol. Though we can not use any off the shelf libraries for it, the flexibility and power it gives us makes it worth the upfront development cost. We will be able to optimize to our hearts content without having to delve into 3rd party libraries and strip out parts thus removing the benefit of using a 3rd party to save time.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Modbus</th>
+<th>SLIP</th>
+<th>Custom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ease of use</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr>
+<td>Runtime Adaptability</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr>
+<td>Low Overhead</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    
+
+    <section id="initial-web-server-07-13-2024"></section>
+    <div class="entry-header">
+        <h1>Initial Web Server</h1>
+        <div class='entry-topic'>
+            focus: <b>V5 Debug Board</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>We desired a way to allow easy configuration of the Vex Debug Board(VDB) without needing to rebuild and redeploy software. This not only takes a fair amount of time, but is also unavailable to those without the entire <code>esp-idf</code> tool chain installed.</p>
+<p>A web interface was the obvious solution to this. A simple web app could allow users to connect and reconfigure wirelessly without any external tools. This webserver could also serve other purposes such as checking the status of the board or checking logs. Eventually, we would like to support a filesystem on the SD card in order to hold 3D models of the robot to use in Foxglove or other visualization platforms and this web portal can be used to upload and preview this model.</p>
+<p><img src="Assets/Screenshot_20240713_151217%201.png">
+<em>An early, in development look at the web interface</em></p>
+<p>We chose Elm for the front end language as it was a preferred language for front end development by the writer of the web app and the strong guarantees it makes. Elm is a pure functional programming language designed for robust and performant web interfaces that promises zero runtime exceptions. That is, if it compiles, no front end crashes are possible. Additionally, it provides a powerful &quot;time travelling&quot; debugger that can be easily embedded into the web page meaning we can debug the website (and even the back end responses) easily. This is vital as debugging the server is considerably more difficult because it runs on a micro controller compared to debugging on a traditional server.</p>
+<p>Elm compiles down to HTML and Javascript using its own compiler. From this (or any other front end code) we needed a way to embed the front end such that the ESP32 can find and serve it. To accomplish this, a custom command was added to the esp-idf project that would first make the elm project, then minify the code, and finally gzip the resulting output. This produced an output small enough to be flashed into the ESP32s memory alongside all of the C code that runs the board. This means no SD card will be needed by default and the board will be perfectly usable without one.</p>
+<p>The overall design of the front end is a simple web app with a JSON REST backend. After the initial page load, no UI data is requested from the ESP32. In fact, in a production environment, we could tell the browser to cache the entire webapp which would reduce the time to load without any ill effects as all &quot;live&quot; data is brought in through HTTP requests to the board. This also provides a more pleasant developer experience as, when working on the front end, a programmer can run the ui on their computer while still sending data to the board's REST server meaning the time for an edit-compile-run is limited only by the Elm compiler (almost instant) rather than the time it takes to deploy to the board (~30 seconds).</p>
+
+    </div>
+    
+
+    <section id="custom-protocol-07-19-2024"></section>
+    <div class="entry-header">
+        <h1>Custom Protocol</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>This week, effort was put towards finalizing the custom protocol used to communicated between devices. There are two &quot;layers&quot; of the protocol - we have chosen to call these the application layer and the link layer. The link layer describes the way that data is transferred over the physical medium of the serial cable and the application layer describes the information the protocol uses to exchange data. The current protocol is described here.</p>
+<h1>Terms</h1>
+<p>Here are brief definitions for the terms used later on. More detailed descriptions are available in the <em>Application Layer</em> and <em>Link Layer</em> sections</p>
+<p><strong>Checksum</strong> - For this protocol, we use a CRC32 checksum to check the integrity of the packets. We calculate the checksum and place it at the end of the packet. Then, upon reading we recalculate the checksum from the data we received and compare it with the encoded checksum. If they match, we can decode the data and use it. If they do not match, we ignore the packet.</p>
+<p><strong>Channel</strong> - A channel is a logical unit of data. It is defined by a <strong>Schema</strong> and is assigned a <strong>Channel Id</strong> to identify it. Data transmitted must fit the <strong>Schema</strong> in order to be correctly decoded.</p>
+<p><strong>Channel ID</strong> - an integer uniquely identifying a channel</p>
+<p><strong>Delimiter</strong> - A zero byte used to mark the boundaries between packets for bytes transferred on the serial link</p>
+<p><strong>Header</strong> - For this protocol, a header describes the type and function of a packet. More info about the structure of a header is shown below</p>
+<p><strong>Packet</strong> - A certain number of bytes that are logically grouped together, beginning with a <strong>Header</strong>, containing byte data, and terminated by a <strong>Checksum</strong></p>
+<p><strong>Wire Packet</strong> - A Consistent Overhead Byte Stuffing (COBS) encoded, zero delimited string of bytes that is ready to be sent over the serial link. It is distinct from a Packet in that the protocol does not really concern itself with this level - It is an implementation detail. If we wanted to send Packets over a different system, the Wire Packet could be encoded differently and the protocol would not care.</p>
+<h1>Application Layer</h1>
+<p>The application layer performs two functions - broadcast/discovery of data channels and sending/receiving of data. Messages in the application layer are described by packets.</p>
+<h2>Packet</h2>
+<p>An application packet can have the following data.</p>
+<p><strong>Header</strong> - a single byte of information</p>
+<p><strong>Channel ID</strong> - a single byte describing what channel of data this message pertains to. The value of 0 is reserved for protocol related activities leaving 255 channels available for user data.</p>
+<p><strong>Data</strong> - This section is optional as the <strong>header</strong> and <strong>channel id</strong> may describe the entire message. When used, this section can encode a <strong>Schema</strong> or <strong>Data</strong></p>
+<p><strong>Checksum</strong> - a CRC32 checksum used to verify the integrity of a packet</p>
+<p>At minimum, the packet must contain a <strong>Header</strong>, <strong>Channel ID</strong>, and <strong>Checksum</strong> meaning the minimum packet size is 6 bytes</p>
+<table>
+<thead>
+<tr>
+<th>header</th>
+<th>channel Id</th>
+<th>data</th>
+<th>checksum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 byte</td>
+<td>1 byte</td>
+<td>X</td>
+<td>4 bytes</td>
+</tr>
+</tbody>
+</table>
+<p><em>Packet Structure. Note: Data can be an arbitrary length but the last 4 bytes must always be the checksum</em></p>
+<h3>Header</h3>
+<p>The header is a bitfield containing the following information.</p>
+<h3>Packet Type: Broadcast or Data</h3>
+<h3>Packet Function: Send or Acknowledge</h3>
+<p>Both data and broadcast packets can be sent but only Channel broadcast messages will be acknowledged. The receiver needs the description of the channel to properly decode the information so the sender uses <strong>Acknowledges</strong> (or the lack thereof) to know if the receiver is ready for data. If no acknowledge is received after a given timeout, the broadcast is re-sent. The sender does not expect or require an acknowledge for data packets - we want data to flow as fast as possible and the overhead of acknowledging could lead to slowdown that would better be spent sending more up to date information.</p>
+<p>At the time of writing, the remaining 6bits are unused and left open for future needs</p>
+<h3>Channel Broadcast/Discovery</h3>
+<p>A channel broadcast packet consists of a header, the channel id of the channel its describing, the schema definition for that channel, and a checksum.</p>
+<p>The schema definition provides the structure and names of different fields in the following data packet. This gives the receiver the information it needs to reconstruct structured data from the flat buffer of values it will receive in <strong>Data packets</strong>.</p>
+<p>Channels can be updated as time goes on simply by rebroadcasting the channel. This is necessary as the ESP32 side will be powered on while code is continuously redeployed to the robot and the channels it sends change.</p>
+<h4>Schema</h4>
+<p>A schema type can be one of the following: <code>Record</code>, <code>String</code>, <code>Double</code>, <code>Float</code>, <code>Uint8</code>, <code>Uint16</code>, <code>Uint32</code>, <code>Uint64</code>, <code>Int8</code>, <code>Int16</code>, <code>Int32</code>, or <code>Int64</code>.</p>
+<p>A schema contains a 8-bit type byte, a 0 terminated string name, then any internal data needed to represent the type.</p>
+<p>Unless otherwise specified, these types correspond with the standard C types. All integers are encoded as little endian and all numeric types are decoded by a simple copy from uint8 memory into the underlying type.</p>
+<p>A record is very similar to a C struct consisting of named fields. These fields can be of any type. Its schema is described like all others (A type byte and a name) but then contains a number representing the number of fields. Then, each field is encoded as if they were the schema type. When decoding a schema, the decoder will see that this element is a <code>Record</code>, find the number of fields, then read in that many more fields into the record.</p>
+<pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Motor <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> record[<span style="color:#ae81ff">5</span>]{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#a6e22e">Position</span>(deg)<span style="color:#f92672">:</span>        <span style="color:#66d9ef">float</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#a6e22e">Velocity</span>(dps)<span style="color:#f92672">:</span>        <span style="color:#66d9ef">float</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  <span style="color:#a6e22e">Temperature</span>(C)<span style="color:#f92672">:</span>       uint8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  <span style="color:#a6e22e">Voltage</span>(V)<span style="color:#f92672">:</span>   <span style="color:#66d9ef">float</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>  <span style="color:#a6e22e">Current</span>(<span style="color:#f92672">%</span>)<span style="color:#f92672">:</span>   <span style="color:#66d9ef">float</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>}
+</span></span></code></pre><p><em>An example of a schema. A record with 5 fields named 'Motor 1. Then, 5 fields of varying names and types</em>.</p>
+<p>As of now we have not implemented them, but arrays and enumerations could prove helpful. If we find a need we will discuss their implementation at a later date</p>
+<h2>Channel Data</h2>
+<p>A data packet consists of the header, the Channel ID for the channel its data corresponds to, a buffer of data, and a checksum.
+The encoding simply walks the tree of a schema writing values of the first children first in the case of records.
+For example, the Motor schema shown above would produce a data packet of the following form</p>
+<pre><code>header
+channel id
+4 byte float for Position(deg)
+4 byte float for Velocity(dps)
+1 byte uint8 for Temperature(C)
+4 byte float for Voltage(V)
+4 byte float for Current(%)
+checksum
+</code></pre>
+<p>This packet will be 23 bytes long</p>
+<p><img src="Assets/Pasted%20image%2020240720152020.png" alt="600">
+<em>Testing the protocol with a &quot;loopback&quot; cable</em></p>
+<h1>Link Layer</h1>
+<p>The link layer provides the communication medium for the application layer. it is responsible for transmitting packets over some physical medium in a way that the other device in the exchange can reconstruct individual packets. This is implemented using Consistent Overhead Byte Stuffing (COBS) with a delimiter of 0. The encoding phase reinterprets the passed in data such that no 0s appear. Then, a zero is pre-pended and appended to mark packet boundaries. Then, the packet is sent over the serial link.</p>
+<p>On the receiving end, the 0s mark the start and end of packet. From here, the receiver can decode to get the data 0s back, before passing the packet to the <strong>application layer</strong> for using.</p>
+<h3>Reading from the wire</h3>
+<pre class="mermaid">flowchart LR
+A[Wait for byte] --&gt; |Was not Delimiter| B
+B[Accumulate Bytes] --&gt; A
+
+A --&gt; |Was Delimiter| D[COBS Decode\nEntire Packet]
+D --&gt; |Decoded Packet|E[...]
+</pre><h3>Writing to the wire</h3>
+<pre class="mermaid">flowchart LR
+A[Protocol] --&gt; |Packet|B[COBS Encode,\nAdd Delimiters] 
+B --&gt; |COBS Packet|C[Write to wire]
+</pre><h1>Implementation Notes</h1>
+<p>Both the VEX Brain and the ESP32 support C++ but have very different serial IO APIs. We can reuse much of the protocol code so long as we separate the IO from the rest. To do this, we implemented the protocol in two main classes. The first, the <em>Registry</em> class, handles everything in the application layer - Parsing packets, writing packets, handling Acknowledge commands, broadcasting, and sending data. This, as well as all of the type definitions and helper functions, can be used verbatim on both the ESP32 and the VEX Brain. The second class, the <em>Device</em> class handles all IO and encoding of Application packets into COBS packets. This allows us to reuse all of the code except for the <em>Device</em> class.</p>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad: true});</script>
+    </div>
+    
+
+    <section id="custom-protocol-08-12-2024"></section>
+    <div class="entry-header">
+        <h1>Custom Protocol</h1>
+        <div class='entry-topic'>
+            focus: <b>Vex Debug Protocol</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>Since the last entry, one major update has occured. This change revolves around the &quot;flow control&quot; of the protocol. To avoid the VDB and Brain talking over each other on a half duplex connection, we have decided to make the protocol controlled by one side acting as a controller and the other responding to the controller.</p>
+<p>Since the Brain will be talking the most, we have decided that it should be the controller with the VDB only ever &quot;talking&quot; when asked to.</p>
+<p>This makes the most sense when considering the types of data either side will send. The Brain needs to send rapidly updating, time series data while the VDB needs to only respond accordingly or send comparatively infrequent updates to control parameters such as PID tuning constants.</p>
+<p>For VDB information such as these parameters, we plan to adopt a polling model where the Brain will ask for any available information and know to listen for a response with data or a response indicating no data. At times when it is not expecting a response from the VDB, the Brain is free to send data as it pleases. We are also considering requiring Positive and Negative acknowledgements when receiving data from the VDB as data such as tuning parameters should not be dropped while 100hz time series data coming from the brain can be dropped with little concern. As polling for VDB data is not a priority right now, this has not been decided yet.</p>
+<p>Some examples of this strategy are shown below:</p>
+<h2>Advertising Channel and Sending Data</h2>
+<pre class="mermaid">sequenceDiagram
+    Brain-&gt;&gt;+VDB: Channel 1 Advertise
+    VDB--&gt;&gt;-Brain: Channel 1 Acknowledge
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+</pre><details data-callout="NOTE" open>
+<summary>
+Acknowledgement rules
+</summary>
+<div class="callout-content">
+<p>Since only some parts of this protocol requires acknowledgements, we must consider how to know what to acknowledge. If the VDB receives a garbled packet, it can not know what type of packet it is and as such does not know if it needs to acknowledge it. As a rule, the VDB will only acknowledge a packet if its type is Advertise <em>and</em> its checksum passes</p>
+</div>
+</details>
+<h2>Advertising Multiple Channels</h2>
+<pre class="mermaid">sequenceDiagram
+    Brain-&gt;&gt;+VDB: Channel 1 Advertise
+    VDB--&gt;&gt;-Brain: Acknowledge
+    Brain-&gt;&gt;+VDB: Channel 2 Advertise
+    VDB--&gt;&gt;-Brain: Acknowledge
+    Brain-&gt;&gt;+VDB: Channel 2 Data
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+    Brain-&gt;&gt;+VDB: Channel 2 Data
+
+</pre><details data-callout="NOTE" open>
+<summary>
+In Flight Limit
+</summary>
+<div class="callout-content">
+<p>In order to simplify the protocol. Only one Advertise/Acknowledge can be &quot;In Flight&quot; at a time. If you wish to advertise 2 channels, you must first advertise channel 1, wait for an acknowledgement, then advertise channel 2</p>
+</div>
+</details>
+<h2>Advertise Timeout</h2>
+<pre class="mermaid">sequenceDiagram
+    Brain-&gt;&gt;VDB: Channel 1 Advertise
+    Note right of Brain: No activity for X milliseconds
+    Brain-&gt;&gt;+VDB: Channel 1 Advertise
+    VDB--&gt;&gt;-Brain: Acknowledge
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+</pre><h2>Advertise Failure</h2>
+<pre class="mermaid">sequenceDiagram
+    Brain-&gt;&gt;+VDB: Channel 1 (Garbled)
+	Note right of VDB: Don&#39;t know type of packet
+	Note right of Brain: No activity for X milliseconds
+
+	Brain-&gt;&gt;+VDB: Channel 1 Advertise
+    VDB--&gt;&gt;-Brain: Acknowledge
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+</pre><h2>In a Context</h2>
+<pre class="mermaid">sequenceDiagram
+	actor User
+	participant Brain
+	participant VDB
+	User-&gt;&gt;Brain: Init
+	Brain-&gt;&gt;+VDB: Channel 1 Advertise
+    VDB--&gt;&gt;-Brain: Acknowledge
+	User-&gt;&gt;+Brain: Data 1
+    Brain-&gt;&gt;+VDB: Channel 1 Data
+</pre><h2>Buffering User Data</h2>
+<pre class="mermaid">sequenceDiagram
+	actor User
+	participant Brain
+	participant VDB
+	User-&gt;&gt;Brain: Init
+	Brain-&gt;&gt;+VDB: Channel 1 Advertise
+    VDB--&gt;&gt;-Brain: Acknowledge
+	User-&gt;&gt;+Brain: Data 1
+    User-&gt;&gt;+Brain: Data 2
+    Brain-&gt;&gt;+VDB: Channel 1 Data 1
+    Brain-&gt;&gt;+VDB: Channel 1 Data 2
+</pre><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad: true});</script>
+    </div>
+    
+
+    <section id="v5-interface-board-08-14-2024"></section>
+    <div class="entry-header">
+        <h1>V5 Interface Board</h1>
+        <div class='entry-topic'>
+            focus: <b>V5 Interface Board</b>
+        </div>
+    </div>
+
+    <div class="entry-signature">
+        <div class="flL">by:
+            
+            <b>Richie Sommers</b>
+            
+        </div>
+        <div class="flR">
+            reviewed by: 
+
+        </div>
+    </div>
+
+
+    <div class="entry-embed">
+        <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>While the Vex V5 Platform offers a simple, easy to use electrical system optimized for the uses of the competition, it can be restrictive when trying to use more complicated electrical components. Our team has sought to use COTS Inertial Measurement Units, LIDAR sensors, the Sparkfun Optical Odometry Sensor and more. These sensors usually use Serial Peripheral Interface (SPI), Inter-Integrated Circuit (I2C), or RS232 and are meant to be integrated into a printed circuit board or connected to General Purpose Input Output (GPIO) pins of a microcontroller. However, the V5 platform does not aim to integrate with such devices and as such provides no mechanisms to communicate on these protocols.</p>
+<p>The default hardware provides only the following connections: A battery connector, a usb port, and SD Card slot, 21 Smart Ports, and 8 Three wire ports. For the purposes of external communications, only the USB port, smart ports, and three wire ports are of any use. Unfortunately, none of these fit our needs for connecting with other sensors.
+While the USB port offers a serial connection, it would be playing double duty as the connection to sensors as well as a way to upload code and view output of the program. Additionally, a USB host device would be needed for this connection giving some restrictions about what types of devices we could use here.
+<img src="Assets/Pasted%20image%2020240814195930.png" alt="center">
+<em>The three wire ports on a Vex Brain</em></p>
+<p>The three wire ports are a simple input-output system but are limited in their output. Using them, we would have to build some protocol to communicate to any device on the other end as the Vex SDK does not offer any standard protocols for communicating complex data over these ports. Additionally, bit-banging any sort of protocol over these outputs will be slow. As well, our team commonly uses almost all or all of these ports for encoders, pneumatics, or potentiometers so we would lose some flexibility if we chose to use one or more of these outputs for communicating to external devices.</p>
+<p><img src="Assets/Pasted%20image%2020240814200152.png" alt="center|400">
+<em>A &quot;Smart cable&quot; connected to a Vex Motor</em></p>
+<p>This leaves the smart ports. These are the obvious solution to our problems as we often have extra left open and they provide a standard serial protocol with which to communicate.
+Unfortunately, not many off the shelf sensors that we would like to use have an RJ9 connector running an RS-485 connector to interact with the brain in this way.</p>
+<p>One approach would be to create custom PCBs with the sensor, a microcontroller to handle talking to the Brain, and circuitry to handle power over the smart port. While this would be feasible and give us the external devices we so desparately want, it comes at a steep cost. For each sensor we would have to design, layout, and order a new board - at least 50% of which would be shared with other sensor boards.</p>
+<p>After some brainstorming, and some inter-team espionage, we found Mikro Bus standard. We came across this idea as RIT Launch Initiative, a rocketry team with which we share space and members, uses a single board with Mikro Bus ports to test development of software using a common platform with new sensor chips. This allows them to quickly design and manufacture small, simple PCBs with just the sensor chip while the larger, complicated circuitry can be shared for a wide variety of sensors over different protocols.
+<span class="hashtag">#todo</span> picture of launch shield and mikro bus boards</p>
+<p><img src="Assets/Pasted%20image%2020240814190708.png" alt="center">
+<em>The Pinout for the Mikro Bus connection. Features many common communication standards allowing a wide variety of uses with no change to the underlying connection.</em></p>
+<p>Using this developped standard offers a hardware and software connection to target without having to re-design comparitavly complex PCBs after the initial one. Additionally, there is a large library of COTS Mikro Bus compatible boards to choose from - further limitting the number of PCBs we have to design in house.</p>
+
+    </div>
+    
+
+    <h1>End</h1>
+</body>
+
+</html>

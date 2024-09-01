@@ -2,37 +2,84 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="extra.css">
+
+
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+        integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+        integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <div class="FirstPage">
-        <div class="TeamName">RIT VEX U Robotics</div>
-        <br>
-        <div class="Title">
-            {{.Notebook}} Notebook
-        </div>
-        <br>
-        <br>
-        <div class="Season">
-            2024-2025
-        </div>
-
-
+    <h1>Entries By Date</h1>
+    <div class="TableOfContents">
+        <ul>
+            {{range $md := .Entries}}
+            <li class="tocentry">
+                {{.Data.Date.Format "01/02/2006"}}
+                <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>:
+                <pre class="process-tag">{{index .Data.ProcessSteps 0}}</pre>
+            </li>
+            {{end}}
+        </ul>
     </div>
+
+    <h1>Entries By Project</h1>
+    <div class="TableOfContents">
+        <ul>
+            <li>
+                {{range $foc := .ByFocus}}
+                {{.Focus}}
+                <ul>
+                    {{range $entry := .Entries}}
+                    <li class="tocentry">{{.Date.Format "01/02/2006"}}
+                        <a class="toclink" href="#{{.Anchor}}">{{.Title}}</a>: {{index .ProcessSteps 0}}
+                        <pre class="process-tag">{{index .ProcessSteps 0}}</pre>
+                    </li>
+                    {{end}}
+                </ul>
+                {{end}}
+            </li>
+        </ul>
+    </div>
+
 
     <br class="pagebreak">
 
     {{range $entry := .Entries}}
 
-    <h1>
-        {{.Data.Title}}
+    <section id="{{.Data.Anchor}}"></section>
+    <div class="entry-header">
+        <h1>{{.Data.Title}}</h1>
         <div class='entry-topic'>
-            <br>
             focus: <b>{{.Data.Focus}}</b>
         </div>
-    </h1>
+    </div>
 
     <div class="entry-signature">
         <div class="flL">by:
@@ -52,7 +99,7 @@
     </div>
     {{end}}
 
-
+    <h1>End</h1>
 </body>
 
 </html>

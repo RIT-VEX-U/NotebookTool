@@ -3,9 +3,7 @@ package main
 import (
 	"path/filepath"
 
-	katex "github.com/FurqanSoftware/goldmark-katex"
 	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
-	mathjax "github.com/litao91/goldmark-mathjax"
 	"github.com/yuin/goldmark"
 	emoji "github.com/yuin/goldmark-emoji"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
@@ -56,7 +54,6 @@ func Md() goldmark.Markdown {
 		goldmark.WithExtensions(
 			extension.GFM,
 			meta.New(meta.WithStoresInDocument()),
-			mathjax.MathJax,
 			&wikilink.Extender{
 				Resolver: wikilinkResolver{},
 			},
@@ -65,7 +62,6 @@ func Md() goldmark.Markdown {
 				Variant:  hashtag.ObsidianVariant,
 			},
 			emoji.Emoji,
-			&katex.Extender{},
 			&mermaid.Extender{},
 			callout.CalloutExtention,
 			highlighting.NewHighlighting(

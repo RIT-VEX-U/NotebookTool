@@ -19,11 +19,15 @@ type MetadataError struct {
 	err  error
 }
 
+func (me MetadataError) Unwrap() error {
+	return me.err
+}
+
 func (me MetadataError) Error() string {
 	return "in " + me.file + ": " + me.err.Error()
 }
 
-type Metadata struct {
+type Note struct {
 	Title string
 	Focus string
 
@@ -37,7 +41,13 @@ type Metadata struct {
 	Src          []byte
 }
 
-func (m Metadata) String() string {
+func (m Note) Anchor() string {
+	name := strings.ReplaceAll(strings.ToLower(m.Title), " ", "-")
+	date := m.Date.Format("01-02-2006")
+	return fmt.Sprintf("%s-%s", name, date)
+}
+
+func (m Note) String() string {
 	return fmt.Sprintf("Metadata for %v", m.Title)
 }
 
@@ -66,11 +76,13 @@ func getStringlist(field string, meta map[string]interface{}) ([]string, error) 
 	return res, nil
 }
 
-func extractMetadata(meta map[string]interface{}) (Metadata, error) {
-	out := Metadata{}
+var ErrNotEntry error = errors.New("not a notebook entry")
+
+func extractMetadata(meta map[string]interface{}) (Note, error) {
+	out := Note{}
 	nbI, exists := meta["notebook"]
 	if !exists {
-		return out, errors.New("no Notebook Field")
+		return out, ErrNotEntry
 	}
 	nb, ok := nbI.(string)
 	if !ok {
@@ -113,13 +125,16 @@ func fixTitle(filepath string) string {
 		return title
 	}
 	newTitle := r.ReplaceAll([]byte(title), []byte{})
-	return string(newTitle)
+	return strings.TrimSpace(string(newTitle))
 }
 
-func getMetadata(filepath string) (Metadata, error) {
+func getMetadata(filepath string) (Note, error) {
 	bs, err := os.ReadFile(filepath)
-	if err != nil {
-		return Metadata{}, MetadataError{filepath, err}
+	if errors.Is(err, ErrNotEntry) {
+		fmt.Println("ASDSADASDASDSA")
+		return Note{}, err
+	} else if err != nil {
+		return Note{}, MetadataError{filepath, err}
 	}
 
 	doc := NotebookParser().Parse(text.NewReader(bs))
@@ -130,17 +145,18 @@ func getMetadata(filepath string) (Metadata, error) {
 	meta.Src = bs
 	meta.Doc = doc
 	meta.Title = fixTitle(filepath)
+
 	dir := path.Dir(filepath)
 	meta.Focus = path.Base(dir)
 
 	return meta, nil
 }
 
-func listOfFilesInThisNotebook(notes []Metadata, notebook string) []Metadata {
-	slices.SortFunc(notes, func(a, b Metadata) int {
+func listOfFilesInThisNotebook(notes []Note, notebook string) []Note {
+	slices.SortFunc(notes, func(a, b Note) int {
 		return a.Date.Compare(b.Date)
 	})
-	filtered := []Metadata{}
+	filtered := []Note{}
 	for _, n := range notes {
 		if n.Notebook == notebook {
 			filtered = append(filtered, n)
