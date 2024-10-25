@@ -40,9 +40,12 @@ type Note struct {
 	Proofreaders []string
 	Doc          ast.Node
 	Src          []byte
+
+	PrevInFocus *Note
+	NextInFocus *Note
 }
 
-var dateRemover = regexp.MustCompile(`/^\d{1,2}-\d{1,2}-\d{2,4}\s+/`)
+var dateRemover = regexp.MustCompile(`^\d{1,2}-\d{1,2}-\d{2,4}\s+`)
 
 func (m Note) Anchor() string {
 
@@ -124,12 +127,8 @@ func extractMetadata(meta map[string]interface{}) (Note, error) {
 func fixTitle(filepath string) string {
 	title := path.Base(filepath)
 	title = strings.ReplaceAll(title, path.Ext(title), "")
-	// regexp.(``)
-	r, e := regexp.Compile(`^\d{1,2}-\d{1,2}-\d{2}\s+`)
-	if e != nil {
-		return title
-	}
-	newTitle := r.ReplaceAll([]byte(title), []byte{})
+
+	newTitle := dateRemover.ReplaceAllString(title, "")
 	return strings.TrimSpace(string(newTitle))
 }
 

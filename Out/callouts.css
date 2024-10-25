@@ -1,11 +1,17 @@
-details[data-callout] {
+details {
     padding: 0.1in;
     border-radius: 0.1in;
+    border: 0.02in solid black;
+    margin-left: 0.05in;
+    margin-right: 0.05in;
+
 }
+
 
 details[data-callout]>summary {
     list-style-type: none;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 details[data-callout="caution"] {
@@ -14,4 +20,21 @@ details[data-callout="caution"] {
 
 details[data-callout="caution"]>summary {
     color: rgb(236, 117, 0);
+}
+.callout[data-callout='palette-white'],
+.callout[data-callout='palette-magenta'],
+.callout[data-callout="palette-orange"] {
+    --callout-icon: lucide-paint-bucket;
+}
+
+.callout[data-callout='palette-white'] {
+    --callout-color: 255, 255, 255;
+}
+
+.callout[data-callout='palette-magenta'] {
+    --callout-color: 244, 0, 161;
+}
+
+.callout[data-callout="palette-orange"] {
+    --callout-color: 247, 105, 2;
 }

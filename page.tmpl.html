@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <!-- paged.js -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.min.js" defer>
-     </script>
+    </script>
 
     <script defer src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
 
     <!-- our stylesheets -->
+    <link rel="stylesheet" type="text/css" href="fonts.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="extra.css">
     <link rel="stylesheet" type="text/css" href="callouts.css">
 
 
@@ -45,8 +45,8 @@
 </head>
 
 <body>
-    <!-- TOC 1 -->
-    <h1>Entries By Date</h1>
+    <!-- TOC By Date -->
+    <h1 class="TOC">Entries By Date</h1>
     <div class="TableOfContents">
         <ul>
             {{range $md := .Entries}}
@@ -61,8 +61,8 @@
     </div>
     <br class="pagebreak">
 
-    <!-- TOC 2 -->
-    <h1>Entries By Project</h1>
+    <!-- TOC By Project -->
+    <h1 class="TOC">Entries By Project</h1>
     <div class="TableOfContents">
         <ul>
             <li>
@@ -111,10 +111,19 @@
             </span>
         </div>
 
+        {{if .Data.PrevInFocus}}
+        Continued From <a class="note_ref" href="#{{.Data.PrevInFocus.Anchor}}"><b>{{.Data.PrevInFocus.Title}}</b></a>
+        {{end}}
 
         <div class="entry-embed">
             {{.Html}}
         </div>
+        {{if .Data.NextInFocus}}
+        <div style="text-align: right;">
+            Continued In <a class="note_ref" href="#{{.Data.NextInFocus.Anchor}}"><b>{{.Data.NextInFocus.Title}}</b></a>
+        </div>
+        {{end}}
+
         {{end}}
     </section>
 

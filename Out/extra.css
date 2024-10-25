@@ -122,6 +122,7 @@ pre[data-undisplayed="undisplayed"] {
 
 
 
+
 @media print {
     @page {
         size: 8.5in 11in;
@@ -130,6 +131,13 @@ pre[data-undisplayed="undisplayed"] {
     img {
         break-before: always;
         break-inside: avoid;
+
+        max-width: 2in;
+        max-height: 2in;
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     img+em {
@@ -145,6 +153,11 @@ pre[data-undisplayed="undisplayed"] {
         page-break-before: always;
     }
 }
+@page {
+    @bottom-center {
+        content: counter(page) " of " counter(pages);
+    }
+}
 
 .tocentry>a::after {
     float: right;
@@ -153,11 +166,6 @@ pre[data-undisplayed="undisplayed"] {
 
 
 
-@page {
-    @bottom-center {
-        content: counter(page) " of " counter(pages);
-    }
-}
 
 
 

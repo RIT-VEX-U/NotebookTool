@@ -158,11 +158,12 @@ func main() {
 		slices.SortFunc(entries, func(a, b Note) int {
 			return a.Date.Compare(b.Date)
 		})
-
-		focusList = append(focusList, FocusGroup{
-			Focus:   focus,
-			Entries: entries,
-		})
+		if focus != "Frontmatter" {
+			focusList = append(focusList, FocusGroup{
+				Focus:   focus,
+				Entries: entries,
+			})
+		}
 	}
 
 	// Sort focus index by focus name
@@ -170,14 +171,27 @@ func main() {
 		return strings.Compare(a.Focus, b.Focus)
 	})
 
-	for _, entry := range entries {
+	// Find neighbours
+	for j, entry := range entries {
 		focus := entry.Data.Focus
 		neighbors := byFocus[focus]
-		slices.IndexFunc(neighbors, func(n Note) bool {
+		i := slices.IndexFunc(neighbors, func(n Note) bool {
 			return n.Location == entry.Data.Location
 		})
+
+		if i > 0 {
+			entries[j].Data.PrevInFocus = &neighbors[i-1]
+			// fmt.Println("Found prev", i, byFocus[focus][i].PrevInFocus)
+		}
+		if i < len(neighbors)-1 {
+			entries[j].Data.NextInFocus = &neighbors[i+1]
+		}
 	}
-	// log.Println("Entries:")
+
+	writeToFile(args.Notebook, entries, focusList)
+}
+
+func writeToFile(notebookName string, entries []RenderedEntry, focusList []FocusGroup) {
 	f, err := os.Create("Out/index.html")
 	must(err)
 	err = f.Truncate(0)
@@ -185,7 +199,7 @@ func main() {
 	defer f.Close()
 
 	err = templateFile.Execute(f, Notebook{
-		Notebook: args.Notebook,
+		Notebook: notebookName,
 		Entries:  entries,
 		ByFocus:  focusList,
 	})
