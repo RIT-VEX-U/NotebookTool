@@ -107,6 +107,9 @@ func extractMetadata(meta map[string]interface{}) (Note, error) {
 	if out.ProcessSteps, err = getStringlist("process_step", meta); err != nil {
 		return out, err
 	}
+	if len(out.ProcessSteps) == 0 {
+		return out, fmt.Errorf("missing process_step")
+	}
 
 	if dateS, exists := meta["entry_date"]; exists {
 		dateS, ok := dateS.(string)
@@ -135,7 +138,6 @@ func fixTitle(filepath string) string {
 func getMetadata(filepath string) (Note, error) {
 	bs, err := os.ReadFile(filepath)
 	if errors.Is(err, ErrNotEntry) {
-		fmt.Println("ASDSADASDASDSA")
 		return Note{}, err
 	} else if err != nil {
 		return Note{}, MetadataError{filepath, err}

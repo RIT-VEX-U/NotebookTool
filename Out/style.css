@@ -9,12 +9,14 @@
     --proc-step-update: #009CBD;
     --proc-step-test: #F6BE00;
     --proc-step-select: #7D55C7;
+    --proc-step-other: #bbbbbb;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.0em;
 }
+
 pre[data-undisplayed="undisplayed"] {
     display: none;
 }
@@ -27,6 +29,15 @@ pre[data-undisplayed="undisplayed"] {
     padding-right: 2px;
     font-size: small;
     float: right;
+}
+
+table,
+th,
+tr,
+td,
+thead {
+    border: 1pt solid black;
+    border-collapse: collapse;
 }
 
 .process-tag[data-process="identify-problem"] {
@@ -45,8 +56,12 @@ pre[data-undisplayed="undisplayed"] {
     background-color: var(--proc-step-select);
 }
 
-.process-tag[data-process="test"] {
+.process-tag[data-process="test-result"] {
     background-color: var(--proc-step-test);
+}
+
+.process-tag[data-process="other"] {
+    background-color: var(--proc-step-other);
 }
 
 
@@ -54,6 +69,7 @@ div.TableOfContents>ul {
     list-style: none;
     padding-left: 0;
 }
+
 .tocentry>a::after {
     float: right;
     content: target-counter(attr(href), page);
@@ -91,10 +107,11 @@ div.TableOfContents>ul {
 
 @page {
     @bottom-center {
-      content: counter(page) " of " counter(pages);
+        content: counter(page) " of " counter(pages);
     }
 }
-  
+
+
 @media print {
     @page {
         size: 8.5in 11in;
@@ -103,19 +120,26 @@ div.TableOfContents>ul {
     /*Page Breaking Rules*/
 
 
-    h1.TOC{
-        break-before: always;
+    h1.TOC {
+        /* break-before: always; */
     }
 
     h1.entry-title {
         page-break-before: always;
         page-break-after: avoid;
+        string-set: title content(text);
     }
 
-    h1, h2, h3, h4, h5 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
         page-break-after: avoid;
     }
-    table, figure {
+
+    table,
+    figure {
         page-break-inside: avoid;
     }
 
@@ -129,7 +153,7 @@ div.TableOfContents>ul {
         text-align: center;
         margin: auto;
     }
-    
+
 
     img+em {
         break-inside: avoid;
@@ -139,17 +163,19 @@ div.TableOfContents>ul {
         color: black;
         text-decoration: none;
     }
-    a.note_ref{
+
+    a.note_ref {
         color: black;
         text-decoration: none;
     }
+
     a.note_ref::after {
         content: " (Pg. " target-counter(attr(href), page) ")";
-     
-    
+
+    }
+
     .pagebreak {
         page-break-before: always;
     }
 
 }
-

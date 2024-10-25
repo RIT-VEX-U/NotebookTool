@@ -67,7 +67,7 @@
         <ul>
             <li>
                 {{range $foc := .ByFocus}}
-                {{.Focus}}
+                <b>{{.Focus}}</b>
                 <ul>
                     {{range $entry := .Entries}}
                     <li class="tocentry">{{.Date.Format "01/02/2006"}}
@@ -112,7 +112,7 @@
         </div>
 
         {{if .Data.PrevInFocus}}
-        Continued From <a class="note_ref" href="#{{.Data.PrevInFocus.Anchor}}"><b>{{.Data.PrevInFocus.Title}}</b></a>
+        Continued from <a class="note_ref" href="#{{.Data.PrevInFocus.Anchor}}"><b>{{.Data.PrevInFocus.Title}}</b></a>
         {{end}}
 
         <div class="entry-embed">
@@ -120,7 +120,7 @@
         </div>
         {{if .Data.NextInFocus}}
         <div style="text-align: right;">
-            Continued In <a class="note_ref" href="#{{.Data.NextInFocus.Anchor}}"><b>{{.Data.NextInFocus.Title}}</b></a>
+            Continued in <a class="note_ref" href="#{{.Data.NextInFocus.Anchor}}"><b>{{.Data.NextInFocus.Title}}</b></a>
         </div>
         {{end}}
 

@@ -107,7 +107,9 @@ func main() {
 	files := getAllFilesInDirectory(args.VaultPath)
 	notes, errs := parseFiles(files)
 	if len(errs) > 0 {
-		fmt.Println(errs)
+		for _, e := range errs {
+			fmt.Println(e)
+		}
 	}
 
 	wanted_entries := filterFilesForThisNotebook(notes, args.Notebook)
@@ -168,7 +170,10 @@ func main() {
 
 	// Sort focus index by focus name
 	slices.SortFunc(focusList, func(a, b FocusGroup) int {
-		return strings.Compare(a.Focus, b.Focus)
+		return a.Entries[0].Date.Compare(b.Entries[0].Date)
+	})
+	slices.SortFunc(entries, func(a, b RenderedEntry) int {
+		return a.Data.Date.Compare(b.Data.Date)
 	})
 
 	// Find neighbours
