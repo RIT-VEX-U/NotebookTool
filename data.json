@@ -1,0 +1,37 @@
+{
+  "version": "0.0.1",
+  "totalSeconds": 174,
+  "trackData": {
+    "1doyPSKlfeIyA6s4NSwXPn": {
+      "artistId": "1Yq3rS7K1SQKqjMOHXpqqt",
+      "artistName": "Towa Bird",
+      "title": "B.I.L.L.S."
+    },
+    "3WSOUb3U7tqURbBSgZTrZX": {
+      "artistId": "7GlBOeep6PqTfFi59PTUUN",
+      "artistName": "Chappell Roan",
+      "title": "Casual"
+    },
+    "6rEcXviYlZCEx01m1z7qZv": {
+      "artistId": "1GmsPCcpKgF9OhlNXjOsbS",
+      "artistName": "Lizzy McAlpine",
+      "title": "Come Down Soon"
+    },
+    "4BnrGx9tWNF8aiXl1UhDBa": {
+      "artistId": "2pAWfrd7WFF3XhVt9GooDL",
+      "artistName": "MF DOOM",
+      "title": "One Beer"
+    }
+  },
+  "byFile": {
+    "/home/unknown/Clubs/VEX/NotebookFooling/NotebookTool/main.go": {
+      "1doyPSKlfeIyA6s4NSwXPn": 12
+    },
+    "/home/unknown/Clubs/VEX/NotebookFooling/NotebookTool/data.json": {
+      "1doyPSKlfeIyA6s4NSwXPn": 2,
+      "3WSOUb3U7tqURbBSgZTrZX": 58,
+      "6rEcXviYlZCEx01m1z7qZv": 74,
+      "4BnrGx9tWNF8aiXl1UhDBa": 28
+    }
+  }
+}

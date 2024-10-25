@@ -1,2 +1,5 @@
 Out/Assets
 out.pdf
+node_modules
+package.json
+package-lock.json

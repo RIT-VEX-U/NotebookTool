@@ -6,7 +6,6 @@ import (
 	"os"
 	"path"
 	"regexp"
-	"slices"
 	"strings"
 	"time"
 
@@ -28,6 +27,8 @@ func (me MetadataError) Error() string {
 }
 
 type Note struct {
+	Location string
+
 	Title string
 	Focus string
 
@@ -41,10 +42,14 @@ type Note struct {
 	Src          []byte
 }
 
+var dateRemover = regexp.MustCompile(`/^\d{1,2}-\d{1,2}-\d{2,4}\s+/`)
+
 func (m Note) Anchor() string {
+
 	name := strings.ReplaceAll(strings.ToLower(m.Title), " ", "-")
+	name = dateRemover.ReplaceAllString(name, "")
 	date := m.Date.Format("01-02-2006")
-	return fmt.Sprintf("%s-%s", name, date)
+	return fmt.Sprintf("entry-%s-%s", name, date)
 }
 
 func (m Note) String() string {
@@ -142,6 +147,7 @@ func getMetadata(filepath string) (Note, error) {
 	if err != nil {
 		return meta, MetadataError{filepath, err}
 	}
+	meta.Location = filepath
 	meta.Src = bs
 	meta.Doc = doc
 	meta.Title = fixTitle(filepath)
@@ -152,12 +158,9 @@ func getMetadata(filepath string) (Note, error) {
 	return meta, nil
 }
 
-func listOfFilesInThisNotebook(notes []Note, notebook string) []Note {
-	slices.SortFunc(notes, func(a, b Note) int {
-		return a.Date.Compare(b.Date)
-	})
+func filterFilesForThisNotebook(allnotes []Note, notebook string) []Note {
 	filtered := []Note{}
-	for _, n := range notes {
+	for _, n := range allnotes {
 		if n.Notebook == notebook {
 			filtered = append(filtered, n)
 		}

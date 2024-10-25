@@ -3,12 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- paged.js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.min.js" defer>
+     </script>
+
+    <script defer src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+
+    <!-- our stylesheets -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="extra.css">
+    <link rel="stylesheet" type="text/css" href="callouts.css">
 
 
-
-    <!-- KaTeX -->
+    <!-- KaTeX (Math rendering )-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
         integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
@@ -33,9 +40,12 @@
             });
         });
     </script>
+
+
 </head>
 
 <body>
+    <!-- TOC 1 -->
     <h1>Entries By Date</h1>
     <div class="TableOfContents">
         <ul>
@@ -43,12 +53,15 @@
             <li class="tocentry">
                 {{.Data.Date.Format "01/02/2006"}}
                 <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>:
-                <pre class="process-tag">{{index .Data.ProcessSteps 0}}</pre>
+                <span class="process-tag" data-process="{{index .Data.ProcessSteps 0}}">{{index .Data.ProcessSteps
+                    0}}</span>
             </li>
             {{end}}
         </ul>
     </div>
+    <br class="pagebreak">
 
+    <!-- TOC 2 -->
     <h1>Entries By Project</h1>
     <div class="TableOfContents">
         <ul>
@@ -58,8 +71,10 @@
                 <ul>
                     {{range $entry := .Entries}}
                     <li class="tocentry">{{.Date.Format "01/02/2006"}}
-                        <a class="toclink" href="#{{.Anchor}}">{{.Title}}</a>: {{index .ProcessSteps 0}}
-                        <pre class="process-tag">{{index .ProcessSteps 0}}</pre>
+                        <a class="toclink" href="#{{.Anchor}}">{{.Title}}</a>
+                        <span class="process-tag" data-process="{{index .ProcessSteps 0}}">{{index
+                            .ProcessSteps 0}}</span>
+
                     </li>
                     {{end}}
                 </ul>
@@ -67,39 +82,44 @@
             </li>
         </ul>
     </div>
-
-
-    <br class="pagebreak">
+    <!-- <br class="pagebreak"> -->
 
     {{range $entry := .Entries}}
 
-    <section id="{{.Data.Anchor}}"></section>
-    <div class="entry-header">
-        <h1>{{.Data.Title}}</h1>
-        <div class='entry-topic'>
-            focus: <b>{{.Data.Focus}}</b>
+    <section id="{{.Data.Anchor}}">
+
+        <div class="entry-header">
+            <h1 class="entry-title">
+                {{.Data.Title}}
+            </h1>
+            <span class='entry-topic'>
+                focus: <b>{{.Data.Focus}}</b>
+            </span>
         </div>
-    </div>
 
-    <div class="entry-signature">
-        <div class="flL">by:
-            {{range $index, $auth := .Data.Authors}}
-            <b>{{.}}</b>
-            {{end}}
+        <hr class="entry-header-hr">
+
+        <div class="entry-signature">
+            <div>by:
+                {{range $index, $auth := .Data.Authors}}
+                {{if $index}}, {{end}}
+                <b>{{.}}</b>
+                {{end}}
+            </div>
+            <span>
+                reviewed by: {{range $index, $auth := .Data.Proofreaders}} {{if $index}},{{end}} <b>{{.}}</b> {{end}}
+            </span>
         </div>
-        <div class="flR">
-            reviewed by: {{range $index, $auth := .Data.Proofreaders}} {{if $index}},{{end}} <b>{{.}}</b> {{end}}
 
+
+        <div class="entry-embed">
+            {{.Html}}
         </div>
-    </div>
+        {{end}}
+    </section>
 
 
-    <div class="entry-embed">
-        {{.Html}}
-    </div>
-    {{end}}
 
-    <h1>End</h1>
 </body>
 
 </html>

@@ -2,11 +2,13 @@ package main
 
 import (
 	"bytes"
+	_ "embed"
 	"errors"
 	"fmt"
 	"io/fs"
 	"os"
 	"path"
+	"slices"
 	"strings"
 	"text/template"
 )
@@ -44,7 +46,7 @@ func ParseArgs() Config {
 	}
 }
 
-func getAllFiles(root string) []string {
+func getAllFilesInDirectory(root string) []string {
 	files := []string{}
 	f := func(filename string, d fs.DirEntry, err error) error {
 		if err != nil {
@@ -64,6 +66,9 @@ func getAllFiles(root string) []string {
 
 type RenderedEntry struct {
 	Data Note
+
+	PrevNote, NextNote *string
+
 	Html string
 }
 
@@ -78,14 +83,7 @@ type Notebook struct {
 	ByFocus  []FocusGroup
 }
 
-func main() {
-	args := ParseArgs()
-	// log.Println(args)
-	files := getAllFiles(args.VaultPath)
-	// log.Println(files)
-	mds := []Note{}
-	errs := []error{}
-
+func parseFiles(files []string) (mds []Note, errs []error) {
 	for _, file := range files {
 		m, err := getMetadata(file)
 		if errors.Is(err, ErrNotEntry) {
@@ -96,29 +94,32 @@ func main() {
 			mds = append(mds, m)
 		}
 	}
+	return mds, errs
+}
+
+//go:embed page.tmpl.html
+var templateFileSource string
+
+var templateFile = template.Must(template.New("outputPage").Parse(templateFileSource))
+
+func main() {
+	args := ParseArgs()
+	files := getAllFilesInDirectory(args.VaultPath)
+	notes, errs := parseFiles(files)
 	if len(errs) > 0 {
 		fmt.Println(errs)
 	}
 
-	wanted_entries := listOfFilesInThisNotebook(mds, args.Notebook)
-
-	// fmt.Println(wanted)
-
-	f, err := os.OpenFile("Out/index.html", os.O_WRONLY|os.O_CREATE, 0666)
-	must(err)
-	err = f.Truncate(0)
-	must(err)
-	defer f.Close()
-
-	t, err := template.ParseFiles("page.tmpl.html")
-	must(err)
+	wanted_entries := filterFilesForThisNotebook(notes, args.Notebook)
 
 	entries := []RenderedEntry{}
+	frontmatter := []RenderedEntry{}
 
 	errs = []error{}
 	byFocus := map[string][]Note{}
 
 	for _, metadata := range wanted_entries {
+		// Sort by focus
 		if l, exists := byFocus[metadata.Focus]; exists {
 			byFocus[metadata.Focus] = append(l, metadata)
 		} else {
@@ -127,28 +128,63 @@ func main() {
 
 		buf := bytes.NewBuffer([]byte{})
 
-		err = NotebookRender().Render(buf, metadata.Src, metadata.Doc)
+		err := NotebookRender().Render(buf, metadata.Src, metadata.Doc)
 		if err != nil {
 			errs = append(errs, err)
 		}
-		entries = append(entries, RenderedEntry{
-			Data: metadata,
-			Html: buf.String(),
-		})
+		// Rout to frontmatter or regular entry
+		if slices.Contains(metadata.ProcessSteps, "frontmatter") {
+			frontmatter = append(frontmatter, RenderedEntry{
+				Data: metadata,
+				Html: buf.String(),
+			})
+		} else {
+			entries = append(entries, RenderedEntry{
+				Data: metadata,
+				Html: buf.String(),
+			})
+
+		}
+
 	}
 	if len(errs) > 0 {
 		fmt.Println(errs)
 	}
 
+	// Get focii
 	focusList := []FocusGroup{}
 	for focus, entries := range byFocus {
+		// Sort group by date
+		slices.SortFunc(entries, func(a, b Note) int {
+			return a.Date.Compare(b.Date)
+		})
+
 		focusList = append(focusList, FocusGroup{
 			Focus:   focus,
 			Entries: entries,
 		})
 	}
 
-	err = t.Execute(f, Notebook{
+	// Sort focus index by focus name
+	slices.SortFunc(focusList, func(a, b FocusGroup) int {
+		return strings.Compare(a.Focus, b.Focus)
+	})
+
+	for _, entry := range entries {
+		focus := entry.Data.Focus
+		neighbors := byFocus[focus]
+		slices.IndexFunc(neighbors, func(n Note) bool {
+			return n.Location == entry.Data.Location
+		})
+	}
+	// log.Println("Entries:")
+	f, err := os.Create("Out/index.html")
+	must(err)
+	err = f.Truncate(0)
+	must(err)
+	defer f.Close()
+
+	err = templateFile.Execute(f, Notebook{
 		Notebook: args.Notebook,
 		Entries:  entries,
 		ByFocus:  focusList,

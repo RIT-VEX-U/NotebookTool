@@ -1,0 +1,17 @@
+details[data-callout] {
+    padding: 0.1in;
+    border-radius: 0.1in;
+}
+
+details[data-callout]>summary {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+details[data-callout="caution"] {
+    background-color: #ec750040;
+}
+
+details[data-callout="caution"]>summary {
+    color: rgb(236, 117, 0);
+}
