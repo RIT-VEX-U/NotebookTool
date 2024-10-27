@@ -10,7 +10,7 @@ import (
 	"github.com/yuin/goldmark/util"
 )
 
-// A HighlightAst struct represents a Highlight of GFM text.
+// A HighlightAst struct represents a Highlight.
 type HighlightAst struct {
 	gast.BaseInline
 }

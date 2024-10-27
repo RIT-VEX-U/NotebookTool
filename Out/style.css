@@ -31,6 +31,8 @@ pre[data-undisplayed="undisplayed"] {
     float: right;
 }
 
+/* Continued in Grabber Brainstorming (Pg. 22) break before never            */
+
 table,
 th,
 tr,
@@ -38,6 +40,11 @@ td,
 thead {
     border: 1pt solid black;
     border-collapse: collapse;
+}
+
+
+span.comment {
+    display: none;
 }
 
 .process-tag[data-process="identify-problem"] {

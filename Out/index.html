@@ -59,7 +59,7 @@
             <li class="tocentry">
                 05/10/2024
                 <a class="toclink" href="#entry-cad-software-meeting-05-10-2024">CAD Software Meeting</a>:
-                <span class="process-tag" data-process="identify-problem">identify-problem</span>
+                <span class="process-tag" data-process="brainstorm">brainstorm</span>
             </li>
             
             <li class="tocentry">
@@ -124,14 +124,14 @@
             
             <li class="tocentry">
                 09/30/2024
-                <a class="toclink" href="#entry-drivetrain-options-09-30-2024">Drivetrain Options</a>:
-                <span class="process-tag" data-process="brainstorm">brainstorm</span>
+                <a class="toclink" href="#entry-grabber-requirements-09-30-2024">Grabber Requirements</a>:
+                <span class="process-tag" data-process="identify-problem">identify-problem</span>
             </li>
             
             <li class="tocentry">
                 09/30/2024
-                <a class="toclink" href="#entry-grabber-requirements-09-30-2024">Grabber Requirements</a>:
-                <span class="process-tag" data-process="identify-problem">identify-problem</span>
+                <a class="toclink" href="#entry-drivetrain-options-09-30-2024">Drivetrain Options</a>:
+                <span class="process-tag" data-process="brainstorm">brainstorm</span>
             </li>
             
             <li class="tocentry">
@@ -155,6 +155,12 @@
             <li class="tocentry">
                 10/06/2024
                 <a class="toclink" href="#entry-gear-meshing-issues-10-06-2024">Gear Meshing Issues</a>:
+                <span class="process-tag" data-process="update">update</span>
+            </li>
+            
+            <li class="tocentry">
+                10/08/2024
+                <a class="toclink" href="#entry-drivetrain-proof-of-concept-10-08-2024">Drivetrain Proof of Concept</a>:
                 <span class="process-tag" data-process="update">update</span>
             </li>
             
@@ -184,13 +190,19 @@
             
             <li class="tocentry">
                 10/20/2024
+                <a class="toclink" href="#entry-hook-design-10-20-2024">Hook Design</a>:
+                <span class="process-tag" data-process="update">update</span>
+            </li>
+            
+            <li class="tocentry">
+                10/20/2024
                 <a class="toclink" href="#entry-speed-testing-voron-v0-10-20-2024">Speed Testing Voron V0</a>:
                 <span class="process-tag" data-process="test-result">test-result</span>
             </li>
             
             <li class="tocentry">
-                10/20/2024
-                <a class="toclink" href="#entry-hook-design-10-20-2024">Hook Design</a>:
+                10/25/2024
+                <a class="toclink" href="#entry-side-towers-with-mounts-10-25-2024">Side Towers with Mounts</a>:
                 <span class="process-tag" data-process="update">update</span>
             </li>
             
@@ -215,7 +227,7 @@
                     
                     <li class="tocentry">05/10/2024
                         <a class="toclink" href="#entry-cad-software-meeting-05-10-2024">CAD Software Meeting</a>
-                        <span class="process-tag" data-process="identify-problem">identify-problem</span>
+                        <span class="process-tag" data-process="brainstorm">brainstorm</span>
 
                     </li>
                     
@@ -244,6 +256,12 @@
                     
                     <li class="tocentry">10/06/2024
                         <a class="toclink" href="#entry-gear-meshing-issues-10-06-2024">Gear Meshing Issues</a>
+                        <span class="process-tag" data-process="update">update</span>
+
+                    </li>
+                    
+                    <li class="tocentry">10/08/2024
+                        <a class="toclink" href="#entry-drivetrain-proof-of-concept-10-08-2024">Drivetrain Proof of Concept</a>
                         <span class="process-tag" data-process="update">update</span>
 
                     </li>
@@ -391,6 +409,12 @@
 
                     </li>
                     
+                    <li class="tocentry">10/25/2024
+                        <a class="toclink" href="#entry-side-towers-with-mounts-10-25-2024">Side Towers with Mounts</a>
+                        <span class="process-tag" data-process="update">update</span>
+
+                    </li>
+                    
                 </ul>
                 
             </li>
@@ -506,6 +530,9 @@ The team met and discussed the state of CAD, addressing issues that stood out fr
                 
                 <b>Mae Subramanian</b>
                 
+                , 
+                <b>Zoe Rizzo</b>
+                
             </div>
             <span>
                 reviewed by: 
@@ -518,14 +545,15 @@ The team met and discussed the state of CAD, addressing issues that stood out fr
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
 </span></span></code></pre><p>→ <strong>Objective:</strong> Discuss starting the drivetrain for our first robot.
-<strong>We need a drivetrain.</strong> Returning members met to discuss our values for the drivetrain that will serve as our first robot's base. Reflecting on previous years' experiences, we came up with the three key needs that to satisfy with this first drivetrain.</p>
+<strong>A drivetrain is the first and most important part of a robot.</strong> If a robot can't drive straight, slips when it turns, or is easily pushed, it will not be easy to win matches. If the drivetrain is too complex, it will be difficult to repair or make changes. Without a good drivetrain, winning will be very difficult.</p>
+<p>Returning members met to discuss our values for the drivetrain that will serve as our first robot's base. Reflecting on previous years' experiences, we came up with the three key needs that to satisfy with this first drivetrain:</p>
 <h2>Traction</h2>
 <p>During the 2023-2024 Over Under season, a lack of traction resulted in inaccurate positioning during the autonomous period. To prioritize accurate positioning during the autonomous period, the team agreed that <strong>both robots should have an added a traction wheel in the center to avoid drifting or being pushed around.</strong></p>
 <h2>Modularity</h2>
 <p>Space requirements of the first robot's subsystems may change as time goes on during the prototyping process. The initial drivetrain should have movable components such as its cross-braces that can adapt around mechanisms such as the robot's intake or climbing mechanism.</p>
 <h2>Odometry</h2>
-<p>The initial drivetrain <strong>MUST</strong> be built around having space available for odometry.</p>
-<p><strong>Bolded summary sentence that concludes/summarizes observations/future plans.</strong></p>
+<p>The initial drivetrain <strong>MUST</strong> be built around having space available for odometry pods. Based on our strategy meeting last week, winning autonomous is ranked as a high priority for the team. This means we need to give the software sub-team the necessary sensors to have a consistent autonomous. Especially in VEX U, since our autonomous period is longer, matches can be determined in autonomous, which means this needs to be a priority.</p>
+<p><strong>We will need to design our drivetrain around these three factors.</strong> Doing this will give us the best chance to have successful robots.</p>
 
         </div>
         
@@ -566,8 +594,8 @@ The team met and discussed the state of CAD, addressing issues that stood out fr
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Discuss this entry's very important issue.
-<strong>Software needs a drivetrain to test code on.</strong> We took apart our old software robot Nemo, so we need to develop a new drivetrain for Software to use.</p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Discuss this entry's very important issue.</p>
+<p><strong>Software needs a drivetrain to test code on.</strong> We took apart our old software robot Nemo, so we need to develop a new drivetrain for Software to use.</p>
 <h3>Goals:</h3>
 <ul>
 <li>Introduce new Hardware members to building</li>
@@ -622,80 +650,10 @@ The team met and discussed the state of CAD, addressing issues that stood out fr
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Prepare to onboard new members to the Hardware Subteam at the upcoming Hardware meeting.
-<strong>First year students are interested in joining our team.</strong> The four returning Hardware members met to discuss how to organize a onboarding the tens of interested students at the team's upcoming onboarding meeting on September 8th.</p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Prepare to onboard new members to the hardware sub-team at the upcoming Hardware meeting.</p>
+<p><strong>First year students are interested in joining our team.</strong> The four returning Hardware members met to discuss how to organize a onboarding the tens of interested students at the team's upcoming onboarding meeting on September 8th.</p>
 <p>For the meeting, we began by preparing a presentation discussing basic build practices in VEX to bring help bring FTC or FRC alumni and those without robotics experience to the same page. During this meting, we will send out a form gauging incoming members' backgrounds and interests to further understand assess each member's individual needs.</p>
 <p><strong>The upcoming onboarding meeting will help us better understand incoming members' skillsets and backgrounds in preparation for the season.</strong></p>
-<p>%%</p>
-<p>Kickoff team organization</p>
-<ul>
-<li>Get a drive done physically for software
-<ul>
-<li>for new members with little experience</li>
-<li>give basic parameters</li>
-<li>15in drive</li>
-<li>guide people to build that</li>
-<li>6 motor, 4 omni with center traction</li>
-</ul>
-</li>
-<li>Get an optimal, general purpose drive for build
-<ul>
-<li>decently modular</li>
-<li>ready for hardware to prototype on</li>
-<li>8 motor, 4 omni, center traction</li>
-<li>CJ and</li>
-</ul>
-</li>
-</ul>
-<p>Two separate task forces going on at once:</p>
-<p>keep candy on person and give it to contributing questions or points</p>
-<p>things to talk about at meeting</p>
-<ul>
-<li>vex build system
-<ul>
-<li>square holes and that kind of stuff</li>
-</ul>
-</li>
-<li>drivetrain concepts
-<ul>
-<li>drop center</li>
-<li>screw joints
-<ul>
-<li>= idler</li>
-<li>why that works on a smaller scale</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>how odometry modules work
-<ul>
-<li>why we hate them</li>
-<li>why software doesn't deserve them</li>
-</ul>
-</li>
-<li>PTOs</li>
-<li>how pneumatics work/ways they're commonly used</li>
-<li>assimilate to tipping point build methods
-<ul>
-<li>overcenter locking mechs/locking claws</li>
-<li>how people got rings on the goals/tilted goals</li>
-</ul>
-</li>
-<li>fabrication processes</li>
-</ul>
-<p>discussion topics:</p>
-<ul>
-<li>what we can do to make a good drive for hardware/proposals
-<ul>
-<li>things to keep in mind like modularity</li>
-</ul>
-</li>
-<li>general thoughts about the game
-<ul>
-<li>%%</li>
-</ul>
-</li>
-</ul>
 
         </div>
         
@@ -826,9 +784,14 @@ The team met and discussed the state of CAD, addressing issues that stood out fr
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
 </span></span></code></pre><p>→ <strong>Objective:</strong> Review results of the orientation meeting</p>
 <p><strong>The orientation meeting was very successful.</strong> The meeting had a lot of engagement, with almost 60 prospective members attending. The guided discussion groups had solid engagement, and we heard a lot of ideas for strategy. Overall people seemed interested and the meeting was a good sign for recruitment this season.</p>
-<p>There were some issues that came up though, the meeting was almost 4 hours long so interest began to drop off. Another issue is that some of the changes in the VEXU section of the manual weren't clearly communicated. This might have affected what conclusions the strategy discussions came to. It would likely be beneficial to hold additional strategy meetings in the future.</p>
+<p>There were some issues that came up though:</p>
+<ul>
+<li>The meeting was almost 4 hours long, so interest began to drop off.</li>
+<li>Some of the changes in the VEXU section of the manual weren't clearly communicated.</li>
+</ul>
+<p>This might have affected what conclusions the strategy discussions came to. It would likely be beneficial to hold additional strategy meetings in the future.</p>
 <p>Looking forward, a large influx of members may pose logistical challenges to us. With only 7 members with experience on campus, a lot of our bandwidth may be taken up by onboarding.</p>
-<p><strong>The orientation meeting went very well and is a strong sign for recruitment; there may be additional logistical challenges for onboarding and managing an influx of new members</strong></p>
+<p><strong>The orientation meeting went very well and is a strong sign for recruitment</strong>; there may be additional logistical challenges for onboarding and managing an influx of new members.</p>
 
         </div>
         
@@ -871,12 +834,11 @@ The team met and discussed the state of CAD, addressing issues that stood out fr
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong>  Brainstorm mechanisms in prep for the upcoming weeks of hardware.<br>
-<strong>We need to get prototyping.</strong> The team had its first hardware meeting today, thinking about specifics for each subsystem.</p>
+</span></span></code></pre><p>→ <strong>Objective:</strong>  Brainstorm mechanisms in prep for the upcoming weeks of hardware.</p>
+<p><strong>We need to get prototyping.</strong> The team had its first hardware meeting today, thinking about specifics for each subsystem.</p>
 <blockquote>
 <p>[!quote]+ Brainstorm notes from meeting
-mobile goal grabbing:
-In terms of intake, we thought of the following:</p>
+Intake:</p>
 <ul>
 <li>Skewer/Plunger mechanism
 <ul>
@@ -894,29 +856,29 @@ In terms of intake, we thought of the following:</p>
 <li>2 silicone wheels/rubber band wheels that intake rings</li>
 <li>We don't need to worry about sorting until afterwards</li>
 <li>Wheels on the <strong>side</strong> instead of the top</li>
-<li>inspired by YNOT - image coming one sec pls hold</li>
+<li>Inspired by YNOT (see image below)</li>
 </ul>
 </li>
 </ul>
-<p>grabbing the mobile stake:</p>
+<p>Grabbing the mobile stake:</p>
 <ul>
-<li>design 1 - mobile stake grabber?
+<li>Group 1 - mobile stake grabber?
 <ul>
 <li>Mobile goal shaped cutout</li>
 <li>Use the indent in the mobile stake</li>
-<li>we need something for the base to lean against as as we pull the lip of the mobile stake</li>
-<li>research overcenter locking claw!!!</li>
+<li>We need something for the base to lean against as as we pull the lip of the mobile stake</li>
+<li>Research overcenter locking claw</li>
 </ul>
 </li>
-<li>group 2
+<li>Group 2
 <ul>
-<li>took inspiration from watching tiktok during hardware meeting!! :LiSparkles:</li>
-<li>same as others</li>
+<li>Took inspiration from watching tiktok during hardware meeting!! :LiSparkles:</li>
+<li>Same as others</li>
 </ul>
 </li>
-<li>group 3
+<li>Group 3
 <ul>
-<li>use a dr4b to raise to the neutral stake - this goes over to a future problem</li>
+<li>Use a dr4b to raise to the neutral stake - this goes over to a future problem</li>
 </ul>
 </li>
 </ul>
@@ -930,42 +892,41 @@ YNOT inspiration
 <p><img src="Assets/maxresdefault%201.jpg"></p>
 </div>
 </details>
-<p>Keeping in mind that the mobile stake has some resistance on the rings, we can't just rely on gravity to score rings. We thought of the following ideas for</p>
-<p>end effector problems:</p>
+<p>Keeping in mind that the mobile stake has some resistance on the rings, we can't just rely on gravity to score rings. We thought of the following ideas for end effector problems:</p>
 <ul>
-<li>how do we quickly pass rings onto the mobile stake?
+<li>How do we quickly pass rings onto the mobile stake?
 <ul>
-<li>conveyor that traverses up through the robot, and then we can push it down onto the mobile stake</li>
+<li>Conveyor that traverses up through the robot, and then we can push it down onto the mobile stake</li>
 </ul>
 </li>
-<li>how do we raise up to neutral goal
+<li>How do we raise up to neutral goal
 <ul>
-<li>continued idea of using the skewer/plunger idea</li>
-<li>raise the entire conveyor up</li>
-<li>use a basket on the intaking end of the robot and raise it up</li>
-<li>all using 4bar/6bar to reach</li>
+<li>Continued idea of using the skewer/plunger idea</li>
+<li>Raise the entire conveyor up</li>
+<li>Use a basket on the intaking end of the robot and raise it up</li>
+<li>All using 4bar/6bar to reach</li>
 </ul>
 </li>
 </ul>
-<h2>CLIMB!!!</h2>
+<h2>Climb</h2>
 <ul>
-<li>how do we climb?
+<li>How do we climb?
 <ul>
-<li>four hooks total that fold when they press up against the bottom of the rung, alternating so that</li>
-<li>use post as support</li>
-<li>passive climb</li>
+<li>Four hooks total that fold when they press up against the bottom of the rung, alternating so that</li>
+<li>Use post as support</li>
+<li>Passive climb</li>
 </ul>
 </li>
-<li>buddy climb?
+<li>Buddy climb?
 <ul>
-<li>one robot sits on top of the other
+<li>One robot sits on top of the other
 <ul>
-<li>&#x274c; we have to design the robot frames around that a lot</li>
+<li>&#x274c; We have to design the robot frames around that a lot</li>
 </ul>
 </li>
-<li>really really high strength latch</li>
-<li>one robot holding mobile stake and can hold onto it and latch on and climb</li>
-<li>other robot that can latch on similar to locking claws</li>
+<li>Really really high strength latch</li>
+<li>One robot holding mobile stake and can hold onto it and latch on and climb</li>
+<li>Other robot that can latch on similar to locking claws</li>
 </ul>
 </li>
 </ul>
@@ -1001,7 +962,7 @@ YNOT inspiration
                 
             </div>
             <span>
-                reviewed by: 
+                reviewed by:   <b>Zoe Rizzo</b> 
             </span>
         </div>
 
@@ -1012,9 +973,8 @@ YNOT inspiration
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Identify needs for our 15in
-<strong>Bolded thesis-like intro sentence.</strong> Background knowledge. Here's our problem. Yadda yadda yadda.</p>
-<p><strong>Bolded summary sentence that concludes/summarizes observations/future plans.</strong></p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Identify needs for our 15in to do well during Skills.</p>
+<p><strong>We need to determine our goals and objectives for Skills.</strong> Since one of our main goals this year is winning Excellence at Worlds, we need to be in the top 40% of Skills.</p>
 <h2>Why does Skills matter?</h2>
 <p>Skills is important as it is a very direct way to increase our chances of qualifying for worlds. A high rank in skills at competitions is necessary to be eligible for Excellence, so we will need strong performances in both driver and programming skills.</p>
 <p>Skills can also directly qualify us for worlds, with the teams with the top 5 skills scores on December 31st 2024 being awarded qualification to the world championship. Qualifying that early in the season would allow us to plan more long term, and reduce the stress that comes from trying to get a worlds qualification.</p>
@@ -1080,7 +1040,6 @@ YNOT inspiration
 </span></span></code></pre><p>→ <strong>Objective:</strong> Decide on a drivetrain design for the Initial Drivetrain
 <strong>The team met to settle on a drive out of multiple proposed options.</strong> After</p>
 <p><strong>Bolded summary sentence that concludes our decision and leads into future plans.</strong></p>
-<p>%% note: this usually involves a decision matrix! for big decisions like deciding on a drivetrain, this is best written after a hardware meeting :)%%</p>
 
         </div>
         
@@ -1121,8 +1080,8 @@ YNOT inspiration
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Identify possible mechanisms for a Ring intake.
-<strong>Following season kickoff expectations, our robot will need some method of intaking Rings.</strong> In general, intakes can be divided into two types: active and passive. An active intake uses some sort of rotation to pull in game elements, while a passive intake is something like a claw where it needs to be lined up and then actuated.</p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Identify possible mechanisms for a Ring intake.</p>
+<p><strong>Following season kickoff expectations, our robot will need some method of intaking Rings.</strong> In general, intakes can be divided into two types: active and passive. An active intake uses some sort of rotation to pull in game elements, while a passive intake is something like a claw where it needs to be lined up and then actuated.</p>
 <h3>Active Intake Styles</h3>
 <h4>Top Roller Intake</h4>
 <p>Top roller intakes are frequently used for game elements with a flat top or that would otherwise be hard to grab from the sides. These intakes can allow robots to intake from a wide horizontal range.</p>
@@ -1131,6 +1090,7 @@ YNOT inspiration
 <p>Use of surgical tubing on an intake is much more common in other competitive robotics programs such as FTC. Surgical tubing can be useful on an intake due to its high grip, and with these game elements the potential to act as hooks on the center of the ring that better pull in the rings into the robot.
 <img src="Assets/7203-intake.webp"></p>
 <!-- raw HTML omitted -->
+<p>Since their release flex wheels have been widely used in intakes in V5RC. The compliance of the flex wheels allows them to get good traction on game elements, and we have used them in the past such as in Over Under. Potential downsides of using flex wheels are their weight and potentially having less grip than other options.</p>
 <p><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdxxROC8IUxzHT1v_7kMjeyk7TAXq4Qm1LALY1RMwiSGwD5fRMLCd24mlFUXJwFwpO_XgAMI4l46aRlN37mZ74IpbSFtBJfT4LnrDJYGOLSI-Q8DsLa0YI-ov7rLmTkb5_ClJzE2ADW9OzLPur2li5JQS2m?key=borQwcGlJ-tc8GaPaf5KzA" alt=""></p>
 <!-- raw HTML omitted -->
 <h3>Side Roller Intake</h3>
@@ -1143,18 +1103,85 @@ YNOT inspiration
 <p><img src="Assets/V5RC%202024-2025%20Axel%20C-Channel%20Intake.png"></p>
 <!-- raw HTML omitted -->
 <h4>Claw Intake</h4>
-<p>Claw intakes are relatively common in V5RC, though are not frequently used at a high level in most games. These have the same advantages and disadvantages of the stick intakes for this game, potentially with worse alignment issues since they would either need to grab horizontally with a very wide grabber, or vertically which would only work when lined up in a narrow range.
-<img src="Assets/Pasted%20image%2020241013184945.png"></p>
+<p>Claw intakes are relatively common in V5RC, though are not frequently used at a high level in most games. These have the same advantages and disadvantages of the stick intakes for this game, potentially with worse alignment issues since they would either need to grab horizontally with a very wide grabber, or vertically which would only work when lined up in a narrow range.</p>
+<p><img src="Assets/Pasted%20image%2020241013184945.png"></p>
 <!-- raw HTML omitted -->
-<p><strong>bottom intake ramp roller</strong>
-bottom rollers In addition to a top roller help transition game objects from the ground into the bot, using small 1in silicon rollers to help the game element get off the floor and unto the ramp.
-<img src="Assets/Pasted%20image%2020241016195838.png"></p>
+<p>Bbottom intake ramp roller**
+Bottom rollers In addition to a top roller help transition game objects from the ground into the bot, using small 1in silicon rollers to help the game element get off the floor and unto the ramp.</p>
+<p><img src="Assets/Pasted%20image%2020241016195838.png"></p>
 <!-- raw HTML omitted -->
 
         </div>
         
         <div style="text-align: right;">
             Continued in <a class="note_ref" href="#entry-intake-selection-10-06-2024"><b>Intake Selection</b></a>
+        </div>
+        
+
+        
+
+    <section id="entry-grabber-requirements-09-30-2024">
+
+        <div class="entry-header">
+            <h1 class="entry-title">
+                Grabber Requirements
+            </h1>
+            <span class='entry-topic'>
+                focus: <b>15in Mobile Goal Grabber</b>
+            </span>
+        </div>
+
+        <hr class="entry-header-hr">
+
+        <div class="entry-signature">
+            <div>by:
+                
+                
+                <b>Ellie Bancroft</b>
+                
+            </div>
+            <span>
+                reviewed by:   <b>Zoe Rizzo</b> 
+            </span>
+        </div>
+
+        
+
+        <div class="entry-embed">
+            <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>→ <strong>Objective:</strong> Create requirements for a Mobile Stakes grabber.</p>
+<p><strong>To score effectively we need to have some way to grab and hold Mobile Stakes.</strong> Minimizing our movement around the field is going to allow us to score faster. Carrying around a mobile stake while being able to score on it allows us to have a consistent position to score and minimizes our movement around the field since we don't have to drive back and forth between rings and a mobile stake.</p>
+<h4>Goals and Requirements:</h4>
+<ol>
+<li>Minimize points of failure
+<ol>
+<li>Reduce Complexity</li>
+<li>Fewer Moving Parts</li>
+</ol>
+</li>
+<li>Keep as much of the Mobile Stake in the robot as possible
+<ol>
+<li>Prevent other teams from stealing it</li>
+</ol>
+</li>
+<li>Keep all of the Mobile Stake grabber inside the 15in sizing limit at all times
+<ol>
+<li>Keep the robot within expansion limits</li>
+</ol>
+</li>
+<li>Get the top of the Mobile Stake as close to inside the 15in size limit as possible
+<ol>
+<li>Make scoring on the Mobile Stake easier</li>
+<li>Lets the conveyor be able to score in its starting position</li>
+</ol>
+</li>
+</ol>
+
+        </div>
+        
+        <div style="text-align: right;">
+            Continued in <a class="note_ref" href="#entry-grabber-brainstorming-10-04-2024"><b>Grabber Brainstorming</b></a>
         </div>
         
 
@@ -1205,73 +1232,6 @@ bottom rollers In addition to a top roller help transition game objects from the
 
         
 
-    <section id="entry-grabber-requirements-09-30-2024">
-
-        <div class="entry-header">
-            <h1 class="entry-title">
-                Grabber Requirements
-            </h1>
-            <span class='entry-topic'>
-                focus: <b>15in Mobile Goal Grabber</b>
-            </span>
-        </div>
-
-        <hr class="entry-header-hr">
-
-        <div class="entry-signature">
-            <div>by:
-                
-                
-                <b>Ellie Bancroft</b>
-                
-            </div>
-            <span>
-                reviewed by: 
-            </span>
-        </div>
-
-        
-
-        <div class="entry-embed">
-            <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Create requirements for a Mobile Stakes grabber.
-<strong>To score effectively we need to have a Mobile Stake grabber.</strong> Minimizing our movement around the field is going to allow us to score faster. Carrying around a mobile stake while being able to score on it allows us to have a consistent position to score at, and minimizes our movement around the field since we don't have to drive back and forth between rings and a mobile stake.</p>
-<h4>Goals:</h4>
-<ol>
-<li>Minimize points of failure
-<ol>
-<li>Reduce Complexity</li>
-<li>Fewer Moving Parts</li>
-</ol>
-</li>
-<li>Keep as much of the Mobile Stake in the robot as possible
-<ol>
-<li>Prevent other teams from stealing it</li>
-</ol>
-</li>
-<li>Keep all of the Mobile Stake grabber inside the 15in sizing limit at all times
-<ol>
-<li>Keep the robot within expansion limits</li>
-</ol>
-</li>
-<li>Get the top of the Mobile Stake as close to inside the 15in size limit as possible
-<ol>
-<li>Make scoring on the Mobile Stake easier</li>
-<li>Lets the conveyor be able to score in its starting position</li>
-</ol>
-</li>
-</ol>
-
-        </div>
-        
-        <div style="text-align: right;">
-            Continued in <a class="note_ref" href="#entry-grabber-brainstorming-10-04-2024"><b>Grabber Brainstorming</b></a>
-        </div>
-        
-
-        
-
     <section id="entry-grabber-brainstorming-10-04-2024">
 
         <div class="entry-header">
@@ -1304,8 +1264,8 @@ bottom rollers In addition to a top roller help transition game objects from the
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Identify possible Mobile Stake Grabber Designs.
-<strong>We need some way of possessing and holding onto Mobile Stakes.</strong> Mobile Goals have been a mechanism used in many past VRC games, so we can look into past mechanisms to take inspiration.</p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Identify possible Mobile Stake Grabber Designs.</p>
+<p><strong>We need some way of possessing and holding onto Mobile Stakes.</strong> Mobile Goals have been a mechanism used in many past VRC games, so we can look into past mechanisms to take inspiration.</p>
 <h2>In the Zone Style Mobile Grabber</h2>
 <p><img src="Assets/IMG_0398.jpg"></p>
 <!-- raw HTML omitted -->
@@ -1360,8 +1320,8 @@ bottom rollers In addition to a top roller help transition game objects from the
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Select the best intake options to prototype.
-<strong>The team met to score potential intake options.</strong> Using a decision matrix, we listed scored the following criteria based on importance:</p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Select the best intake options to prototype.</p>
+<p><strong>The team met to score potential intake options.</strong> Using a decision matrix, we listed scored the following criteria based on importance:</p>
 <table>
 <thead>
 <tr>
@@ -1623,7 +1583,6 @@ bottom rollers In addition to a top roller help transition game objects from the
 </tbody>
 </table>
 <p><strong>Our next step is to prototype surgical tubing and flex wheel intakes.</strong></p>
-<p>%% note: this usually involves a decision matrix! for big decisions like deciding on a drivetrain, this is best written after a hardware meeting :)%%</p>
 
         </div>
         
@@ -1664,19 +1623,7 @@ bottom rollers In addition to a top roller help transition game objects from the
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>%% proofreading note: please review <a href="Assets/RIT%20VEX%20U%20Notebook%20Standards.html#LiWholeWord%20Conventions%20&%20Wording">RIT VEX U Notebook Standards#LiWholeWord Conventions &amp; Wording</a> and <a href="Assets/RIT%20VEX%20U%20Notebook%20Standards.html#LiUnlink%20No%20links.">RIT VEX U Notebook Standards#LiUnlink No links.</a>
-%%
-→ <strong>Objective:</strong> Tune the Voron V0—a custom-built printer started last season—to full functionality for manufacturing custom parts.</p>
-<p><strong>The Voron V0 and existing manufacturing methods were re-evaluated with new members of Hardware Subteam.</strong> In previous years, various slicer programs have been used to turn 3D object files %% (OBJ, STL) %% to GCode. We used slicers like Cura, PrusaSlicer, and SuperSlicer. Through member recommendations, we decided to switch to OrcaSlicer. %% As there is no existing convention for slicing part files on the subteam, this transition was neither at a loss nor necessary gain. %% OrcaSlicer's ease of use and easy-to-understand UI makes it easier to train less-experienced members of the team, and its network connections will allow for direct printing from the slicer window.</p>
-<p>Through cursory manual inspection of the 3D printer, immediate problems were identified. The transportation of the printer to and from the previous year's World Championship broke the printer's enclosure door off (which is constructed of printed parts and can be easily reprinted) and loosened the bolts holding the frame together. Most importantly, the linear rails were loose in their attachment to the frame. These loosened connections were tightened.</p>
-<p>The printer's software was then inspected. We quickly realized that OrcaSlicer sets the (0,0) coordinate for the print bed at the &quot;lower left&quot; corner (when viewing the print bed from the enclosure door towards the back of the printer). The Voron's configuration set the (0,0) coordinate to the &quot;upper left&quot; corner. The motor connections for x and y motors were swapped to change the direction of motor travel, and axial direction was inverted in the <code>printer.cfg</code> configuration file to ensure that the positive x and y axes were consistent with the software. A homing test was performed and both axes homed in the correct direction, and set the correct corner as (0,0).</p>
-<p><strong>Note for future reference that the printer homes to coordinates (110,100); the software assumes a print bed of these dimensions, which is an underestimate. Underestimates are better than overestimates.</strong> %% We might not want to include notes to self about the details of technical parameter in the notebook. The judges are scanning for information on our process, so this might not be relevant to them.%%</p>
-<p>Macros were added from <a href="https://ellis3dp.com/Print-Tuning-Guide/">https://ellis3dp.com/Print-Tuning-Guide/</a> to allow for easier homing, bed leveling, print start and end, print pause and resume, and heating and cooling the bed and hotend. %% See <a href="Assets/RIT%20VEX%20U%20Notebook%20Standards.html#%F0%9F%92%AC%20Addressing%20The%20Team">RIT VEX U Notebook Standards#💬 Addressing The Team</a> %%</p>
-<p>An extrusion test was next performed to identify why the printer had previous difficulties in extruding material at a consistent rate. A cold pull of the nozzle came out clean, indicating few or no obtrusions inside the nozzle or heat block. A problem was evident, though, as the melting temperature of the filament was ~55 degrees less than what the printer required to smoothly extrude. The printer.cfg file was inspected for problems, and it was identified the wrong thermistor name was called. The brand of thermistor was found, and input, and the printer's temperature began reading more accurate values (e.g. ambient temperature at 28 degrees and not 73).</p>
-<p>An extrusion steps tuning was performed per <a href="https://ellis3dp.com/Print-Tuning-Guide/;">https://ellis3dp.com/Print-Tuning-Guide/;</a> 120mm of filament was measured and 100 mm was fed at 1mm/s. The remaining 20mm was measured for accuracy, and the rotations value was tuned to increase precision. Likewise, the gearing ratio was updated from 50:20 to 1:1 as the extruder motor was found to be wrongly listed in the software. %% See <a href="Assets/RIT%20VEX%20U%20Notebook%20Standards.html#%F0%9F%92%AC%20Addressing%20The%20Team">RIT VEX U Notebook Standards#💬 Addressing The Team</a> %%</p>
-<p>Following these tests a bed level test was performed.</p>
-<p><strong>Recalibrations to bed height, print temperature, and pressure need to be  performed, but these updates to the Voron V0 have left it in a much improved state.</strong></p>
-
+</span></span></code></pre>
         </div>
         
         <div style="text-align: right;">
@@ -1729,6 +1676,63 @@ bottom rollers In addition to a top roller help transition game objects from the
 
         </div>
         
+        <div style="text-align: right;">
+            Continued in <a class="note_ref" href="#entry-drivetrain-proof-of-concept-10-08-2024"><b>Drivetrain Proof of Concept</b></a>
+        </div>
+        
+
+        
+
+    <section id="entry-drivetrain-proof-of-concept-10-08-2024">
+
+        <div class="entry-header">
+            <h1 class="entry-title">
+                Drivetrain Proof of Concept
+            </h1>
+            <span class='entry-topic'>
+                focus: <b>Initial Drivetrain</b>
+            </span>
+        </div>
+
+        <hr class="entry-header-hr">
+
+        <div class="entry-signature">
+            <div>by:
+                
+                
+                <b>Brayden</b>
+                
+            </div>
+            <span>
+                reviewed by: 
+            </span>
+        </div>
+
+        
+        Continued from <a class="note_ref" href="#entry-gear-meshing-issues-10-06-2024"><b>Gear Meshing Issues</b></a>
+        
+
+        <div class="entry-embed">
+            <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>→ <strong>Objective:</strong> build and test the initial drivetrain.</p>
+<h3>Creating motor mounts</h3>
+<p><img src="Assets/Pasted%20image%2020241023123113.png">
+By creating 2D Drawing of our wheel, gear, motor, and C channel, we can create a layout of where we want out motors to be. We created 3D printable mounts using OnShape and custom made feature scripts to make the face of the motor into a extrusion.</p>
+<h3>Implementing design</h3>
+<p>Having the full 3D CAD of our design implementing is fairly easy, copying from the mounter screen to parts. We created each side of the drivetrain at the same time, allowing multiple people to work on the bot simultaneously.</p>
+<p><img src="Assets/Pasted%20image%2020241023114128.png">
+Gearing and Spacing of the Drivetrain</p>
+<p>Our CAD model translated well into building it, as all the spacing and gearing is correct.</p>
+<p><img src="Assets/Pasted%20image%2020241023122341.png"></p>
+<h3>Odom:</h3>
+<p><img src="Assets/Pasted%20image%2020241026212313.png"></p>
+<h3>Drivetrain Overview</h3>
+<p><img src="Assets/Pasted%20image%2020241023123244.png">
+<img src="Assets/Pasted%20image%2020241023122604.png"></p>
+
+        </div>
+        
 
         
 
@@ -1753,7 +1757,7 @@ bottom rollers In addition to a top roller help transition game objects from the
                 
             </div>
             <span>
-                reviewed by: 
+                reviewed by:   <b>Zoe Rizzo</b> 
             </span>
         </div>
 
@@ -1769,19 +1773,19 @@ bottom rollers In addition to a top roller help transition game objects from the
 <p>For this prototype we want to be able to adjust the position of the roller so we can find the best position for the intake for each type of roller.</p>
 <p><strong>CAD design drawing:</strong> using the 2D drawing from the drivetrain as reference and creating 2D drawings of the ring game element we created a drawing protype of a top roller and bottom ramp roller. in addition to testing making the prototypes out of MDF laser cut wood
 <img src="Assets/Pasted%20image%2020241016200605.png"></p>
-<h3>Implementation:</h3>
-<p>using the laser cut wood and C channel to creating this prototype. using 1in silicon rollers as bottom rollers, and top rollers.</p>
+<h3>Implementation</h3>
+<p>Use the laser cut wood and C channel to create this prototype. Use 1in molded silicon rollers as bottom rollers, and top rollers.</p>
 <p><img src="Assets/Pasted%20image%2020241016202045.png"></p>
 <h3>Desired Data</h3>
-<p>this prototype worked very well, using the surgical tubing it helps grab the ring if it is not perfectly aligned. the combination of the bottom and top roller creates a very smooth transition from the ground to the intake. this performance seems very promising, we are going to move forward with this design with incorporating onto the bot.
+<p>This prototype worked very well, using the surgical tubing it helps grab the ring if it is not perfectly aligned. The combination of the bottom and top roller creates a very smooth transition from the ground to the intake. <strong>As this performance seems very promising, we are going to move forward with this design with incorporating onto the bot.</strong>
 <img src="Assets/Pasted%20image%2020241018174659.png"></p>
-<p><strong>Bolded summary sentence that concludes things/the solution's performance and leads into what's next for this issue.</strong></p>
-<h3>Incorporate deign onto bot:</h3>
-<p>our current design work well, but cannot fit onto the bot, we need to redesign the mounts to attach to the bot.
+<h3>Incorporate Design onto 15in Robot</h3>
+<p>Our current design work well, but cannot fit onto the bot. <strong>We need to redesign the mounts to attach to the bot.</strong>
 <img src="Assets/Pasted%20image%2020241020235835.png">
-Using the same geometry as our previous prototype created motor and axle mounts.</p>
-<p>Top Roller Intake: while attaching the motor to the top roller we realized that chain is griding on the bottom roller shaft collar, to fix this issue we are going to gear power to the pivot point of the intake and sprocket from the pivot point instead of the motor mount.
-<img src="Assets/Pasted%20image%2020241021100944.png"></p>
+Using the same geometry as our previous prototype to create motor and axle mounts.</p>
+<h4>Top Roller Intake</h4>
+<p>While attaching the motor to the top roller we realized that chain is griding on the bottom roller shaft collar. To fix this issue, we are going to gear power to the pivot point of the intake and sprocket from the pivot point instead of the motor mount.</p>
+<p><img src="Assets/Pasted%20image%2020241021100944.png"></p>
 
         </div>
         
@@ -1807,6 +1811,9 @@ Using the same geometry as our previous prototype created motor and axle mounts.
                 
                 <b>Ellie Bancroft</b>
                 
+                , 
+                <b>Brayden</b>
+                
             </div>
             <span>
                 reviewed by: 
@@ -1820,27 +1827,35 @@ Using the same geometry as our previous prototype created motor and axle mounts.
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> build and test a tilting mobile stake grabber.
-<strong>Bolded thesis-like intro sentence.</strong> We decided to base this design off of the two piston Mobile Goal grabber that 2775J ran in Tipping Point. We did this because its use of two pistons instead of 3 allows for easier mounting of pistons, and reduces the complexity of the prototype overall.
-<img src="Assets/Pasted%20image%2020241016195931.png"></p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Build and test a tilting mobile stake grabber.</p>
+<p><strong>After deciding a tilting grabber is the most viable design, we need to design, prototype, and test one.</strong></p>
+<p>Testing Criteria:</p>
+<ul>
+<li>Design can effectively hold the mobile stake in place</li>
+<li>Design has the leverage to pull it when driving</li>
+<li>Design can grab it from any orientation</li>
+<li>The mobile stake cannot be easily pulled out from the grabber</li>
+</ul>
+<p>We decided to base this design off of the two piston Mobile Goal grabber that 2775J ran in Tipping Point. We did this because its use of two pistons instead of two allows for easier mounting of pistons, and reduces the complexity of the prototype overall.</p>
+<p><img src="Assets/Pasted%20image%2020241016195931.png"></p>
 <!-- raw HTML omitted -->
-<h3>Design:</h3>
+<h3>Design</h3>
 <p><img src="Assets/Pasted%20image%2020241016213727.png">
 This design uses a short grabber arm that holds the Mobile Stake by clamping it between a c-channel and a 3d printed hook. This design works by having the 2 channels and grabber be pulled back by the pistons and using tension in rubber bands to force the pistons to pull the grabber backward when a mobile stake is in place.</p>
-<h3>Implementation:</h3>
+<h3>Implementation</h3>
 <p>While the piston mount itself was designed to be on holeset, the overall mechanism was difficult to build. The positioning of the cross braces on the robot are not ideal for a mechanism being mounted far back on the robot, so we had to use pieces of c-channel and use shaft collars as bushings to build this mechanism. The result of this is that the grabber was limited in how far it could rotate backward by a piece of c-channel.</p>
-<h3>Testing:</h3>
+<h3>Testing</h3>
 <p><img src="Assets/PXL_20241017_004000896.jpg">
 At 100 PSI the prototype was able to pull back the Mobile Stake somewhat, but have almost not resistance to being pulled out of the grasp of the claw.</p>
 <p><img src="Assets/PXL_20241017_005644989.jpg">
 Prototype did not work at all when attempting to grab the Mobile Stake at its corner.</p>
-<h4>Lessons from Testing:</h4>
+<h4>Lessons from Testing</h4>
 <p>This design did not have nearly enough leverage to hold the Mobile Stake in place. The short arms of the grabbing mechanism meant that they just slipped away</p>
 <p>Another issue is that these hooks only contacted at a point and relied entirely on the force of the air, so in an actual match they would likely not be functioning towards the end of the match as our robot uses its air.</p>
 <p>Finally this design shows that our grabber needs to be contacting at a smaller point to work for grabbing a mobile stake at the corner, or else it just will not function.</p>
 <p><strong>While this design did not work, we gathered useful data about what changed need to be made for future Mobile Stake Grabbers</strong></p>
-<h3>new approach: prototyping</h3>
-<p>Seeing that our previous design did not work, and the odd nature of the mobile goal. We think it might be easier to prototype in person vs theorizing the physics of the mobile goal in CAD.
+<h2>New approach: Prototyping</h2>
+<p>Seeing that our previous design did not work, and the odd nature of the mobile goal, we think <strong>it might be easier to prototype in person vs theorizing the physics of the mobile goal in CAD</strong>.
 <img src="Assets/Pasted%20image%2020241020232556.png"></p>
 
         </div>
@@ -1882,8 +1897,11 @@ Prototype did not work at all when attempting to grab the Mobile Stake at its co
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
 </span></span></code></pre><p>→ <strong>Objective:</strong> Implement the odometry pods for the software drivetrain</p>
 <p><strong>To keep the software drivetrain on track with the initial drivetrain, odometry pods were needed.</strong> The software team can now work on and test code while getting location information from the drivetrain. Mounted on pivots to account for field variance and to accurately represent the initial drivetrain while its under construction.</p>
-<p>This drivetrain has posed a strong benefit to the Software subteam and has strongly helped new team members learn how to use the VEX build system on an accurate representation of a drivetrain used in competition.</p>
-<p><strong>The software drivetrain is finished and ready to be used by the Software subteam.</strong></p>
+<p>This drivetrain has posed a strong benefit to the software sub-team and has strongly helped new team members learn how to use the VEX build system on an accurate representation of a drivetrain used in competition.</p>
+<p><strong>The software drivetrain is finished and ready to be used by the software sub-team.</strong></p>
+<p><img src="Assets/image000000.jpeg"></p>
+<!-- raw HTML omitted -->
+<p><img src="Assets/image000005.jpeg"><!-- raw HTML omitted -->Odemetry Pod Placement<!-- raw HTML omitted --></p>
 
         </div>
         
@@ -1911,7 +1929,7 @@ Prototype did not work at all when attempting to grab the Mobile Stake at its co
                 
             </div>
             <span>
-                reviewed by: 
+                reviewed by:   <b>Zoe Rizzo</b> 
             </span>
         </div>
 
@@ -1923,7 +1941,31 @@ Prototype did not work at all when attempting to grab the Mobile Stake at its co
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
 </span></span></code></pre><p>→ <strong>Objective:</strong> Tune the Voron V0 to reduce visual defects and improve tolerances.</p>
-<p><strong>While the Voron V0 has been made much more functional, it still has far to go in terms of quality and tolerances of printed parts.</strong> The first test print after the rework of the firmware showed good progress, but there was still noticeable stringing <em>(thin strands of filament created on travel moves)</em>, ringing <em>(also known as ghosting; ripples that show up on the surface of the print, typically near sharp corners or smaller details)</em>, and cooling issues <em>(droop on overhangs showing that the plastic isn't being cooled quick enough)</em>.</p>
+<p><strong>While the Voron V0 has been made much more functional, it still has far to go in terms of quality and tolerances of printed parts.</strong> The first test print after the rework of the firmware showed good progress, but there was still noticeable stringing, ringing, and cooling issues.</p>
+<details data-callout="NOTE" open>
+<summary>
+Definition: Stringing
+</summary>
+<div class="callout-content">
+<p>Thin strands of filament created on travel moves</p>
+</div>
+</details>
+<details data-callout="NOTE" open>
+<summary>
+Definition: Ringing
+</summary>
+<div class="callout-content">
+<p>Also known as ghosting; ripples that show up on the surface of the print, typically near sharp corners or smaller details</p>
+</div>
+</details>
+<details data-callout="NOTE" open>
+<summary>
+Definition: Cooling Issues
+</summary>
+<div class="callout-content">
+<p>Droop on overhangs showing that the plastic isn't being cooled quick enough</p>
+</div>
+</details>
 <p><img src="Assets/Pasted%20image%2020241018151157.png">
 The above image shows ringing around a hole through the part, Pressure advance tuning can help reduce it but to go further, we would need to slow down the speeds around sensitive areas.</p>
 <p><img src="Assets/Pasted%20image%2020241018151351.png">
@@ -1941,6 +1983,50 @@ We got SSH working for the raspberry pi and changed the login <em>(new login can
         
         <div style="text-align: right;">
             Continued in <a class="note_ref" href="#entry-speed-testing-voron-v0-10-20-2024"><b>Speed Testing Voron V0</b></a>
+        </div>
+        
+
+        
+
+    <section id="entry-hook-design-10-20-2024">
+
+        <div class="entry-header">
+            <h1 class="entry-title">
+                Hook Design
+            </h1>
+            <span class='entry-topic'>
+                focus: <b>15in Conveyor</b>
+            </span>
+        </div>
+
+        <hr class="entry-header-hr">
+
+        <div class="entry-signature">
+            <div>by:
+                
+                
+                <b>Colt Franklin</b>
+                
+            </div>
+            <span>
+                reviewed by: 
+            </span>
+        </div>
+
+        
+
+        <div class="entry-embed">
+            <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
+</span></span></code></pre><p>→ <strong>Objective:</strong> Update on conveyor progress for hooks.
+<strong>Bolded thesis-like intro sentence.</strong> Background knowledge. Talk about what was improved or updated and what tests we ran to see how it performed. Yadda yadda yadda.
+We developed the cad design</p>
+<p><strong>Bolded summary sentence that concludes and leads into what's next for this issue (a test, further modification, etc).</strong></p>
+
+        </div>
+        
+        <div style="text-align: right;">
+            Continued in <a class="note_ref" href="#entry-side-towers-with-mounts-10-25-2024"><b>Side Towers with Mounts</b></a>
         </div>
         
 
@@ -1985,11 +2071,11 @@ We got SSH working for the raspberry pi and changed the login <em>(new login can
 
         
 
-    <section id="entry-hook-design-10-20-2024">
+    <section id="entry-side-towers-with-mounts-10-25-2024">
 
         <div class="entry-header">
             <h1 class="entry-title">
-                Hook Design
+                Side Towers with Mounts
             </h1>
             <span class='entry-topic'>
                 focus: <b>15in Conveyor</b>
@@ -2002,7 +2088,7 @@ We got SSH working for the raspberry pi and changed the login <em>(new login can
             <div>by:
                 
                 
-                <b>Colt Franklin</b>
+                <b>Samuel Radulski</b>
                 
             </div>
             <span>
@@ -2011,14 +2097,16 @@ We got SSH working for the raspberry pi and changed the login <em>(new login can
         </div>
 
         
+        Continued from <a class="note_ref" href="#entry-hook-design-10-20-2024"><b>Hook Design</b></a>
+        
 
         <div class="entry-embed">
             <pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">// DONT REMOVE, will hide itself in final product (and if theres no errors)
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">dv</span>.<span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#39;Obsidian Resources/views/check&#39;</span>)
-</span></span></code></pre><p>→ <strong>Objective:</strong> Update on conveyor progress for hooks.
-<strong>Bolded thesis-like intro sentence.</strong> Background knowledge. Talk about what was improved or updated and what tests we ran to see how it performed. Yadda yadda yadda.
-We developed the cad design</p>
-<p><strong>Bolded summary sentence that concludes and leads into what's next for this issue (a test, further modification, etc).</strong></p>
+</span></span></code></pre><p>→ <strong>Objective:</strong> Mount side towers on bot for conveyor to be build upon.</p>
+<p><strong>The bottom conveyor can now be constructed.</strong> Using custom 3D-printed mounting joints, two towers were added mirroring each other on either side of the bot. We modified preexisting mounts for the bottom roller to be build upon these towers instead of their older tower, allowing for a significantly easier time creating/putting together the rest of the conveyor upon it.</p>
+<p><strong>With the towers in place, we can continue our progress and build the bottom conveyor on the bot.</strong>
+<img src="Assets/unnamed%203.jpg"><img src="Assets/unnamed%204.jpg"><img src="Assets/unnamed%205.jpg"><img src="Assets/unnamed%206.jpg"></p>
 
         </div>
         
