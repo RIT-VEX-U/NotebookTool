@@ -2,7 +2,7 @@ details {
     padding: 0.1in;
     border-radius: 0.1in;
     border: 0.02in solid black;
-    margin-left: 0.05   in;
+    margin-left: 0.05 in;
     margin-right: 0.05in;
 
 }
@@ -21,6 +21,7 @@ details[data-callout="caution"] {
 details[data-callout="caution"]>summary {
     color: rgb(236, 117, 0);
 }
+
 .callout[data-callout='palette-white'],
 .callout[data-callout='palette-magenta'],
 .callout[data-callout="palette-orange"] {
