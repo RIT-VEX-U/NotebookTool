@@ -62,7 +62,7 @@ func Md() goldmark.Markdown {
 				Variant:  hashtag.ObsidianVariant,
 			},
 			HighlightInst,
-			CommentInst,
+			// CommentInst,
 			emoji.Emoji,
 			&mermaid.Extender{},
 			callout.CalloutExtention,

@@ -3,12 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- paged.js -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.min.js" defer>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.min.js" defer> -->
     </script>
-
-    <script defer src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- our stylesheets -->
     <link rel="stylesheet" type="text/css" href="fonts.css">
@@ -20,10 +16,10 @@
     <!-- KaTeX (Math rendering )-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
         integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
         integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
         crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
         integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
         crossorigin="anonymous"></script>
     <script>
@@ -38,8 +34,15 @@
                     { left: '\\[', right: '\\]', display: true }
                 ],
                 // • rendering keys, e.g.:
-                throwOnError: false
+                throwOnError: true
             });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/pagedjs/dist/paged.polyfill.js';
+            document.head.appendChild(script);
         });
     </script>
 
@@ -54,7 +57,7 @@
             {{range $md := .Entries}}
             <li class="tocentry">
                 {{.Data.Date.Format "01/02/2006"}}
-                <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>:
+                <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>: <i data-lucide="menu"></i>
                 <span class="process-tag" data-process="{{index .Data.ProcessSteps 0}}">{{index .Data.ProcessSteps
                     0}}</span>
             </li>
@@ -109,17 +112,19 @@
                 {{end}}
             </div>
             <span>
-                reviewed by: {{range $index, $auth := .Data.Proofreaders}} {{if $index}},{{end}} <b>{{.}}</b> {{end}}
+                Date: <b>{{.Data.Date.Format "01/02/2006"}}</b>
             </span>
         </div>
+        <br>
 
         {{if .Data.PrevInFocus}}
         Continued from <a class="note_ref" href="#{{.Data.PrevInFocus.Anchor}}"><b>{{.Data.PrevInFocus.Title}}</b></a>
         {{end}}
-
+        <br>
         <div class="entry-embed">
             {{.Html}}
         </div>
+
         {{if .Data.NextInFocus}}
         <div style="text-align: right; bottom: 0%;">
             Continued in <a class="note_ref" href="#{{.Data.NextInFocus.Anchor}}"><b>{{.Data.NextInFocus.Title}}</b></a>
@@ -129,6 +134,11 @@
         {{end}}
     </section>
 
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 
 
 </body>

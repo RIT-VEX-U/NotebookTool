@@ -119,6 +119,15 @@ div.TableOfContents>ul {
     }
 }
 
+.lucide {
+    /* Change this! */
+    /* color: #ffadff; */
+    overflow: visible;
+    width: 0.2in;
+    height: 0.2in;
+    stroke-width: 1px;
+    bottom: 0;
+}
 
 @media print {
     @page {
@@ -165,7 +174,6 @@ div.TableOfContents>ul {
 
     details {
         break-inside: avoid;
-        text-align: center;
     }
 
     img+em {
