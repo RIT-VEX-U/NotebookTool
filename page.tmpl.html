@@ -55,11 +55,14 @@
     <div class="TableOfContents">
         <ul>
             {{range $md := .Entries}}
-            <li class="tocentry">
-                {{.Data.Date.Format "01/02/2006"}}
-                <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>: <i data-lucide="menu"></i>
-                <span class="process-tag" data-process="{{index .Data.ProcessSteps 0}}">{{index .Data.ProcessSteps
-                    0}}</span>
+            <li>
+                <div class="tocentry">
+                    <span class="toc_date">{{.Data.Date.Format "01/02/2006"}}</span>
+                    {{.Data.LucideIcon}}
+                    <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>
+
+                    <span class="page_number" href="#{{.Data.Anchor}}"></span>
+                </div>
             </li>
             {{end}}
         </ul>
@@ -70,21 +73,25 @@
     <h1 class="TOC">Entries By Project</h1>
     <div class="TableOfContents">
         <ul>
+
+            {{range $foc := .ByFocus}}
             <li>
-                {{range $foc := .ByFocus}}
                 <b>{{.Focus}}</b>
                 <ul>
                     {{range $entry := .Entries}}
-                    <li class="tocentry">{{.Date.Format "01/02/2006"}}
-                        <a class="toclink" href="#{{.Anchor}}">{{.Title}}</a>
-                        <span class="process-tag" data-process="{{index .ProcessSteps 0}}">{{index
-                            .ProcessSteps 0}}</span>
+                    <li>
+                        <div class="tocentry">
+                            <span class="toc_date">{{.Date.Format "01/02/2006"}}</span>
+                            {{.LucideIcon}}
+                            <a class="toclink" href="#{{.Anchor}}">{{.Title}}</a>
 
+                            <span class="page_number" href="#{{.Anchor}}"></span>
+                        </div>
                     </li>
                     {{end}}
                 </ul>
-                {{end}}
             </li>
+            {{end}}
         </ul>
     </div>
     <!-- <br class="pagebreak"> -->
@@ -98,14 +105,14 @@
                 {{.Data.Title}}
             </h1>
             <span class='entry-topic'>
-                focus: <b>{{.Data.Focus}}</b>
+                Focus: <b>{{.Data.Focus}}</b>
             </span>
         </div>
 
         <hr class="entry-header-hr">
 
         <div class="entry-signature">
-            <div>by:
+            <div>By:
                 {{range $index, $auth := .Data.Authors}}
                 {{if $index}}, {{end}}
                 <b>{{.}}</b>

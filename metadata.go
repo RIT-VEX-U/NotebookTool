@@ -45,6 +45,37 @@ type Note struct {
 	NextInFocus *Note
 }
 
+func (n Note) LucideIcon() string {
+	icon := "menu"
+	strokeColor := "black"
+
+	switch n.ProcessSteps[0] {
+	case "other":
+		icon = "circle-ellipsis"
+		strokeColor = "var(--proc-step-other)"
+	case "identify-problem":
+		icon = "scan-eye"
+		strokeColor = "var(--proc-step-identify)"
+	case "update":
+		icon = "refresh-cw"
+		strokeColor = "var(--proc-step-update)"
+	case "brainstorm":
+		icon = "brain"
+		strokeColor = "var(--proc-step-brainstorm)"
+	case "select-best":
+		icon = "mouse-pointer-click"
+		strokeColor = "var(--proc-step-select)"
+	case "test":
+		icon = "clipboard-list"
+		strokeColor = "var(--proc-step-test)"
+	case "context":
+		icon = "zoom-in"
+		strokeColor = "var(--proc-step-context)"
+	}
+
+	return fmt.Sprintf("<i data-lucide=\"%s\" style = \"stroke: %s;\"></i>", icon, strokeColor)
+}
+
 var dateRemover = regexp.MustCompile(`^\d{1,2}-\d{1,2}-\d{2,4}\s+`)
 
 func (m Note) Anchor() string {
