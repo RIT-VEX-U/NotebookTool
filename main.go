@@ -10,12 +10,10 @@ import (
 	"os"
 	"path"
 	"slices"
-	"strings"
 	"text/template"
 )
 
 type Config struct {
-	Notebook  string // Hardware, Software, Strategy
 	VaultPath string
 }
 
@@ -30,19 +28,12 @@ notebook_type: one of 'software', 'hardware', or 'strategy
 
 func ParseArgs() Config {
 	args := os.Args
-	if len(args) < 3 {
+	if len(args) < 2 {
 		PrintUsage()
 	}
-	notebook := os.Args[1]
-	notebook = strings.TrimSpace(notebook)
-	notebook = strings.ToLower(notebook)
-	if !(notebook == "software" || notebook == "hardware" || notebook == "strategy") {
-		PrintUsage()
-	}
-	vault_path := os.Args[2]
+	vault_path := os.Args[1]
 
 	return Config{
-		Notebook:  notebook,
 		VaultPath: vault_path,
 	}
 }
@@ -179,11 +170,14 @@ func makeNotebookFile(notebook string, allNotes []Note) {
 
 		if i > 0 {
 			entries[j].Data.PrevInFocus = &neighbors[i-1]
-			// fmt.Println("Found prev", i, byFocus[focus][i].PrevInFocus)
 		}
 		if i < len(neighbors)-1 {
 			entries[j].Data.NextInFocus = &neighbors[i+1]
 		}
+	}
+
+	for _, fnote := range frontmatter {
+		fmt.Println("Frontmatter: ", fnote.Data.Title)
 	}
 
 	writeNotebookHTMLToFile(notebook, entries, focusList)
@@ -215,6 +209,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+		log.Println("Finished ", notebook)
 	}
 	log.Println("Finished saving")
 

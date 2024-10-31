@@ -45,7 +45,8 @@ func startFileServing(dir string, port int) func() {
 }
 
 func savePageToPdf(url, outputFile string) error {
-	ctx, cancel := chromedp.NewContext(context.Background())
+	ctx, cancel := chromedp.NewContext(context.Background(), chromedp.WithLogf(func(s string, i ...interface{}) {}))
+
 	defer cancel()
 
 	// capture pdf
