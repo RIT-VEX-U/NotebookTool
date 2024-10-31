@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io/fs"
+	"log"
 	"os"
 	"path"
 	"slices"
@@ -102,22 +103,14 @@ var templateFileSource string
 
 var templateFile = template.Must(template.New("outputPage").Parse(templateFileSource))
 
-func main() {
-	args := ParseArgs()
-	files := getAllFilesInDirectory(args.VaultPath)
-	notes, errs := parseFiles(files)
-	if len(errs) > 0 {
-		for _, e := range errs {
-			fmt.Println(e)
-		}
-	}
+func makeNotebookFile(notebook string, allNotes []Note) {
 
-	wanted_entries := filterFilesForThisNotebook(notes, args.Notebook)
+	wanted_entries := filterFilesForThisNotebook(allNotes, notebook)
 
 	entries := []RenderedEntry{}
 	frontmatter := []RenderedEntry{}
 
-	errs = []error{}
+	errs := []error{}
 	byFocus := map[string][]Note{}
 
 	for _, metadata := range wanted_entries {
@@ -193,11 +186,41 @@ func main() {
 		}
 	}
 
-	writeToFile(args.Notebook, entries, focusList)
+	writeNotebookHTMLToFile(notebook, entries, focusList)
+
 }
 
-func writeToFile(notebookName string, entries []RenderedEntry, focusList []FocusGroup) {
-	f, err := os.Create("Out/index.html")
+func main() {
+	args := ParseArgs()
+	files := getAllFilesInDirectory(args.VaultPath)
+	notes, errs := parseFiles(files)
+	if len(errs) > 0 {
+		for _, e := range errs {
+			fmt.Println(e)
+		}
+	}
+	makeNotebookFile("hardware", notes)
+	makeNotebookFile("software", notes)
+	makeNotebookFile("strategy", notes)
+	log.Println("Made HTML")
+	port := 8080
+
+	close := startFileServing("Out/", port)
+	defer close()
+
+	for _, notebook := range []string{"hardware", "software", "strategy"} {
+		url := fmt.Sprintf("http://localhost:%d/%s.html", port, notebook)
+		err := savePageToPdf(url, "PDFs/"+notebook+".pdf")
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+	log.Println("Finished saving")
+
+}
+
+func writeNotebookHTMLToFile(notebookName string, entries []RenderedEntry, focusList []FocusGroup) {
+	f, err := os.Create(fmt.Sprintf("Out/%s.html", notebookName))
 	must(err)
 	err = f.Truncate(0)
 	must(err)
