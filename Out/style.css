@@ -227,6 +227,14 @@ span.page_number {
     img+em {
         break-inside: avoid;
         text-align: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-top: 0.1in;
+        margin-bottom: 0.1in;
+
+        display: block;
     }
 
     .toclink {

@@ -1,9 +1,14 @@
 details {
     padding: 0.1in;
-    border-radius: 0.1in;
     border: 0.02in solid black;
     margin-left: 0.05 in;
     margin-right: 0.05in;
+    margin-top: 0.15in;
+
+    border-radius: 0.05in;
+    padding: 0.2in;
+    padding-bottom: 0.1in;
+
 
 }
 
@@ -14,8 +19,11 @@ details[data-callout]>summary {
     text-decoration: underline;
 }
 
+
+
 details[data-callout="caution"] {
     background-color: #ec750040;
+    border: none;
 }
 
 details[data-callout="caution"]>summary {
@@ -43,9 +51,6 @@ details[data-callout="caution"]>summary {
 details[data-callout="manual"] {
     background-color: #ff3d3d40;
     border: none;
-    border-radius: 0.05in;
-    padding: 0.2in;
-    padding-bottom: 0.1in;
 }
 
 details[data-callout="manual"]>summary {
