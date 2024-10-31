@@ -1,6 +1,7 @@
 package main
 
 import (
+	"NotebookTool/parsers"
 	"path/filepath"
 
 	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
@@ -61,7 +62,7 @@ func Md() goldmark.Markdown {
 				Resolver: nil,
 				Variant:  hashtag.ObsidianVariant,
 			},
-			HighlightInst,
+			parsers.HighlightInst,
 			// CommentInst,
 			emoji.Emoji,
 			&mermaid.Extender{},
