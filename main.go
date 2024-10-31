@@ -202,6 +202,7 @@ func main() {
 	makeNotebookFile("hardware", notes)
 	makeNotebookFile("software", notes)
 	makeNotebookFile("strategy", notes)
+
 	log.Println("Made HTML")
 	port := 8080
 

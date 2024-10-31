@@ -12,6 +12,8 @@ import (
 	"github.com/chromedp/chromedp"
 )
 
+// starts a file server of a certain dir on a certain port
+// returns a close function
 func startFileServing(dir string, port int) func() {
 	srv := &http.Server{Addr: fmt.Sprintf(":%d", port)}
 
