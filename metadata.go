@@ -71,6 +71,9 @@ func (n Note) LucideIcon() string {
 	case "context":
 		icon = "zoom-in"
 		strokeColor = "var(--proc-step-context)"
+	case "game-analysis":
+		icon = "chart-pie"
+		strokeColor = "var(--proc-step-game-analysis)"
 	}
 
 	return fmt.Sprintf("<i data-lucide=\"%s\" style = \"stroke: %s;\"></i>", icon, strokeColor)

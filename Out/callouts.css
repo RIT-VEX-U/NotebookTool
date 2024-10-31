@@ -39,3 +39,16 @@ details[data-callout="caution"]>summary {
 .callout[data-callout="palette-orange"] {
     --callout-color: 247, 105, 2;
 }
+
+details[data-callout="manual"] {
+    background-color: #ff3d3d40;
+    border: none;
+    border-radius: 0.05in;
+    padding: 0.2in;
+    padding-bottom: 0.1in;
+}
+
+details[data-callout="manual"]>summary {
+    color: #ff3d3d;
+    text-decoration: none;
+}

@@ -11,6 +11,7 @@
     --proc-step-select: #7D55C7;
     --proc-step-other: #8E8E8E;
     --proc-step-context: #FF8000;
+    --proc-step-game-analysis: #F933C2;
     --text-normal: #000000;
     --bold-modifier: 100;
     --font-bold: 500;
@@ -20,6 +21,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.0em;
+    /* font-weight: 150; */
 }
 
 pre[data-undisplayed="undisplayed"] {
@@ -138,7 +140,14 @@ span.page_number {
     align-self: flex-end;
 }
 
-.entry-header-hr {}
+.entry-header-hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 0.03in solid var(--brand-orange);
+    margin: 0.02in 0;
+    padding: 0;
+}
 
 .entry-signature {
     display: flex;

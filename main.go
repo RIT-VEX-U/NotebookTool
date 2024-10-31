@@ -121,6 +121,21 @@ func main() {
 	byFocus := map[string][]Note{}
 
 	for _, metadata := range wanted_entries {
+		buf := bytes.NewBuffer([]byte{})
+
+		err := NotebookRender().Render(buf, metadata.Src, metadata.Doc)
+		if err != nil {
+			errs = append(errs, err)
+		}
+
+		// Rout to frontmatter or regular entry
+		if slices.Contains(metadata.ProcessSteps, "frontmatter") {
+			frontmatter = append(frontmatter, RenderedEntry{
+				Data: metadata,
+				Html: buf.String(),
+			})
+			continue
+		}
 		// Sort by focus
 		if l, exists := byFocus[metadata.Focus]; exists {
 			byFocus[metadata.Focus] = append(l, metadata)
@@ -128,25 +143,10 @@ func main() {
 			byFocus[metadata.Focus] = []Note{metadata}
 		}
 
-		buf := bytes.NewBuffer([]byte{})
-
-		err := NotebookRender().Render(buf, metadata.Src, metadata.Doc)
-		if err != nil {
-			errs = append(errs, err)
-		}
-		// Rout to frontmatter or regular entry
-		if slices.Contains(metadata.ProcessSteps, "frontmatter") {
-			frontmatter = append(frontmatter, RenderedEntry{
-				Data: metadata,
-				Html: buf.String(),
-			})
-		} else {
-			entries = append(entries, RenderedEntry{
-				Data: metadata,
-				Html: buf.String(),
-			})
-
-		}
+		entries = append(entries, RenderedEntry{
+			Data: metadata,
+			Html: buf.String(),
+		})
 
 	}
 	if len(errs) > 0 {
