@@ -49,6 +49,31 @@
 </head>
 
 <body>
+    <h3>RIT VEX U</h3>
+    <h1>{{.Notebook}} Notebook</h1>
+    <h4>{{.Date.Format "01/02/2006 03:05 PM"}}</h4>
+
+
+    <br class="pagebreak">
+
+    {{range $fm := .Frontmatter}}
+    <section id="{{.Data.Anchor}}">
+        <div class="entry-header">
+            <h1 class="entry-title">
+                {{.Data.Title}}
+            </h1>
+        </div>
+        <hr class="entry-header-hr">
+        <br>
+
+        <div class="entry-embed">
+            {{.Html}}
+        </div>
+
+    </section>
+    {{end}}
+    <br class="pagebreak">
+
     <!-- TOC By Date -->
     <h1 class="TOC">Entries By Date</h1>
     <div class="TableOfContents">
@@ -74,7 +99,7 @@
         <ul>
 
             {{range $foc := .ByFocus}}
-            <li>
+            <li class="byFocus">
                 <b>{{.Focus}}</b>
                 <ul>
                     {{range $entry := .Entries}}
@@ -94,6 +119,7 @@
         </ul>
     </div>
     <!-- <br class="pagebreak"> -->
+
 
     {{range $entry := .Entries}}
 

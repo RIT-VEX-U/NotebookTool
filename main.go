@@ -11,6 +11,10 @@ import (
 	"path"
 	"slices"
 	"text/template"
+	"time"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 type Config struct {
@@ -70,9 +74,11 @@ type FocusGroup struct {
 }
 
 type Notebook struct {
-	Notebook string
-	Entries  []RenderedEntry
-	ByFocus  []FocusGroup
+	Date        time.Time
+	Notebook    string
+	Frontmatter []RenderedEntry
+	Entries     []RenderedEntry
+	ByFocus     []FocusGroup
 }
 
 func parseFiles(files []string) (mds []Note, errs []error) {
@@ -94,12 +100,12 @@ var templateFileSource string
 
 var templateFile = template.Must(template.New("outputPage").Parse(templateFileSource))
 
-func makeNotebookFile(notebook string, allNotes []Note) {
+func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string) {
 
 	wanted_entries := filterFilesForThisNotebook(allNotes, notebook)
 
 	entries := []RenderedEntry{}
-	frontmatter := []RenderedEntry{}
+	frontmatterNotes := []RenderedEntry{}
 
 	errs := []error{}
 	byFocus := map[string][]Note{}
@@ -114,7 +120,7 @@ func makeNotebookFile(notebook string, allNotes []Note) {
 
 		// Rout to frontmatter or regular entry
 		if slices.Contains(metadata.ProcessSteps, "frontmatter") {
-			frontmatter = append(frontmatter, RenderedEntry{
+			frontmatterNotes = append(frontmatterNotes, RenderedEntry{
 				Data: metadata,
 				Html: buf.String(),
 			})
@@ -175,12 +181,25 @@ func makeNotebookFile(notebook string, allNotes []Note) {
 			entries[j].Data.NextInFocus = &neighbors[i+1]
 		}
 	}
+	orderedFrontmatterNotes := []RenderedEntry{}
+	for _, name := range frontmatterWanted {
+		found := false
+		for _, note := range frontmatterNotes {
+			if note.Data.Title == name {
+				orderedFrontmatterNotes = append(orderedFrontmatterNotes, note)
+				found = true
+			}
+		}
+		if !found {
+			log.Printf("Couldnt find entry '%s' for %s notebook", name, notebook)
+		}
+	}
 
-	for _, fnote := range frontmatter {
+	for _, fnote := range frontmatterNotes {
 		fmt.Println("Frontmatter: ", fnote.Data.Title)
 	}
 
-	writeNotebookHTMLToFile(notebook, entries, focusList)
+	writeNotebookHTMLToFile(notebook, orderedFrontmatterNotes, entries, focusList)
 
 }
 
@@ -193,29 +212,30 @@ func main() {
 			fmt.Println(e)
 		}
 	}
-	makeNotebookFile("hardware", notes)
-	makeNotebookFile("software", notes)
-	makeNotebookFile("strategy", notes)
+	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized"})
+	makeNotebookFile("software", notes, []string{"How this Notebook is Organized"})
+	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"})
 
 	log.Println("Made HTML")
 	port := 8080
 
 	close := startFileServing("Out/", port)
 	defer close()
-
-	for _, notebook := range []string{"hardware", "software", "strategy"} {
-		url := fmt.Sprintf("http://localhost:%d/%s.html", port, notebook)
-		err := savePageToPdf(url, "PDFs/"+notebook+".pdf")
-		if err != nil {
-			log.Fatal(err)
-		}
-		log.Println("Finished ", notebook)
-	}
-	log.Println("Finished saving")
+	time.Sleep(1 * time.Hour)
+	//
+	// for _, notebook := range []string{"hardware", "software", "strategy"} {
+	// url := fmt.Sprintf("http://localhost:%d/%s.html", port, notebook)
+	// err := savePageToPdf(url, "PDFs/"+notebook+".pdf")
+	// if err != nil {
+	// log.Fatal(err)
+	// }
+	// log.Println("Finished ", notebook)
+	// }
+	// log.Println("Finished saving")
 
 }
 
-func writeNotebookHTMLToFile(notebookName string, entries []RenderedEntry, focusList []FocusGroup) {
+func writeNotebookHTMLToFile(notebookName string, frontmatter []RenderedEntry, entries []RenderedEntry, focusList []FocusGroup) {
 	f, err := os.Create(fmt.Sprintf("Out/%s.html", notebookName))
 	must(err)
 	err = f.Truncate(0)
@@ -223,9 +243,11 @@ func writeNotebookHTMLToFile(notebookName string, entries []RenderedEntry, focus
 	defer f.Close()
 
 	err = templateFile.Execute(f, Notebook{
-		Notebook: notebookName,
-		Entries:  entries,
-		ByFocus:  focusList,
+		Date:        time.Now(),
+		Notebook:    cases.Title(language.AmericanEnglish).String(notebookName),
+		Frontmatter: frontmatter,
+		Entries:     entries,
+		ByFocus:     focusList,
 	})
 	must(err)
 

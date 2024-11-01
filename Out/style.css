@@ -185,9 +185,6 @@ span.page_number {
     /*Page Breaking Rules*/
 
 
-    h1.TOC {
-        /* break-before: always; */
-    }
 
     h1.entry-title {
         page-break-before: always;
@@ -218,9 +215,15 @@ span.page_number {
         display: block;
         text-align: center;
         margin: auto;
+        /* display: inline; */
     }
 
     details {
+        break-inside: avoid;
+    }
+
+
+    li.byFocus {
         break-inside: avoid;
     }
 
