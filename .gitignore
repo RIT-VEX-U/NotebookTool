@@ -4,3 +4,7 @@ node_modules
 package.json
 package-lock.json
 NotebookGen
+Out/
+Out2/
+PDFs/
+temp/

@@ -38,7 +38,6 @@ pre[data-undisplayed="undisplayed"] {
     float: right;
 }
 
-/* Continued in Grabber Brainstorming (Pg. 22) break before never            */
 
 table,
 th,
@@ -185,11 +184,9 @@ span.page_number {
     /*Page Breaking Rules*/
 
 
-
     h1.entry-title {
         page-break-before: always;
         page-break-after: avoid;
-        string-set: title content(text);
         font-size: 0.25in;
     }
 
@@ -206,16 +203,24 @@ span.page_number {
         page-break-inside: avoid;
     }
 
+    li.byFocus {
+        break-inside: avoid;
+    }
+
+    .continued_in {
+        text-align: right;
+        bottom: 0%;
+    }
+
     img {
         max-width: 6in;
         max-height: 4in;
-        /* max-height: 3in; */
+
         margin-left: auto;
         margin-right: auto;
         display: block;
         text-align: center;
         margin: auto;
-        /* display: inline; */
     }
 
     details {
@@ -223,8 +228,13 @@ span.page_number {
     }
 
 
-    li.byFocus {
-        break-inside: avoid;
+
+
+    h3>img {
+        display: inline;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        vertical-align: bottom;
     }
 
     img+em {
