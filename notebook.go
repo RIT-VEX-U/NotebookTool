@@ -84,7 +84,14 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 		return a.Entries[0].Date.Compare(b.Entries[0].Date)
 	})
 	slices.SortFunc(entries, func(a, b RenderedEntry) int {
-		return a.Data.Date.Compare(b.Data.Date)
+		cmp := a.Data.Date.Compare(b.Data.Date)
+		if cmp != 0 {
+			return cmp
+		}
+		if a.Data.ProcessSteps[0] == "brainstorm" {
+			return 1
+		}
+		return 0
 	})
 
 	// Find neighbours
