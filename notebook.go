@@ -88,7 +88,7 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 		if cmp != 0 {
 			return cmp
 		}
-		if a.Data.ProcessSteps[0] == "brainstorm" {
+		if a.Data.ProcessSteps[0] == "identify-problem" {
 			return 1
 		}
 		return 0
