@@ -2,6 +2,7 @@ package main
 
 import (
 	"NotebookTool/parsers"
+	"fmt"
 	"path/filepath"
 
 	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
@@ -37,6 +38,10 @@ func (wr wikilinkResolver) ResolveWikilink(n *wikilink.Node) (destination []byte
 	var s = []byte{}
 	s = append(s, []byte("Assets/")...)
 	if len(n.Target) > 0 {
+		fmt.Println("targ", string(n.Target))
+		if n.Target[len(n.Target)-1] == '\\' {
+			n.Target = n.Target[:len(n.Target)-1]
+		}
 		s = append(s, n.Target...)
 		if filepath.Ext(string(n.Target)) == "" {
 			s = append(s, _html...)
