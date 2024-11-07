@@ -125,7 +125,6 @@ func sortEntries(a, b Note) int {
 		return cmp
 	}
 	if a.ProcessSteps[0] == "identify-problem" || a.ProcessSteps[0] == "game-analysis" {
-		fmt.Println("ovelroad", a.Title, b.Title)
 		return -1
 	}
 
