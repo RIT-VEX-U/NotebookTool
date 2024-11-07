@@ -127,8 +127,8 @@ func (r *HighlightHTMLRenderer) renderHighlight(
 type highlight struct {
 }
 
-// HighlightInst is an extension that allow you to use mark expression like '==text==' .
-var HighlightInst = &highlight{}
+// Highlight is an extension that allow you to use mark expression like '==text==' .
+var Highlight = &highlight{}
 
 func (e *highlight) Extend(m goldmark.Markdown) {
 	m.Parser().AddOptions(parser.WithInlineParsers(
