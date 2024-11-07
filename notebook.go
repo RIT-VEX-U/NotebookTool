@@ -9,6 +9,7 @@ import (
 	"os"
 	"path"
 	"slices"
+	"strings"
 	"text/template"
 	"time"
 
@@ -24,6 +25,8 @@ var templateFile = template.Must(template.New("outputPage").Parse(templateFileSo
 func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string) {
 
 	wanted_entries := filterFilesForThisNotebook(allNotes, notebook)
+
+	slices.SortFunc(wanted_entries, sortEntries)
 
 	entries := []RenderedEntry{}
 	frontmatterNotes := []RenderedEntry{}
@@ -83,16 +86,6 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 	slices.SortFunc(focusList, func(a, b FocusGroup) int {
 		return a.Entries[0].Date.Compare(b.Entries[0].Date)
 	})
-	slices.SortFunc(entries, func(a, b RenderedEntry) int {
-		cmp := a.Data.Date.Compare(b.Data.Date)
-		if cmp != 0 {
-			return cmp
-		}
-		if a.Data.ProcessSteps[0] == "identify-problem" {
-			return 1
-		}
-		return 0
-	})
 
 	// Find neighbours
 	for j, entry := range entries {
@@ -124,7 +117,19 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 	}
 
 	writeNotebookHTMLToFile(notebook, orderedFrontmatterNotes, entries, focusList)
+}
 
+func sortEntries(a, b Note) int {
+	cmp := a.Date.Compare(b.Date)
+	if cmp != 0 {
+		return cmp
+	}
+	if a.ProcessSteps[0] == "identify-problem" || a.ProcessSteps[0] == "game-analysis" {
+		fmt.Println("ovelroad", a.Title, b.Title)
+		return -1
+	}
+
+	return strings.Compare(a.Title, b.Title)
 }
 
 func writeNotebookHTMLToFile(notebookName string, frontmatter []RenderedEntry, entries []RenderedEntry, focusList []FocusGroup) {
