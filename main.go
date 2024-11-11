@@ -110,9 +110,9 @@ func main() {
 	setupTmpOutputDir(args)
 
 	log.Println("Making notebooks")
-	// makeNotebookFile("hardware",		 notes, []string{"How this Notebook is Organized"})
+	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized"})
 	makeNotebookFile("software", notes, []string{"How this Notebook is Organized"})
-	// makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"})
+	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"})
 
 	log.Println("Made HTML")
 
