@@ -186,9 +186,14 @@ span.page_number {
 
 
     h1.entry-title {
-        page-break-before: always;
         page-break-after: avoid;
         font-size: 0.25in;
+    }
+
+    h2.robots {
+        page-break-before: always;
+        page-break-after: avoid;
+        font-size: 1.0em;
     }
 
     h1,

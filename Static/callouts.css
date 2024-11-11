@@ -21,12 +21,21 @@ details[data-callout]>summary {
 
 
 
-details[data-callout="caution"] {
+details[data-callout="CAUTION"] {
     background-color: #ec750040;
     border: none;
 }
 
-details[data-callout="caution"]>summary {
+details[data-callout="CAUTION"]>summary {
+    color: rgb(236, 117, 0);
+}
+
+details[data-callout="WARNING"] {
+    background-color: #ec750040;
+    border: none;
+}
+
+details[data-callout="WARNING"]>summary {
     color: rgb(236, 117, 0);
 }
 
@@ -56,4 +65,32 @@ details[data-callout="manual"] {
 details[data-callout="manual"]>summary {
     color: #ff3d3d;
     text-decoration: none;
+}
+
+details[data-callout="NOTE"] {
+    background-color: #3d84ff40;
+    border: none;
+}
+
+details[data-callout="NOTE"]>summary {
+    color: #3d9bff;
+    text-decoration: none;
+}
+
+details[data-callout="IMPORTANT"] {
+    background-color: #00ece840;
+    border: none;
+}
+
+details[data-callout="IMPORTANT"]>summary {
+    color: rgb(0, 236, 232);
+}
+
+details[data-callout="TIP"] {
+    background-color: #00ece840;
+    border: none;
+}
+
+details[data-callout="TIP"]>summary {
+    color: rgb(0, 236, 232);
 }

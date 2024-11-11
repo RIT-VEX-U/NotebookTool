@@ -35,6 +35,7 @@ type Note struct {
 	Notebook     string
 	ProcessSteps []string
 	Date         time.Time
+	Robots		 []string
 
 	Authors      []string
 	Proofreaders []string
@@ -139,6 +140,9 @@ func extractMetadata(meta map[string]interface{}) (Note, error) {
 		return out, err
 	}
 	if out.ProcessSteps, err = getStringlist("process_step", meta); err != nil {
+		return out, err
+	}
+	if out.Robots, err = getStringlist("robot", meta); err != nil {
 		return out, err
 	}
 	if len(out.ProcessSteps) == 0 {
