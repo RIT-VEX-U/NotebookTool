@@ -49,9 +49,10 @@ thead {
 }
 
 
-span.comment {
-    display: none;
+span.obsidian-comment {
+    background-color: lightblue;
 }
+
 
 .process-tag[data-process="identify-problem"] {
     background-color: var(--proc-step-identify);
