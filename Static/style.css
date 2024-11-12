@@ -133,6 +133,8 @@ span.page_number {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0;
+    padding: 0;
 }
 
 .entry-topic {
@@ -158,8 +160,21 @@ span.page_number {
     text-indent: 1.5em;
 }
 
+.big-header-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin: 0;
+    padding: 0;
+}
 
-
+.robots {
+    page-break-before: always;
+    page-break-after: avoid;
+    margin-left: auto;
+    text-align: right;
+    font-size: 1.0em;
+}
 
 @page {
     @bottom-center {
@@ -190,10 +205,9 @@ span.page_number {
         font-size: 0.25in;
     }
 
-    h2.robots {
+    .robots {
         page-break-before: always;
         page-break-after: avoid;
-        font-size: 1.0em;
     }
 
     h1,

@@ -125,19 +125,24 @@
 
     <section id="{{.Data.Anchor}}">
 
-        <h2 class="robots">
-            {{range $index, $auth := .Data.Robots}}
-            {{if $index}}, {{end}}
-            <b>{{.}}</b>
-            {{end}}
-        </h2>
-        <div class="entry-header">
-            <h1 class="entry-title">
-                {{.Data.LucideIcon}}{{.Data.Title}}
-            </h1>
-            <span class='entry-topic'>
-                Focus: <b>{{.Data.Focus}}</b>
+        <div class="big-header-container">
+            <span class="robots">
+                {{if .Data.Robots}}
+                    Robot:
+                    {{range $index, $auth := .Data.Robots}}
+                        {{if $index}}, {{end}}
+                        <b>{{.}}</b>
+                    {{end}}
+                {{end}}
             </span>
+            <div class="entry-header">
+                <h1 class="entry-title">
+                    {{.Data.LucideIcon}}{{.Data.Title}}
+                </h1>
+                <span class='entry-topic'>
+                    Focus: <b>{{.Data.Focus}}</b>
+                </span>
+            </div>
         </div>
 
         <hr class="entry-header-hr">
