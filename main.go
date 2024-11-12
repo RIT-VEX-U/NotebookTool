@@ -44,14 +44,14 @@ func ParseArgs() Config {
 		failed = true
 	}
 
-	if !path.IsAbs(cfg.EntriesPath) {
-		fmt.Println("Entry path must be absolute")
-		failed = true
-	}
-	if !path.IsAbs(cfg.AssetsPath) {
-		fmt.Println("Asset path must be absolute")
-		failed = true
-	}
+	// if !path.IsAbs(cfg.EntriesPath) {
+	// 	fmt.Println("Entry path must be absolute")
+	// 	failed = true
+	// }
+	// if !path.IsAbs(cfg.AssetsPath) {
+	// 	fmt.Println("Asset path must be absolute")
+	// 	failed = true
+	// }
 
 	if failed {
 		flag.Usage()

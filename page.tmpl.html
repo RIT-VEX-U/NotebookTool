@@ -125,16 +125,13 @@
 
     <section id="{{.Data.Anchor}}">
 
+        <h2 class="robots">
+            {{range $index, $auth := .Data.Robots}}
+            {{if $index}}, {{end}}
+            <b>{{.}}</b>
+            {{end}}
+        </h2>
         <div class="entry-header">
-            <h2 class="robots">
-                <div>
-                    {{range $index, $auth := .Data.Robots}}
-                    {{if $index}}, {{end}}
-                    <b>{{.}}</b>
-                    {{end}}
-                </div>
-            </h2>
-            <br>
             <h1 class="entry-title">
                 {{.Data.LucideIcon}}{{.Data.Title}}
             </h1>
