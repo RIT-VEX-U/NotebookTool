@@ -126,8 +126,14 @@
 
         <div class="entry-header">
             <h2 class="robots">
-                {{.Data.Robots}}
+                <div>
+                    {{range $index, $auth := .Data.Robots}}
+                    {{if $index}}, {{end}}
+                    <b>{{.}}</b>
+                    {{end}}
+                </div>
             </h2>
+            <br>
             <h1 class="entry-title">
                 {{.Data.LucideIcon}}{{.Data.Title}}
             </h1>
