@@ -146,9 +146,81 @@ span.page_number {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 0.03in solid var(--brand-orange);
     margin: 0.02in 0;
     padding: 0;
+    border-top: 0.03in solid var(--brand-orange);
+}
+
+.entry-header-hr-identify {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-identify);
+}
+
+.entry-header-hr-brainstorm {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-brainstorm);
+}
+
+.entry-header-hr-select {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-select);
+}
+
+.entry-header-hr-update {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-update);
+}
+
+.entry-header-hr-test {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-test);
+}
+
+.entry-header-hr-game-analysis {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-game-analysis);
+}
+
+.entry-header-hr-other {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-other);
+}
+
+.entry-header-hr-context {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 0.02in 0;
+    padding: 0;
+    border-top: 0.03in solid var(--proc-step-context);
 }
 
 .entry-signature {
@@ -163,7 +235,7 @@ span.page_number {
 .big-header-container {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     margin: 0;
     padding: 0;
 }
