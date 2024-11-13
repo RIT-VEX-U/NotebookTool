@@ -123,26 +123,13 @@
 
     {{range $entry := .Entries}}
 
-    <section id="{{.Data.Anchor}}" data-process-steps="{{.Data.ProcessSteps}}>
+    <section id="{{.Data.Anchor}}" data-process-steps="{{.Data.ProcessSteps}}" class="entire-entry">
 
-        <div class=" big-header-container">
-        <span class="robots">
-            {{if .Data.Robots}}
-            Robot:
-            {{range $index, $auth := .Data.Robots}}
-            {{if $index}}, {{end}}
-            <b>{{.}}</b>
-            {{end}}
-            {{end}}
-        </span>
+
         <div class="entry-header">
             <h1 class="entry-title">
                 {{.Data.LucideIcon}}{{.Data.Title}}
             </h1>
-            <span class='entry-topic'>
-                Focus: <b>{{.Data.Focus}}</b>
-            </span>
-        </div>
         </div>
 
         <hr class="entry-header-hr"
@@ -159,6 +146,22 @@
                 Date: <b>{{.Data.Date.Format "01/02/2006"}}</b>
             </span>
         </div>
+        <div class="topic-robot-box">
+            <div class='entry-topic'>
+                Focus: <b>{{.Data.Focus}}</b>
+            </div>
+            <div class="robots">
+                {{if .Data.Robots}}
+                Robot:
+                {{range $index, $auth := .Data.Robots}}
+                {{if $index}}, {{end}}
+                <b>{{.}}</b>
+                {{end}}
+                {{end}}
+            </div>
+
+        </div>
+
         <br>
 
         {{if .Data.PrevInFocus}}
@@ -175,8 +178,8 @@
         </div>
         {{end}}
 
-        {{end}}
     </section>
+    {{end}}
 
 
     <script src="https://unpkg.com/lucide@latest"></script>

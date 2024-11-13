@@ -129,6 +129,10 @@ span.page_number {
     margin: 0px;
 }
 
+h1.entry-title {
+    font-size: 0.25in;
+}
+
 .entry-header {
     display: flex;
     flex-direction: row;
@@ -137,10 +141,11 @@ span.page_number {
     padding: 0;
 }
 
-.entry-topic {
+.topic-robot-box {
     justify-self: end;
     align-self: flex-end;
 }
+
 
 .entry-header-hr {
     display: block;
@@ -192,21 +197,6 @@ span.page_number {
     text-indent: 1.5em;
 }
 
-.big-header-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-}
-
-.robots {
-    page-break-before: always;
-    page-break-after: avoid;
-    margin-left: auto;
-    text-align: right;
-    font-size: 1.0em;
-}
 
 @page {
     @bottom-center {
@@ -230,19 +220,14 @@ span.page_number {
     }
 
     /*Page Breaking Rules*/
-
-
-    h1.entry-title {
-        page-break-after: avoid;
-        font-size: 0.25in;
+    section.entire-entry {
+        /* Break before a new entry */
+        break-before: always;
     }
 
-    .robots {
-        page-break-before: always;
-        page-break-after: avoid;
-    }
 
-    h1,
+
+    section h1,
     h2,
     h3,
     h4,
