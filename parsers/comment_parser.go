@@ -1,8 +1,6 @@
 package parsers
 
 import (
-	"fmt"
-
 	"github.com/yuin/goldmark"
 	gast "github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/parser"
@@ -60,7 +58,6 @@ var defaultcommentParser = &commentParser{}
 // NewcommentParser return a new InlineParser that parses
 // comment expressions.
 func NewcommentParser() parser.InlineParser {
-	fmt.Println("New comment parser")
 	return defaultcommentParser
 }
 
@@ -72,9 +69,7 @@ func (s *commentParser) Parse(parent gast.Node, block text.Reader, pc parser.Con
 	before := block.PrecendingCharacter()
 	line, segment := block.PeekLine()
 	node := parser.ScanDelimiter(line, before, 1, defaultcommentDelimiterProcessor)
-	fmt.Println("commentParser Parse got line:", string(line))
 	if node == nil || node.OriginalLength > 2 || before == '%' {
-		fmt.Println("commentParser Parse skipping line:", string(line))
 		return nil
 	}
 
@@ -86,7 +81,6 @@ func (s *commentParser) Parse(parent gast.Node, block text.Reader, pc parser.Con
 
 func (s *commentParser) CloseBlock(parent gast.Node, pc parser.Context) {
 	// nothing to do
-	fmt.Println("Comment Parser close block")
 }
 
 // CommentHTMLRenderer is a renderer.NodeRenderer implementation that

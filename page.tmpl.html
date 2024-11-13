@@ -125,27 +125,28 @@
 
     <section id="{{.Data.Anchor}}" data-process-steps="{{.Data.ProcessSteps}}>
 
-        <div class="big-header-container">
-            <span class="robots">
-                {{if .Data.Robots}}
-                    Robot:
-                    {{range $index, $auth := .Data.Robots}}
-                        {{if $index}}, {{end}}
-                        <b>{{.}}</b>
-                    {{end}}
-                {{end}}
+        <div class=" big-header-container">
+        <span class="robots">
+            {{if .Data.Robots}}
+            Robot:
+            {{range $index, $auth := .Data.Robots}}
+            {{if $index}}, {{end}}
+            <b>{{.}}</b>
+            {{end}}
+            {{end}}
+        </span>
+        <div class="entry-header">
+            <h1 class="entry-title">
+                {{.Data.LucideIcon}}{{.Data.Title}}
+            </h1>
+            <span class='entry-topic'>
+                Focus: <b>{{.Data.Focus}}</b>
             </span>
-            <div class="entry-header">
-                <h1 class="entry-title">
-                    {{.Data.LucideIcon}}{{.Data.Title}}
-                </h1>
-                <span class='entry-topic'>
-                    Focus: <b>{{.Data.Focus}}</b>
-                </span>
-            </div>
+        </div>
         </div>
 
-        <hr class="entry-header-hr">
+        <hr class="entry-header-hr"
+            data-first-process-step="{{if .Data.ProcessSteps}}{{index .Data.ProcessSteps 0}}{{end}}">
 
         <div class="entry-signature">
             <div>By:
@@ -181,65 +182,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll('section').forEach(section => {
-                const processSteps = section.getAttribute('data-process-steps');
-
-                if (processSteps){
-                    if (processSteps.includes("update")) {
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-update');
-                        }
-                    }
-                    else if (processSteps.includes("brainstorm")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-brainstorm');
-                        }
-                    }
-                    else if (processSteps.includes("identify-problem")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-identify');
-                        }
-                    }
-                    else if (processSteps.includes("test-result")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-test');
-                        }
-                    }
-                    else if (processSteps.includes("select-best")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-select');
-                        }
-                    }
-                    else if (processSteps.includes("game-analysis")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-game-analysis');
-                        }
-                    }
-                    else if (processSteps.includes("other")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-other');
-                        }
-                    }
-                    else if (processSteps.includes("context")){
-                        const hr = section.querySelector('.entry-header-hr');
-                        if (hr) {
-                            hr.classList.add('entry-header-hr-context');
-                        }
-                    }
-                }
-            });
-        });
     </script>
 
 
