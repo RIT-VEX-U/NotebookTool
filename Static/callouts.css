@@ -16,7 +16,6 @@ details {
 details[data-callout]>summary {
     list-style-type: none;
     font-weight: bold;
-    text-decoration: underline;
 }
 
 
@@ -28,6 +27,7 @@ details[data-callout="CAUTION"] {
 
 details[data-callout="CAUTION"]>summary {
     color: rgb(236, 117, 0);
+    text-decoration: none;
 }
 
 details[data-callout="WARNING"] {
@@ -37,6 +37,7 @@ details[data-callout="WARNING"] {
 
 details[data-callout="WARNING"]>summary {
     color: rgb(236, 117, 0);
+    text-decoration: none;
 }
 
 .callout[data-callout='palette-white'],
@@ -78,19 +79,21 @@ details[data-callout="NOTE"]>summary {
 }
 
 details[data-callout="IMPORTANT"] {
-    background-color: #00ece840;
+    background-color: rgba(0, 236, 232, 0.175);
     border: none;
 }
 
 details[data-callout="IMPORTANT"]>summary {
-    color: rgb(0, 236, 232);
+    color: rgb(28, 207, 204);
+    text-decoration: none;
 }
 
 details[data-callout="TIP"] {
-    background-color: #00ece840;
+    background-color: rgba(0, 236, 232, 0.175);
     border: none;
 }
 
 details[data-callout="TIP"]>summary {
-    color: rgb(0, 236, 232);
+    color: rgb(28, 207, 204);
+    text-decoration: none;
 }
