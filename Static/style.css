@@ -260,12 +260,22 @@ h1.entry-title {
         margin: auto;
     }
 
+    .bio-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        float: left;
+        margin-bottom: 0.5in;
+    }
+
+    .bio-flex img {
+        margin-right: 0.5in;
+        width: 2in;
+    }
+
     details {
         break-inside: avoid;
     }
-
-
-
 
     h3>img {
         display: inline;

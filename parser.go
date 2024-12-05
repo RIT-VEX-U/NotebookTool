@@ -12,6 +12,7 @@ import (
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/renderer"
+	"github.com/yuin/goldmark/renderer/html"
 	callout "gitlab.com/staticnoise/goldmark-callout"
 	"go.abhg.dev/goldmark/hashtag"
 	"go.abhg.dev/goldmark/mermaid"
@@ -86,5 +87,7 @@ func NotebookParser() parser.Parser {
 }
 
 func NotebookRender() renderer.Renderer {
-	return Md().Renderer()
+	r := Md().Renderer()
+	r.AddOptions(html.WithUnsafe())
+	return r
 }
