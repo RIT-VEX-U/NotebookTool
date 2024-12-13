@@ -132,7 +132,7 @@ func sortEntries(a, b Note) int {
 		"brainstorm":       3,
 		"select-best":      4,
 		"update":           5,
-		"test":             6,
+		"test-result":      6,
 	}
 
 	defaultPriority := 10

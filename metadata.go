@@ -66,7 +66,7 @@ func (n Note) LucideIcon() string {
 	case "select-best":
 		icon = "mouse-pointer-click"
 		strokeColor = "var(--proc-step-select)"
-	case "test":
+	case "test-result":
 		icon = "clipboard-list"
 		strokeColor = "var(--proc-step-test)"
 	case "context":
