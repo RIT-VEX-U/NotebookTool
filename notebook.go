@@ -124,8 +124,35 @@ func sortEntries(a, b Note) int {
 	if cmp != 0 {
 		return cmp
 	}
-	if a.ProcessSteps[0] == "identify-problem" || a.ProcessSteps[0] == "game-analysis" {
-		return -1
+
+	stepPriority := map[string]int{
+		"identify-problem": 0,
+		"game-analysis":    1,
+		"context":          2,
+		"brainstorm":       3,
+		"select-best":      4,
+		"update":           5,
+		"test":             6,
+	}
+
+	defaultPriority := 10
+
+	aPriority := defaultPriority
+	if len(a.ProcessSteps) > 0 {
+		if p, ok := stepPriority[a.ProcessSteps[0]]; ok {
+			aPriority = p
+		}
+	}
+
+	bPriority := defaultPriority
+	if len(b.ProcessSteps) > 0 {
+		if p, ok := stepPriority[b.ProcessSteps[0]]; ok {
+			bPriority = p
+		}
+	}
+
+	if aPriority != bPriority {
+		return aPriority - bPriority
 	}
 
 	return strings.Compare(a.Title, b.Title)
