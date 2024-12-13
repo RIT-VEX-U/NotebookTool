@@ -12,32 +12,9 @@ details {
 
 }
 
-
 details[data-callout]>summary {
     list-style-type: none;
     font-weight: bold;
-}
-
-
-
-details[data-callout="CAUTION"] {
-    background-color: #ec750040;
-    border: none;
-}
-
-details[data-callout="CAUTION"]>summary {
-    color: rgb(236, 117, 0);
-    text-decoration: none;
-}
-
-details[data-callout="WARNING"] {
-    background-color: #ec750040;
-    border: none;
-}
-
-details[data-callout="WARNING"]>summary {
-    color: rgb(236, 117, 0);
-    text-decoration: none;
 }
 
 .callout[data-callout='palette-white'],
@@ -58,42 +35,42 @@ details[data-callout="WARNING"]>summary {
     --callout-color: 247, 105, 2;
 }
 
-details[data-callout="manual"] {
+details[data-callout="manual" i] {
     background-color: #ff3d3d40;
     border: none;
 }
 
-details[data-callout="manual"]>summary {
+details[data-callout="manual" i]>summary {
     color: #ff3d3d;
     text-decoration: none;
 }
 
-details[data-callout="NOTE"] {
+details[data-callout="note" i], details[data-callout="definition" i] {
     background-color: #3d84ff40;
     border: none;
 }
 
-details[data-callout="NOTE"]>summary {
+details[data-callout="note" i]>summary, details[data-callout="definition" i]>summary {
     color: #3d9bff;
     text-decoration: none;
 }
 
-details[data-callout="IMPORTANT"] {
+details[data-callout="important" i], details[data-callout="tip" i] {
     background-color: rgba(0, 236, 232, 0.175);
     border: none;
 }
 
-details[data-callout="IMPORTANT"]>summary {
+details[data-callout="important" i]>summary,  details[data-callout="tip" i]>summary {
     color: rgb(28, 207, 204);
     text-decoration: none;
 }
 
-details[data-callout="TIP"] {
-    background-color: rgba(0, 236, 232, 0.175);
+details[data-callout="caution" i], details[data-callout="warning" i] {
+    background-color: #ec750040;
     border: none;
 }
 
-details[data-callout="TIP"]>summary {
-    color: rgb(28, 207, 204);
+details[data-callout="caution" i]>summary, details[data-callout="warning" i]>summary {
+    color: rgb(236, 117, 0);
     text-decoration: none;
 }
