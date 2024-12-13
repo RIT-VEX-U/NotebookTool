@@ -28,6 +28,10 @@ pre[data-undisplayed="undisplayed"] {
     display: none;
 }
 
+table td, table th {
+    padding: 10px;
+}
+
 .process-tag {
     display: inline;
     border-radius: 2px;
