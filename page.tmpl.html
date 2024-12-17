@@ -168,15 +168,16 @@
         {{if .Data.PrevInFocus}}
         Continued from <a class="note_ref" href="#{{.Data.PrevInFocus.Anchor}}"><b>{{.Data.PrevInFocus.Title}}</b></a>
         {{end}}
+        <div class="continued_in">
+            {{if .Data.NextInFocus}}
+            Continued in <a class="note_ref" href="#{{.Data.NextInFocus.Anchor}}"><b>{{.Data.NextInFocus.Title}}</b></a>
+            {{end}}
+        </div>
+
         <br>
         <div class="entry-embed">
             {{.Html}}
         </div>
-        {{if .Data.NextInFocus}}
-        <div class="continued_in">
-            Continued in <a class="note_ref" href="#{{.Data.NextInFocus.Anchor}}"><b>{{.Data.NextInFocus.Title}}</b></a>
-        </div>
-        {{end}}
 
     </section>
     {{end}}
