@@ -28,7 +28,8 @@ pre[data-undisplayed="undisplayed"] {
     display: none;
 }
 
-table td, table th {
+table td,
+table th {
     padding: 10px;
 }
 
@@ -203,7 +204,11 @@ h1.entry-title {
 
 
 @page {
-    @bottom-center {
+    @bottom-right {
+        content: element(continuedInRunning);
+    }
+
+    @bottom-left {
         content: counter(page) " of " counter(pages);
     }
 }
@@ -227,6 +232,12 @@ h1.entry-title {
     section.entire-entry {
         /* Break before a new entry */
         break-before: always;
+    }
+
+    .continued_in {
+        /* never put 'Continued in...' on its own page */
+        /* break-before: never; */
+        position: running(continuedInRunning);
     }
 
 
