@@ -181,7 +181,7 @@ h1.entry-title {
     border-top: 0.03in solid var(--proc-step-update);
 }
 
-.entry-header-hr[data-first-process-step="test"] {
+.entry-header-hr[data-first-process-step="test-result"] {
     border-top: 0.03in solid var(--proc-step-test);
 }
 
