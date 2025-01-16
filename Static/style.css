@@ -280,12 +280,15 @@ h1.entry-title {
         flex-direction: row;
         align-items: center;
         float: left;
-        margin-bottom: 0.5in;
+        margin-bottom: 0.2in;
     }
 
     .bio-flex img {
         margin-right: 0.5in;
-        width: 2in;
+        width: 1.5in;
+        height: 2.5in;
+        overflow: hidden;
+        object-fit: cover;
     }
 
     details {
