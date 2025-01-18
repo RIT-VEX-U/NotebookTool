@@ -46,38 +46,73 @@ type Note struct {
 	NextInFocus *Note
 }
 
-func (n Note) LucideIcon() string {
-	icon := "menu"
-	strokeColor := "black"
-
-	switch n.ProcessSteps[0] {
-	case "other":
-		icon = "circle-ellipsis"
-		strokeColor = "var(--proc-step-other)"
-	case "identify-problem":
-		icon = "scan-eye"
-		strokeColor = "var(--proc-step-identify)"
-	case "update":
-		icon = "refresh-cw"
-		strokeColor = "var(--proc-step-update)"
-	case "brainstorm":
-		icon = "brain"
-		strokeColor = "var(--proc-step-brainstorm)"
-	case "select-best":
-		icon = "mouse-pointer-click"
-		strokeColor = "var(--proc-step-select)"
-	case "test-result":
-		icon = "clipboard-list"
-		strokeColor = "var(--proc-step-test)"
-	case "context":
-		icon = "zoom-in"
-		strokeColor = "var(--proc-step-context)"
-	case "game-analysis":
-		icon = "chart-pie"
-		strokeColor = "var(--proc-step-game-analysis)"
+func (n Note) GradientHR() string {
+	colorMap := map[string]string{
+		"other":            "var(--proc-step-other)",
+		"identify-problem": "var(--proc-step-identify)",
+		"update":           "var(--proc-step-update)",
+		"brainstorm":       "var(--proc-step-brainstorm)",
+		"select-best":      "var(--proc-step-select)",
+		"test-result":      "var(--proc-step-test)",
+		"context":          "var(--proc-step-context)",
+		"game-analysis":    "var(--proc-step-game-analysis)",
 	}
 
-	return fmt.Sprintf("<i data-lucide=\"%s\" style = \"stroke: %s;\"></i>", icon, strokeColor)
+	var colors []string
+	for i, step := range n.ProcessSteps {
+		color, exists := colorMap[step]
+
+		if !exists {
+			color = "black"
+		}
+
+		start := float64(i) / float64(len(n.ProcessSteps)) * 100
+		end := float64(i+1) / float64(len(n.ProcessSteps)) * 100
+		colors = append(colors, fmt.Sprintf("%s %.2f%%, %s %.2f%%", color, start, color, end))
+	}
+
+	gradient := fmt.Sprintf("linear-gradient(to right, %s)", strings.Join(colors, ", "))
+
+	return fmt.Sprintf(`<hr style="background: %s; height: 4px; border: none;">`, gradient)
+}
+
+func (n Note) LucideIcon() string {
+	var icons []string
+	for _, step := range n.ProcessSteps {
+		icon := "menu"
+		strokeColor := "black"
+
+		switch step {
+		case "other":
+			icon = "circle-ellipsis"
+			strokeColor = "var(--proc-step-other)"
+		case "identify-problem":
+			icon = "scan-eye"
+			strokeColor = "var(--proc-step-identify)"
+		case "update":
+			icon = "refresh-cw"
+			strokeColor = "var(--proc-step-update)"
+		case "brainstorm":
+			icon = "brain"
+			strokeColor = "var(--proc-step-brainstorm)"
+		case "select-best":
+			icon = "mouse-pointer-click"
+			strokeColor = "var(--proc-step-select)"
+		case "test-result":
+			icon = "clipboard-list"
+			strokeColor = "var(--proc-step-test)"
+		case "context":
+			icon = "zoom-in"
+			strokeColor = "var(--proc-step-context)"
+		case "game-analysis":
+			icon = "chart-pie"
+			strokeColor = "var(--proc-step-game-analysis)"
+		}
+
+		icons = append(icons, fmt.Sprintf("<i data-lucide=\"%s\" style=\"stroke: %s;\"></i>", icon, strokeColor))
+	}
+
+	return strings.Join(icons, " ")
 }
 
 var dateRemover = regexp.MustCompile(`^\d{1,2}-\d{1,2}-\d{2,4}\s+`)

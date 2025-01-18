@@ -62,11 +62,10 @@ func ParseArgs() Config {
 }
 
 type RenderedEntry struct {
-	Data Note
-
+	Data               Note
 	PrevNote, NextNote *string
-
-	Html string
+	Html               string
+	GradientHR         string
 }
 
 type FocusGroup struct {

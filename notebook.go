@@ -25,12 +25,10 @@ var templateFile = template.Must(template.New("outputPage").Parse(templateFileSo
 func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string) {
 
 	wanted_entries := filterFilesForThisNotebook(allNotes, notebook)
-
 	slices.SortFunc(wanted_entries, sortEntries)
 
 	entries := []RenderedEntry{}
 	frontmatterNotes := []RenderedEntry{}
-
 	errs := []error{}
 	byFocus := map[string][]Note{}
 
@@ -42,14 +40,17 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 			errs = append(errs, err)
 		}
 
-		// Rout to frontmatter or regular entry
+		gradientHR := metadata.GradientHR()
+
 		if slices.Contains(metadata.ProcessSteps, "frontmatter") {
 			frontmatterNotes = append(frontmatterNotes, RenderedEntry{
-				Data: metadata,
-				Html: buf.String(),
+				Data:       metadata,
+				Html:       buf.String(),
+				GradientHR: gradientHR,
 			})
 			continue
 		}
+
 		// Sort by focus
 		if l, exists := byFocus[metadata.Focus]; exists {
 			byFocus[metadata.Focus] = append(l, metadata)
@@ -58,19 +59,18 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 		}
 
 		entries = append(entries, RenderedEntry{
-			Data: metadata,
-			Html: buf.String(),
+			Data:       metadata,
+			Html:       buf.String(),
+			GradientHR: gradientHR,
 		})
-
 	}
+
 	if len(errs) > 0 {
 		fmt.Println(errs)
 	}
 
-	// Get focii
 	focusList := []FocusGroup{}
 	for focus, entries := range byFocus {
-		// Sort group by date
 		slices.SortFunc(entries, func(a, b Note) int {
 			return a.Date.Compare(b.Date)
 		})
@@ -82,12 +82,10 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 		}
 	}
 
-	// Sort focus index by focus name
 	slices.SortFunc(focusList, func(a, b FocusGroup) int {
 		return a.Entries[0].Date.Compare(b.Entries[0].Date)
 	})
 
-	// Find neighbours
 	for j, entry := range entries {
 		focus := entry.Data.Focus
 		neighbors := byFocus[focus]
@@ -102,6 +100,7 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 			entries[j].Data.NextInFocus = &neighbors[i+1]
 		}
 	}
+
 	orderedFrontmatterNotes := []RenderedEntry{}
 	for _, name := range frontmatterWanted {
 		found := false

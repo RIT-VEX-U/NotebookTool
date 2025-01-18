@@ -124,10 +124,13 @@ span.page_number::after {
 
 
 span.page_number {
-    margin-left: auto;
-    min-width: 0.3in;
+    min-width: 0.35in;
     text-align: right;
+}
 
+span.toc_icon {
+    margin-left: auto;
+    text-align: right;
 }
 
 .entry-header>h1 {
@@ -144,6 +147,21 @@ h1.entry-title {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+}
+
+.entry-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icons-container {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.title-text {
+    padding-left: 8px;
 }
 
 .topic-robot-box {
@@ -166,7 +184,7 @@ h1.entry-title {
     border-top: 0.03in solid var(--brand-orange);
 }
 
-.entry-header-hr[data-first-process-step="identify-problem"] {
+/* .entry-header-hr[data-first-process-step="identify-problem"] {
     border-top: 0.03in solid var(--proc-step-identify);
 }
 
@@ -196,7 +214,7 @@ h1.entry-title {
 
 .entry-header-hr[data-first-process-step="context"] {
     border-top: 0.03in solid var(--proc-step-context);
-}
+} */
 
 .entry-embed>p {
     text-indent: 1.5em;
