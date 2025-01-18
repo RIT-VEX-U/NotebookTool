@@ -115,6 +115,13 @@ div.TableOfContents>ul {
     /* justify-content: end; */
 }
 
+.toc-main li:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+.toc-main li:nth-child(even) {
+    background-color: #ffffff;
+}
 
 span.page_number::after {
     content: target-counter(attr(href), page);
