@@ -22,9 +22,9 @@ var templateFileSource string
 
 var templateFile = template.Must(template.New("outputPage").Parse(templateFileSource))
 
-func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string) {
+func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string, includeUnfinished bool) {
 
-	wanted_entries := filterFilesForThisNotebook(allNotes, notebook)
+	wanted_entries := filterFilesForThisNotebook(allNotes, notebook, includeUnfinished) // 140 include
 	slices.SortFunc(wanted_entries, sortEntries)
 
 	entries := []RenderedEntry{}

@@ -29,8 +29,9 @@ func (me MetadataError) Error() string {
 type Note struct {
 	Location string
 
-	Title string
-	Focus string
+	Title    string
+	Focus    string
+	Finished bool
 
 	Notebook     string
 	ProcessSteps []string
@@ -166,7 +167,20 @@ func extractMetadata(meta map[string]interface{}) (Note, error) {
 	if !ok {
 		return out, errors.New("notebook field of wrong type")
 	}
+
+	finI, exists := meta["finished"]
+	if !exists {
+		return out, errors.New("no finished field")
+	}
+
+	fin, ok := finI.(bool)
+	if !ok {
+		return out, errors.New("finished field of wrong type")
+	}
+	out.Finished = fin
+
 	out.Notebook = nb
+
 	var err error
 	if out.Authors, err = getStringlist("authors", meta); err != nil {
 		return out, err
@@ -219,6 +233,7 @@ func getMetadata(filepath string) (Note, error) {
 	if err != nil {
 		return meta, MetadataError{filepath, err}
 	}
+
 	meta.Location = filepath
 	meta.Src = bs
 	meta.Doc = doc
@@ -230,10 +245,12 @@ func getMetadata(filepath string) (Note, error) {
 	return meta, nil
 }
 
-func filterFilesForThisNotebook(allnotes []Note, notebook string) []Note {
+func filterFilesForThisNotebook(allnotes []Note, notebook string, includeUnfinished bool) []Note {
 	filtered := []Note{}
 	for _, n := range allnotes {
-		if n.Notebook == notebook {
+		keep := n.Notebook == notebook
+		keep = keep && (includeUnfinished || n.Finished)
+		if keep {
 			filtered = append(filtered, n)
 		}
 	}

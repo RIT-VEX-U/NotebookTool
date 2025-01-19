@@ -14,10 +14,11 @@ import (
 )
 
 type Config struct {
-	EntriesPath string
-	AssetsPath  string
-	OutputPath  string
-	Port        int
+	EntriesPath       string
+	AssetsPath        string
+	OutputPath        string
+	Port              int
+	IncludeUnfinished bool
 }
 
 var tmpDir string = "temp"
@@ -27,15 +28,17 @@ var StaticFiles embed.FS
 
 func ParseArgs() Config {
 	cfg := Config{
-		EntriesPath: "",
-		AssetsPath:  "",
-		OutputPath:  "",
+		EntriesPath:       "",
+		AssetsPath:        "",
+		OutputPath:        "",
+		IncludeUnfinished: false,
 	}
 
 	flag.StringVar(&cfg.EntriesPath, "entries", "", "OS Path to the entries (following metadata all that stuff)")
 	flag.StringVar(&cfg.AssetsPath, "assets", "", "OS Path to the image assets (the directory that all the images are in)")
 	flag.StringVar(&cfg.OutputPath, "output", "", "where to save the output PDFS. Leave blank to just serve for ever rather than make PDFs")
 	flag.IntVar(&cfg.Port, "port", 32124, "the port to serve on. (Dont make this 0)")
+	flag.BoolVar(&cfg.IncludeUnfinished, "includeUnfinished", false, "Include unfinished entries. By default, skip entries that do not have the finished checkbox checked")
 
 	flag.Parse()
 
@@ -43,15 +46,6 @@ func ParseArgs() Config {
 	if cfg.EntriesPath == "" || cfg.AssetsPath == "" || cfg.Port == 0 {
 		failed = true
 	}
-
-	// if !path.IsAbs(cfg.EntriesPath) {
-	// 	fmt.Println("Entry path must be absolute")
-	// 	failed = true
-	// }
-	// if !path.IsAbs(cfg.AssetsPath) {
-	// 	fmt.Println("Asset path must be absolute")
-	// 	failed = true
-	// }
 
 	if failed {
 		flag.Usage()
@@ -109,9 +103,9 @@ func main() {
 	setupTmpOutputDir(args)
 
 	log.Println("Making notebooks")
-	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized"})
-	makeNotebookFile("software", notes, []string{"How this Notebook is Organized"})
-	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"})
+	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized"}, args.IncludeUnfinished)
+	makeNotebookFile("software", notes, []string{"How this Notebook is Organized"}, args.IncludeUnfinished)
+	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
 
 	log.Println("Made HTML")
 
