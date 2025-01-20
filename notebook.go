@@ -125,9 +125,9 @@ func sortEntries(a, b Note) int {
 	}
 
 	stepPriority := map[string]int{
-		"identify-problem": 0,
-		"game-analysis":    1,
-		"context":          2,
+		"context":          0,
+		"identify-problem": 1,
+		"game-analysis":    2,
 		"brainstorm":       3,
 		"select-best":      4,
 		"update":           5,
