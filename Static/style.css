@@ -248,6 +248,14 @@ h1.entry-title {
     text-indent: 1.5em;
 }
 
+table img {
+    max-width: 3in;
+    height: auto;
+    max-height: 4in;
+    overflow: hidden;
+    object-fit: cover;
+    border: none;
+}
 
 @page {
     @bottom-right {
