@@ -2,7 +2,6 @@ package main
 
 import (
 	"NotebookTool/parsers"
-	"fmt"
 	"path/filepath"
 	"strings"
 
@@ -66,7 +65,6 @@ func (p *PreWrapper) End(code bool) string {
 
 // Start implements html.PreWrapper.
 func (p *PreWrapper) Start(code bool, styleAttr string) string {
-	fmt.Println("code", code, "styleAttr", styleAttr)
 	return "<div class='dontdisplaycheck'>"
 }
 
