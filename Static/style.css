@@ -112,15 +112,15 @@ span.obsidian-comment {
     background-color: var(--proc-step-other);
 }
 
-
-
 div.TableOfContents>ul {
     list-style: none;
     padding-left: 0;
 }
 
-.toc-focus-list {
+.byFocus ul {
     list-style: none;
+    list-style-position: inside;
+    padding-left: 0;
 }
 
 .toc_date {
@@ -136,7 +136,8 @@ div.TableOfContents>ul {
     display: inline-flex;
     flex-direction: row;
     width: 100%;
-    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
     /* gap: 0.1in; */
     /* justify-content: end; */
 }
@@ -149,12 +150,16 @@ div.TableOfContents>ul {
     background-color: #ffffff;
 }
 
+.focus-title {
+    width: 100%;
+    background-color: #ffffff;
+}
+
 span.page_number::after {
     content: target-counter(attr(href), page);
     text-align: right;
     min-width: 0.3in;
 }
-
 
 span.page_number {
     min-width: 0.35in;

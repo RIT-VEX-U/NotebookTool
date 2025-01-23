@@ -83,15 +83,15 @@
 
     <!-- TOC By Project -->
     <h1 class="TOC">Entries By Project</h1>
-    <div class="TableOfContents toc-main">
+    <div class="TableOfContents">
         <ul>
 
             {{range $foc := .ByFocus}}
             <li class="byFocus">
-                <b>{{.Focus}}</b>
-                <ul>
+                <span class="focus-title"><b>{{.Focus}}</b></span>
+                <ul class="toc-focus-list toc-main">
                     {{range $entry := .Entries}}
-                    <li class="toc-focus-list">
+                    <li class="focus-entry-item">
                         <div class="tocentry">
                             <span class="toc_date">{{.Date.Format "01/02/2006"}}</span>
                             <a class="toclink" href="#{{.Anchor}}">{{.Title}}</a>
