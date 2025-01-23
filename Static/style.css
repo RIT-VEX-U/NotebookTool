@@ -258,6 +258,10 @@ h1.entry-title {
     text-indent: 1.5em;
 }
 
+.entry-embed {
+    line-height: 1.4;
+}
+
 table img {
     max-width: 3in;
     height: auto;
