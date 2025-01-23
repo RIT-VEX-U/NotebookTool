@@ -96,12 +96,10 @@ func Md() goldmark.Markdown {
 				),
 				highlighting.WithCodeBlockOptions(func(c highlighting.CodeBlockContext) []chromahtml.Option {
 					if language, ok := c.Language(); ok {
-						// Turn on line numbers for Go only.
+						// Add custom wrapper for js (dv.views(check))
 						if strings.Contains(string(language), "js") {
 							return []chromahtml.Option{
-								// chromahtml.WithCustomCSS(),
 								chromahtml.WithPreWrapper(&PreWrapper{}),
-								// chromahtml.WithLineNumbers(true),
 							}
 						}
 					}
