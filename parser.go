@@ -2,7 +2,9 @@ package main
 
 import (
 	"NotebookTool/parsers"
+	"fmt"
 	"path/filepath"
+	"strings"
 
 	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
 	"github.com/yuin/goldmark"
@@ -54,6 +56,22 @@ func (wr wikilinkResolver) ResolveWikilink(n *wikilink.Node) (destination []byte
 
 }
 
+type PreWrapper struct {
+}
+
+// End implements html.PreWrapper.
+func (p *PreWrapper) End(code bool) string {
+	return "</div>"
+}
+
+// Start implements html.PreWrapper.
+func (p *PreWrapper) Start(code bool, styleAttr string) string {
+	fmt.Println("code", code, "styleAttr", styleAttr)
+	return "<div class='dontdisplaycheck'>"
+}
+
+var _ chromahtml.PreWrapper = &PreWrapper{}
+
 func Md() goldmark.Markdown {
 	md := goldmark.New(
 		goldmark.WithExtensions(
@@ -76,6 +94,41 @@ func Md() goldmark.Markdown {
 				highlighting.WithFormatOptions(
 					chromahtml.WithLineNumbers(true),
 				),
+				highlighting.WithCodeBlockOptions(func(c highlighting.CodeBlockContext) []chromahtml.Option {
+					if language, ok := c.Language(); ok {
+						// Turn on line numbers for Go only.
+						if strings.Contains(string(language), "js") {
+							return []chromahtml.Option{
+								// chromahtml.WithCustomCSS(),
+								chromahtml.WithPreWrapper(&PreWrapper{}),
+								// chromahtml.WithLineNumbers(true),
+							}
+						}
+					}
+					return nil
+				}),
+				// highlighting.WithWrapperRenderer(func(w util.BufWriter, c highlighting.CodeBlockContext, entering bool) {
+				// 	lang, ok := c.Language()
+
+				// 	wasJS := strings.Contains(string(lang), "js")
+				// 	if entering {
+				// 		if !ok {
+				// 			w.WriteString("<pre><code")
+				// 			if wasJS {
+				// 				w.WriteString(" class='dontdisplaycheck'")
+				// 			}
+				// 			w.WriteString(">")
+				// 			return
+				// 		}
+				// 		w.WriteString(`<div class="highlight">`)
+				// 	} else {
+				// 		if !ok {
+				// 			w.WriteString("</pre></code>")
+				// 			return
+				// 		}
+				// 		w.WriteString(`</div>`)
+				// 	}
+				// }),
 			),
 		),
 	)

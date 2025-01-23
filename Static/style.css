@@ -45,7 +45,7 @@ body {
     margin-top: 2in;
 }
 
-pre[data-undisplayed="undisplayed"] {
+.dontdisplaycheck {
     display: none;
 }
 
