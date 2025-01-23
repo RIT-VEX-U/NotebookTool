@@ -93,6 +93,7 @@ func Md() goldmark.Markdown {
 				highlighting.WithStyle("monokai"),
 				highlighting.WithFormatOptions(
 					chromahtml.WithLineNumbers(true),
+					chromahtml.WrapLongLines(true),
 				),
 				highlighting.WithCodeBlockOptions(func(c highlighting.CodeBlockContext) []chromahtml.Option {
 					if language, ok := c.Language(); ok {

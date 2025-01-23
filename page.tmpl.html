@@ -52,12 +52,12 @@
     <h4>{{.Date.Format "01/02/2006 03:05 PM"}}</h4> -->
 
     <div class="header-page">
-         <h1>RIT VEX U Robotics</h1>
+        <h1>RIT VEX U Robotics</h1>
         <h2>{{.Notebook}} Notebook</h2>
         <h2>High Stakes 2024-2025</h2>
         <img src="Assets/rit-long.png" id="rit-long">
     </div>
-    
+
 
     <br class="pagebreak">
 
@@ -80,24 +80,6 @@
     </section>
     {{end}}
 
-    <!-- TOC By Date -->
-    <h1 class="TOC">Entries By Date</h1>
-    <div class="TableOfContents toc-main">
-        <ul>
-            {{range $md := .Entries}}
-            <li>
-                <div class="tocentry">
-                    <span class="toc_date">{{.Data.Date.Format "01/02/2006"}}</span>
-                    <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>
-
-                    <span class="toc_icon">{{.Data.LucideIcon}}</span>
-                    <span class="page_number" href="#{{.Data.Anchor}}"></span>
-                </div>
-            </li>
-            {{end}}
-        </ul>
-    </div>
-    <br class="pagebreak">
 
     <!-- TOC By Project -->
     <h1 class="TOC">Entries By Project</h1>
@@ -124,7 +106,25 @@
             {{end}}
         </ul>
     </div>
-    <!-- <br class="pagebreak"> -->
+
+    <br class="pagebreak">
+    <!-- TOC By Date -->
+    <h1 class="TOC">Entries By Date</h1>
+    <div class="TableOfContents toc-main">
+        <ul>
+            {{range $md := .Entries}}
+            <li>
+                <div class="tocentry">
+                    <span class="toc_date">{{.Data.Date.Format "01/02/2006"}}</span>
+                    <a class="toclink" href="#{{.Data.Anchor}}">{{.Data.Title}}</a>
+
+                    <span class="toc_icon">{{.Data.LucideIcon}}</span>
+                    <span class="page_number" href="#{{.Data.Anchor}}"></span>
+                </div>
+            </li>
+            {{end}}
+        </ul>
+    </div>
 
 
     {{range $entry := .Entries}}
