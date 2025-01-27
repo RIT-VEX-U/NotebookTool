@@ -35,6 +35,16 @@ details[data-callout]>summary {
     --callout-color: 247, 105, 2;
 }
 
+details[data-callout="quote" i] {
+    background-color: #7e7e7e40;
+    border: none;
+}
+
+details[data-callout="quote" i]>summary {
+    color: #545454;
+    text-decoration: none;
+}
+
 details[data-callout="manual" i] {
     background-color: #ff3d3d40;
     border: none;
