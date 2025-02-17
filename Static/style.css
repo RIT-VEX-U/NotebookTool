@@ -45,6 +45,12 @@ body {
     margin-top: 2in;
 }
 
+.bear img, .bear {
+    width: 4in;
+    height: auto;
+    margin-top: 0.1in;
+}
+
 .dontdisplaycheck {
     display: none;
 }
