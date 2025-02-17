@@ -119,7 +119,7 @@ func main() {
 		log.Printf("Serving at http://localhost:%d, press ctrl+c to exit\n", args.Port)
 		<-done // Will block here until user hits ctrl+c
 	} else {
-		log.Println("Rendering")
+		log.Printf("Rendering (port %d)\n", args.Port)
 		for _, notebook := range []string{"hardware", "software", "strategy"} {
 			url := fmt.Sprintf("http://localhost:%d/%s.html", args.Port, notebook)
 			err := savePageToPdf(url, path.Join(args.OutputPath, notebook+".pdf"))

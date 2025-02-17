@@ -88,7 +88,7 @@ func Md() goldmark.Markdown {
 			&mermaid.Extender{},
 			callout.CalloutExtention,
 			highlighting.NewHighlighting(
-				highlighting.WithStyle("monokai"),
+				highlighting.WithStyle("github"),
 				highlighting.WithFormatOptions(
 					chromahtml.WithLineNumbers(true),
 					chromahtml.WrapLongLines(true),
