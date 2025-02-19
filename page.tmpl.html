@@ -134,13 +134,20 @@
 
         <div class="entry-header">
             <h1 class="entry-title">
-                <span class="icons-container">{{.Data.LucideIcon}}</span>
                 <span class="title-text">{{.Data.Title}}</span>
             </h1>
+            <h2 class="header-process-steps">
+                <span class="icons-container">{{.Data.LucideIcon}}</span>
+                <span id="process-steps">
+                    {{range $index, $element := .Data.ProcessSteps}}
+                        <span class="step">
+                            {{if $index}}, {{end}}
+                            {{ $element }}
+                        </span>
+                    {{end}}
+                </span>
+            </h2>
         </div>
-
-        <!-- <hr class="entry-header-hr"
-            data-first-process-step="{{if .Data.ProcessSteps}}{{index .Data.ProcessSteps 0}}{{end}}"> -->
 
         {{.GradientHR}}
 
@@ -198,5 +205,27 @@
 
 
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const processSteps = document.querySelectorAll("#process-steps .step");
+        processSteps.forEach((span, index) => {
+            let formatted = span.innerText
+                .replace(/-/g, " ")
+                .trim();
+
+            formatted = formatted.toLowerCase()
+                .split(' ')
+                .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                .join(' ');
+            
+            span.innerText = formatted;
+            
+            // if (index < processSteps.length - 1) {
+            //     span.innerText += ', ';
+            // }
+        });
+    });
+</script>
 
 </html>

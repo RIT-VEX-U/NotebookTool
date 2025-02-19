@@ -161,6 +161,19 @@ div.TableOfContents>ul {
     background-color: #ffffff;
 }
 
+.header-process-steps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.18in;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 8px;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
 span.page_number::after {
     content: target-counter(attr(href), page);
     text-align: right;
@@ -187,10 +200,11 @@ h1.entry-title {
 
 .entry-header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0;
     padding: 0;
+    gap: 0;
 }
 
 .entry-title {
@@ -209,9 +223,9 @@ h1.entry-title {
     height: auto;
 }
 
-.title-text {
+/* .title-text {
     padding-left: 8px;
-}
+} */
 
 .topic-robot-box {
     display: flex;
