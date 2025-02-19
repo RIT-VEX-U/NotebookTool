@@ -282,7 +282,7 @@ table img {
     }
 
     @bottom-left {
-        content: counter(page) " of " counter(pages);
+        content: "Page " counter(page);
     }
 }
 
