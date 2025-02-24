@@ -248,7 +248,7 @@ func getMetadata(filepath string) (Note, error) {
 func filterFilesForThisNotebook(allnotes []Note, notebook string, includeUnfinished bool) []Note {
 	filtered := []Note{}
 	for _, n := range allnotes {
-		keep := n.Notebook == notebook
+		keep := n.Notebook == notebook || notebook == "all"
 		keep = keep && (includeUnfinished || n.Finished)
 		if keep {
 			filtered = append(filtered, n)

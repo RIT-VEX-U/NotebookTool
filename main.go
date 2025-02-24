@@ -9,7 +9,6 @@ import (
 	"os"
 	"os/signal"
 	"path"
-	"runtime/pprof"
 	"syscall"
 	"time"
 )
@@ -91,14 +90,6 @@ func parseFiles(files []string) (mds []Note, errs []error) {
 }
 
 func main() {
-	f, err := os.Create("cpu.pprof")
-	if err != nil {
-		log.Fatal(err)
-	}
-	pprof.StartCPUProfile(f)
-	defer pprof.StopCPUProfile()
-	defer f.Close()
-
 	args := ParseArgs()
 	files := getAllFilesInDirectory(args.EntriesPath)
 	notes, errs := parseFiles(files)
@@ -112,9 +103,11 @@ func main() {
 	setupTmpOutputDir(args)
 
 	log.Println("Making notebooks")
-	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized"}, args.IncludeUnfinished)
-	makeNotebookFile("software", notes, []string{"How this Notebook is Organized"}, args.IncludeUnfinished)
+	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized (Hardware)"}, args.IncludeUnfinished)
+	makeNotebookFile("software", notes, []string{"How this Notebook is Organized (Software)"}, args.IncludeUnfinished)
 	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
+
+	makeNotebookFile("all", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
 
 	log.Println("Made HTML")
 
@@ -129,7 +122,7 @@ func main() {
 		<-done // Will block here until user hits ctrl+c
 	} else {
 		log.Printf("Rendering (port %d)\n", args.Port)
-		for _, notebook := range []string{"software", "hardware", "strategy"} {
+		for _, notebook := range []string{"all"} {
 
 			url := fmt.Sprintf("http://localhost:%d/%s.html", args.Port, notebook)
 			err := savePagesToPdf(url, path.Join(args.OutputPath, notebook))
