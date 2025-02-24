@@ -103,14 +103,16 @@ func main() {
 	setupTmpOutputDir(args)
 
 	log.Println("Making notebooks")
-	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized"}, args.IncludeUnfinished)
-	makeNotebookFile("software", notes, []string{"How this Notebook is Organized"}, args.IncludeUnfinished)
+	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized (Hardware)"}, args.IncludeUnfinished)
+	makeNotebookFile("software", notes, []string{"How this Notebook is Organized (Software)"}, args.IncludeUnfinished)
 	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
+
+	makeNotebookFile("all", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
 
 	log.Println("Made HTML")
 
-	close := startFileServing(tmpDir, args.Port)
-	defer close()
+	stopServer := startFileServing(tmpDir, args.Port)
+	defer stopServer()
 
 	onlyServe := args.OutputPath == ""
 	if onlyServe {
@@ -120,9 +122,10 @@ func main() {
 		<-done // Will block here until user hits ctrl+c
 	} else {
 		log.Printf("Rendering (port %d)\n", args.Port)
-		for _, notebook := range []string{"hardware", "software", "strategy"} {
+		for _, notebook := range []string{"all"} {
+
 			url := fmt.Sprintf("http://localhost:%d/%s.html", args.Port, notebook)
-			err := savePageToPdf(url, path.Join(args.OutputPath, notebook+".pdf"))
+			err := savePageToPdf(url, path.Join(args.OutputPath, notebook))
 			if err != nil {
 				log.Fatal(err)
 			}
