@@ -63,8 +63,9 @@ type RenderedEntry struct {
 }
 
 type FocusGroup struct {
-	Focus   string
-	Entries []Note
+	Notebook string
+	Focus    string
+	Entries  []Note
 }
 
 type Notebook struct {

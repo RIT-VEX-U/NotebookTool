@@ -77,6 +77,24 @@ func (n Note) GradientHR() string {
 	return fmt.Sprintf(`<hr style="background: %s; height: 4px; border: none;">`, gradient)
 }
 
+func (n Note) NotebookIcon() string {
+	var icon string = ""
+	var strokeColor = "#FFFFFF"
+	switch n.Notebook {
+	case "software":
+		icon = "code"
+		strokeColor = "#5DF0F5"
+	case "hardware":
+		icon = "cog"
+		strokeColor = "#925DF5"
+	case "strategy":
+		icon = "chart-column"
+		strokeColor = "#F595EE"
+	}
+
+	return fmt.Sprintf("<i data-lucide=\"%s\" style=\"stroke: %s;\"></i>", icon, strokeColor)
+}
+
 func (n Note) LucideIcon() string {
 	var icons []string
 	for _, step := range n.ProcessSteps {

@@ -17,10 +17,14 @@ import (
 	"golang.org/x/text/language"
 )
 
+var titler = cases.Title(language.AmericanEnglish)
+
 //go:embed page.tmpl.html
 var templateFileSource string
-
-var templateFile = template.Must(template.New("outputPage").Parse(templateFileSource))
+var funcMap = template.FuncMap{
+	"ToTitle": func(s string) string { return titler.String(s) },
+}
+var templateFile = template.Must(template.New("outputPage").Funcs(funcMap).Parse(templateFileSource))
 
 func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string, includeUnfinished bool) {
 
@@ -76,8 +80,9 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 		})
 		if focus != "Frontmatter" {
 			focusList = append(focusList, FocusGroup{
-				Focus:   focus,
-				Entries: entries,
+				Focus:    focus,
+				Entries:  entries,
+				Notebook: entries[0].Notebook,
 			})
 		}
 	}

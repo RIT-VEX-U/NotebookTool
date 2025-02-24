@@ -45,7 +45,8 @@ body {
     margin-top: 2in;
 }
 
-.bear img, .bear {
+.bear img,
+.bear {
     width: 4in;
     height: auto;
     margin-top: 0.1in;
@@ -159,10 +160,13 @@ div.TableOfContents>ul {
 .focus-title {
     width: 100%;
     background-color: #ffffff;
+    display: inline-flex;
+    justify-content: space-between;
 }
 
 .header-process-steps {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     font-size: 0.18in;

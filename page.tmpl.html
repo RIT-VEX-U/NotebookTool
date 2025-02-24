@@ -88,7 +88,10 @@
 
             {{range $foc := .ByFocus}}
             <li class="byFocus">
-                <span class="focus-title"><b>{{.Focus}}</b></span>
+                <span class="focus-title">
+                    <b>{{.Focus}}</b>
+                    <i>{{ToTitle .Notebook}}</i>
+                </span>
                 <ul class="toc-focus-list toc-main">
                     {{range $entry := .Entries}}
                     <li class="focus-entry-item">
@@ -137,14 +140,20 @@
                 <span class="title-text">{{.Data.Title}}</span>
             </h1>
             <h2 class="header-process-steps">
-                <span class="icons-container">{{.Data.LucideIcon}}</span>
-                <span id="process-steps">
-                    {{range $index, $element := .Data.ProcessSteps}}
+                <span>
+                    <span class="icons-container">{{.Data.LucideIcon}}</span>
+                    <span id="process-steps">
+                        {{range $index, $element := .Data.ProcessSteps}}
                         <span class="step">
                             {{if $index}}, {{end}}
                             {{ $element }}
                         </span>
-                    {{end}}
+                        {{end}}
+                    </span>
+                </span>
+                <span style="align-self: end;">
+                    <span class="icons-container">{{.Data.NotebookIcon}}</span>
+                    {{ToTitle .Data.Notebook}}
                 </span>
             </h2>
         </div>
@@ -218,9 +227,9 @@
                 .split(' ')
                 .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
                 .join(' ');
-            
+
             span.innerText = formatted;
-            
+
             // if (index < processSteps.length - 1) {
             //     span.innerText += ', ';
             // }
