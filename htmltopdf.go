@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path"
 	"sync"
 
 	"github.com/chromedp/cdproto/page"
@@ -44,35 +45,85 @@ func startFileServing(dir string, port int) func() {
 	}
 }
 
-func savePageToPdf(url, outputFile string) error {
-	ctx, cancel := chromedp.NewContext(context.Background())
+type Page struct {
+	PageNum int
+	PDF     []byte
+}
 
+func savePagesToPdf(url, outputFolder string) error {
+	err := os.MkdirAll(outputFolder, 0o755)
+	if err != nil {
+		return err
+	}
+	opts := []chromedp.ExecAllocatorOption{
+		chromedp.Headless, // chromedp.NoFirstRun,
+		chromedp.NoDefaultBrowserCheck,
+		chromedp.DisableGPU,
+		chromedp.Flag("disable-background-networking", true),
+		chromedp.Flag("enable-features", "NetworkService,NetworkServiceInProcess"),
+		chromedp.Flag("disable-background-timer-throttling", true),
+		chromedp.Flag("disable-backgrounding-occluded-windows", true),
+		chromedp.Flag("disable-breakpad", true),
+		chromedp.Flag("disable-client-side-phishing-detection", true),
+		chromedp.Flag("disable-default-apps", true),
+		chromedp.Flag("disable-dev-shm-usage", true),
+		chromedp.Flag("disable-extensions", true),
+		chromedp.Flag("disable-features", "site-per-process,Translate,BlinkGenPropertyTrees"),
+		chromedp.Flag("disable-hang-monitor", true),
+		chromedp.Flag("disable-ipc-flooding-protection", true),
+		chromedp.Flag("disable-popup-blocking", true),
+		chromedp.Flag("disable-prompt-on-repost", true),
+		chromedp.Flag("disable-renderer-backgrounding", true),
+		chromedp.Flag("disable-sync", true),
+		chromedp.Flag("force-color-profile", "srgb"),
+		chromedp.Flag("metrics-recording-only", true),
+		chromedp.Flag("safebrowsing-disable-auto-update", true),
+		chromedp.Flag("enable-automation", true),
+		chromedp.Flag("password-store", "basic"),
+		chromedp.Flag("use-mock-keychain", true),
+	}
+
+	allocCtx, cancel := chromedp.NewExecAllocator(context.Background(), opts...)
 	defer cancel()
 
-	// capture pdf
-	var buf []byte
-	if err := chromedp.Run(ctx, printToPDF(url, &buf)); err != nil {
-		return err
-	}
+	// also set up a custom logger
+	taskCtx, cancel := chromedp.NewContext(allocCtx) // chromedp.WithLogf(log.Printf), chromedp.WithDebugf(log.Printf), chromedp.WithErrorf(log.Printf)
+	defer cancel()
 
-	if err := os.WriteFile(outputFile, buf, 0o644); err != nil {
-		return err
+	pages := make(chan Page)
+
+	// capture pdf
+	go func() {
+		chromedp.Run(taskCtx, printToPDF(url, pages))
+	}()
+
+	for page := range pages {
+		if err := os.WriteFile(path.Join(outputFolder, fmt.Sprintf("%d.pdf", page.PageNum)), page.PDF, 0o644); err != nil {
+			log.Println(err)
+		}
 	}
 	return nil
-
 }
 
 // print a specific pdf page.
-func printToPDF(urlstr string, res *[]byte) chromedp.Tasks {
+func printToPDF(urlstr string, pages chan Page) chromedp.Tasks {
 	return chromedp.Tasks{
 		chromedp.Navigate(urlstr),
 		chromedp.ActionFunc(waitLoaded),
 		chromedp.ActionFunc(func(ctx context.Context) error {
-			buf, _, err := page.PrintToPDF().WithPrintBackground(false).Do(ctx)
-			if err != nil {
-				return err
+			pageNum := 1
+			for {
+				log.Printf("printing page %d of %s to pdf\n", pageNum, urlstr)
+				buf, _, err := page.PrintToPDF().WithPrintBackground(false).WithPageRanges(fmt.Sprintf("%v", pageNum)).Do(ctx)
+				if err != nil {
+					log.Println("ERROR PRINTING TO PDF", err)
+					break
+				}
+				p := Page{PageNum: pageNum, PDF: buf}
+				pages <- p
+				pageNum++
 			}
-			*res = buf
+			close(pages)
 			return nil
 		}),
 	}
