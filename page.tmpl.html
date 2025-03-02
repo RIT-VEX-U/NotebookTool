@@ -154,10 +154,7 @@
 
         <div class="entry-signature">
             <div>By:
-                {{range $index, $auth := .Data.Authors}}
-                {{if $index}}, {{end}}
-                <b>{{.}}</b>
-                {{end}}
+                {{range $index, $auth := .Data.Authors}}{{if $index}}, {{end}}<b>{{.}}</b>{{end}}
             </div>
             <span>
                 Date: <b>{{.Data.Date.Format "01/02/2006"}}</b>
