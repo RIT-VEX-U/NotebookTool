@@ -19,6 +19,8 @@ type Config struct {
 	OutputPath        string
 	Port              int
 	IncludeUnfinished bool
+
+	MakeTemplatePath string
 }
 
 var tmpDir string = "temp"
@@ -32,6 +34,7 @@ func ParseArgs() Config {
 		AssetsPath:        "",
 		OutputPath:        "",
 		IncludeUnfinished: false,
+		MakeTemplatePath:  "",
 	}
 
 	flag.StringVar(&cfg.EntriesPath, "entries", "", "OS Path to the entries (following metadata all that stuff)")
@@ -40,9 +43,14 @@ func ParseArgs() Config {
 	flag.IntVar(&cfg.Port, "port", 32124, "the port to serve on. (Dont make this 0)")
 	flag.BoolVar(&cfg.IncludeUnfinished, "includeUnfinished", false, "Include unfinished entries. By default, skip entries that do not have the finished checkbox checked")
 
+	flag.StringVar(&cfg.MakeTemplatePath, "make-template", "", "directory to place a template notebook for you to fill in")
 	flag.Parse()
 
 	failed := false
+	if cfg.MakeTemplatePath != "" {
+		// don't care about the rest of the args
+		return cfg
+	}
 	if cfg.EntriesPath == "" || cfg.AssetsPath == "" || cfg.Port == 0 {
 		failed = true
 	}
@@ -90,8 +98,33 @@ func parseFiles(files []string) (mds []Note, errs []error) {
 	return mds, errs
 }
 
+//go:embed NotebookTemplate
+var notebook_template embed.FS
+
+func MakeTemplateAtPath(directory string) {
+	if _, err := os.Stat(directory); !errors.Is(err, os.ErrNotExist) {
+		log.Fatalf("There is already something where you're trying to create notebook")
+	}
+
+	err := os.CopyFS(directory, notebook_template)
+	if err != nil {
+		log.Fatalf("Failed to make the notebook template: %v", err)
+	}
+	err = os.Rename(path.Join(directory, "NotebookTemplate"), path.Join(directory, "Notebook"))
+	if err != nil {
+		log.Fatalf("Failed to rename notebook template folder: %v", err)
+	}
+}
+
 func main() {
 	args := ParseArgs()
+
+	if args.MakeTemplatePath != "" {
+		log.Println("Creating notebook template at ", args.MakeTemplatePath)
+		MakeTemplateAtPath(args.MakeTemplatePath)
+		return
+	}
+
 	files := getAllFilesInDirectory(args.EntriesPath)
 	notes, errs := parseFiles(files)
 	if len(errs) > 0 {
