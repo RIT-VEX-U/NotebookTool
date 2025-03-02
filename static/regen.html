@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Regenerate Notebook</title>
+</head>
+
+<body>
+    <h1>Notebook Generator</h1>
+
+    <!--If currently regenerating, put warning here-->
+    <!--If regenning when form submitted bring you back here  with warning-->
+    <fieldset>
+        <legend>Options</legend>
+        <form>
+            <!--Make default values from file or from last submission-->
+            <div>
+                <label for="include-unfinished">include unfinished entries?</label>
+                <input type="checkbox" name="include-unfinished">
+            </div>
+            <div>
+                <label for="frontpage-entries">Frontmatter note titles (one per line</label>
+                <br>
+                <textarea " cols=" 40" rows="10" name="frontmatter-entries">
+How this Notebook is Organized
+Meet the Team
+Meet the Bears Behind the Bots
+The Engineering Design Process</textarea>
+
+
+            </div>
+
+            <div>
+                <label for="frontpage-html">front page html</label>
+                <br>
+                <textarea " cols=" 86" rows="10" name="frontpage-html">
+<div class="header-page">
+    <h1>RIT VEX U Robotics</h1>
+    <h2>Engineering Notebook</h2>
+    <h2>High Stakes 2024-2025</h2>
+    <img src="Assets/rit-long.png" id="rit-long">
+</div></textarea>
+            </div>
+            <input type="submit" value="Regenerate!">
+            <a href="notebook.html">Last generated 3/2/25 6:15:04</a>
+        </form>
+    </fieldset>
+
+</body>
+
+</html>
