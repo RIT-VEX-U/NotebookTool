@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "98093bbfe863b849",
+    "type": "split",
+    "children": [
+      {
+        "id": "c65ba921ec1813d0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dcf2ad5e9a288be2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sign Your Name Here.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sign Your Name Here"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "36cae825b08e1d3f",
+    "type": "split",
+    "children": [
+      {
+        "id": "6bc8eaa38056a740",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "54ede48b6c10436b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e2e7744f5aa9ad82",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8847c8ee137019ed",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 336
+  },
+  "right": {
+    "id": "2457be786ed70f6c",
+    "type": "split",
+    "children": [
+      {
+        "id": "05a1bfecfd37734e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6ef27014998aa918",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Entries/Software Entries/Localization/10-22-2024 Dead Wheel Odometry - IMU.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 10-22-2024 Dead Wheel Odometry - IMU"
+            }
+          },
+          {
+            "id": "6c99f11c3c36715e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Entries/Software Entries/Localization/10-22-2024 Dead Wheel Odometry - IMU.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 10-22-2024 Dead Wheel Odometry - IMU"
+            }
+          },
+          {
+            "id": "ba21976e6f695218",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d11756d635f57612",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Entries/Software Entries/Localization/10-22-2024 Dead Wheel Odometry - IMU.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 10-22-2024 Dead Wheel Odometry - IMU"
+            }
+          },
+          {
+            "id": "6e30932e24b0df3f",
+            "type": "leaf",
+            "state": {
+              "type": "annotations-outline",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "39aeff3c2a12522c",
+            "type": "leaf",
+            "state": {
+              "type": "annotations-outline",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "d736849d32b7bea5",
+            "type": "leaf",
+            "state": {
+              "type": "annotations-outline",
+              "state": {},
+              "icon": "message-square",
+              "title": "Enhanced Annotations"
+            }
+          },
+          {
+            "id": "8dc87a88ebb07878",
+            "type": "leaf",
+            "state": {
+              "type": "annotations-outline",
+              "state": {},
+              "icon": "message-square",
+              "title": "Enhanced Annotations"
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "callout-manager:Insert Callout": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "dcf2ad5e9a288be2",
+  "lastOpenFiles": [
+    "Quick Links.md",
+    "Resources/Unfinished Entries.md",
+    "Resources/Proofreading.md",
+    "Obsidian Resources/How to write notebook entries.md",
+    "Sign Your Name Here.md",
+    "Note to New Members.md",
+    "Obsidian Resources/Templates/Game Manual Rule Template.md",
+    "Game Manual/automation/Game Manual Parsing.md",
+    "Obsidian Resources/Standards/Missing Puzzle Piece/8-30-24 Missing Puzzle Piece Brainstorm.md",
+    "Obsidian Resources/Standards/Missing Puzzle Piece/8-29-24 Missing Puzzle Piece.md",
+    "Obsidian Resources/Templates/hardware brainstorm.md",
+    "Obsidian Resources/Templates/software select best.md",
+    "Obsidian Resources/Templates/software identify the problem.md",
+    "Obsidian Resources/Templates/software brainstorm.md",
+    "Obsidian Resources/Templates/software test.md",
+    "Obsidian Resources/Templates/software update.md",
+    "Obsidian Resources/Templates/strategy game analysis.md",
+    "Obsidian Resources/Templates/other.md",
+    "Obsidian Resources/Templates/Project Overview.md",
+    "Obsidian Resources/Templates/hardware update.md",
+    "Obsidian Resources/Templates/hardware test.md",
+    "Obsidian Resources/Templates/hardware select best.md",
+    "Obsidian Resources/Templates/hardware identify the problem.md",
+    "Obsidian Resources/(Linux) Guide for Setting Up Google Drive for Desktop for RIT VEX U Notebooking for a More Cohesive Documentation Process for Winning Excellence.md",
+    "Obsidian Resources/(Windows) Guide for Setting Up Google Drive for Desktop for RIT VEX U Notebooking for a More Cohesive Documentation Process for Winning Excellence.md",
+    "Assets/Pasted image 20240531204244.jpg",
+    "Assets/yippee.gif",
+    "Assets/Pasted image 20240531215552.png",
+    "Assets/Pasted image 20240531203435.png",
+    "Assets/Pasted image 20240531203318.png",
+    "Assets/Pasted image 20240531203358.png",
+    "Assets/Pasted image 20240531203008.png",
+    "Assets/Pasted image 20240531202923.png",
+    "Assets/Pasted image 20240601001131.png",
+    "Assets/Pasted image 20240601000938.png",
+    "Obsidian Resources/Cheat Sheet.md",
+    "Untitled.canvas",
+    "Entries/Hardware Entries/Robots/24in v1/24in v1 Climb",
+    "Entries/Hardware Entries/Robots/15in v2/Allince stake"
+  ]
+}

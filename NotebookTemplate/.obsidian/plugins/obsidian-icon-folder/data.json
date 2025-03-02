@@ -1,0 +1,1134 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "twemoji",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiChartPie",
+      "LiRefreshCw",
+      "LiClipboardList",
+      "LiMousePointerClick",
+      "LiBrain"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": true,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "debugMode": false,
+    "lucideIconPackType": "native"
+  },
+  "Final Notebooks/Strategy Notebook.md": "LiLock",
+  "Final Notebooks/Software Notebook.md": "LiLock",
+  "Final Notebooks/Hardware Notebook.md": "LiLock",
+  "Entries/Strategy Entries/Notebook Software/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/CAD Software/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Obsidian Resources": "LiLibrary",
+  "Entries": "LiPen",
+  "Quick Links.md": "LiLink",
+  "Sign Your Name Here.md": "LiPen",
+  "Obsidian Resources/Templates/hardware brainstorm.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Obsidian Resources/Templates/hardware identify the problem.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Obsidian Resources/Templates/hardware select best.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Obsidian Resources/Templates/software brainstorm.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Obsidian Resources/Templates/software identify the problem.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Obsidian Resources/Templates/software update.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Obsidian Resources/Templates/software select best.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Strategy Entries/Notebook Software/5-18-24 Notebook Software.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/V5 Debug Board/7-1-24 Vex Debug Board.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/V5 Debug Board/7-13-24 Initial Web Server.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-2-24 Vex Debug Protocol.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-11-24 Vex Debug Protocol.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-20-24 Custom Protocol.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-8-24 Serial Line Internet Protocol.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-7-24 Modbus.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-9-24 Custom Protocol.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/8-12-24 Custom Protocol.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Software Entries/V5 Interface Board/V5 Interface Board.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Obsidian Resources/Templates/hardware update.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Obsidian Resources/Templates/hardware test.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Obsidian Resources/Templates/software test.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Manufacturing and 3D Printing": "LiPrinter",
+  "Entries/Strategy Entries/Notebook Software/5-31-24 Notebook Software Selection.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Pre-Season Meetings (DEPRECATED)/Hardware Meeting 1.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Pre-Season Meetings (DEPRECATED)/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/Manufacturing and 3D Printing/Continuation of Voron V0 Tuning.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Localization/Unscented Kalman Filter.md": {
+    "iconName": "LiZoomIn",
+    "iconColor": "var(--proc-step-context)"
+  },
+  "Entries/Software Entries/Notebook Support Software/6-10-2024 Notebook Support Software.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Notebook Support Software/10-19-2024 Notebook Backup.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Notebook Support Software/10-2-24 External Notebook Generator Rev. 1.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Manufacturing and 3D Printing/Testing and Tuning Voron V0.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Localization/10-28-24 Dead Wheels Update.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Localization/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Software Entries/V5 Interface Board/Changes from V5 Debug Board.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Interface Board/Processor Selection.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/V5 Interface Board/Processor - RP2040.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Interface Board/Processor - RP2350.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Interface Board/Processor - the teensy one.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Interface Board/Processor - STM32H7.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Budget/4-19-2024 Budget Request.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Budget/9-6-2024 Budget Tracking.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Software Entries/Scoring Calculator/5-15-2024 V5RC Hub Scoring Calculator Issues.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Scoring Calculator/5-20-2024 Google Sheets Scoring Calculator.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Scoring Calculator/5-22-2024 GitHub Pages Scoring Website.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Notebook Support Software/10-14-24 External Notebook Generator Start.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Obsidian Resources/Templates/other.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Obsidian Resources/Templates/strategy game analysis.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Project Management/10-21-2024 GitHub Projects.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Project Management/11-6-2024 Slack Lists.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Strategy Entries/Project Management/11-3-2024 Task Management Issues.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Strategy Entries/Project Management/11-5-2024 Task Management Softwares.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/CAD Software/5-10-2024 CAD Software Difficulties.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/CAD Software/5-10-2024 CAD Software Options.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/CAD Software/5-10-2024 CAD Software Decision.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/15in Intake/Corner Ring Arm Build.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Interface Board/10-15-2024 Processor Selection.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/CAD Software/5-14-2024 Onshape Teams.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Autonomous Skills/11-17-24 15in Skills Pseudocode.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Autonomous Skills/11-17-24 24in Skills Pseudocode.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Junior (15 inch bot)/11-17-24 Conveyor Stalling.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Junior (15 inch bot)/Junior (15 inch) overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Software Entries/Localization/11-13-24 N Pod Odometry Update.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Core Build System/6-1-2024 Core Synchronization.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Core Build System/11-16-2024 Eigen Integration.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Core Build System/6-1-2024 Git subrepo.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Core Build System/6-2-2024 Git submodule.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Core Build System/6-2-2024 Git subtree.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Core Build System/6-2-2024 Synchronization Decision.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Software Entries/V5 Interface Board/10-18-2024 Changes from V5 Debug Board.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Strategy Entries/Strategy Goals/6-10-24 Second Strategy Meeting.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Strategy Goals/5-20-24 First Strategy Meeting.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Software Entries/Autonomous Skills/11-17-24 Corner Ring Stacks in Autonomous Skills.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/11-22-24 VDP Device Implementation (ESP32).md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Junior (15in bot)/11-17-24 Conveyor Stalling.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Junior (15in bot)/Junior (15 inch) overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/11-16-24 VDP Device Implementation (Brain).md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Interface Board/8-14-2024 V5 Interface Board.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/V5 Interface Board/10-16-2024 Processor - STM32H7.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Interface Board/10-16-2024 Processor - RP2350.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Interface Board/10-16-2024 Processor - RP2040.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/8-12-24 VDP Flow Control.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Debug Board/Vex Debug Protocol/7-20-24 VDP Initial Design.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/Software Drivetrain/Odometry Pods.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/Software Drivetrain/Software Drivetrain.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/Software Drivetrain/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Intake/Intake Selection.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Intake/Intake & Brainstorming.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Intake/Intake Proof of Concept.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Intake/Corner Rings.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Intake/Corner Ring Arm.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Intake/Corner Ring Arm Build (Slapstick).md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/Initial Drivetrain/Gear Meshing Issues.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/Initial Drivetrain/Initial Drivetrain Expectations.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/Initial Drivetrain/Selecting a Drivetrain.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/Initial Drivetrain/Drivetrain Options.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/Initial Drivetrain/Drivetrain Proof of Concept.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Mobile Goal Grabber/Grabber Requirements.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Mobile Goal Grabber/Grabber Brainstorming.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Mobile Goal Grabber/Tilting Grabber Proof of Concept.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Conveyor/Hook Design.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Conveyor/Side Towers with Mounts.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Conveyor/Conveyer Size.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Conveyor/Expansion Brainstorm.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Conveyor/Conveyer Expansion Redesign.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Conveyor/Remounting the Conveyer.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/24in Robot Requirements.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/24in Assembly.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in Electronics.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Strategy Entries/Budget/12-11-2024 Budget Projection and Event Planning.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Software Entries/Core Improvements/12-16-24 Geometry Type Plan.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Core Improvements/12-16-24 Geometry Types Background.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Core Improvements/12-16-24 Geometry Type Implementations.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/Rebuild Criteria.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/Mobile goal grabber.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/Drivetrain.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/Conveyor and Intake.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/goal grabber.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/Locking Clamp.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Junior (15in bot)/11-21-24 Stopping the Conveyor During Tele-op.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/battery placement.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/Conveyor Mounting.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Final Notebooks/PDFs": "LiFolderLock",
+  "Entries/Hardware Entries/Robots/15in v2/Conveyor Build.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/1-1-25 Battery Placement.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Strategy Entries/Q&As/6-7-24 Legality of COTS Odometry Pods.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Q&As/COTS Odometry Pods Q&A/6-27-24 COTS Odometry Pod Response.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Q&As/COTS Odometry Pods Q&A/6-7-24 Legality of COTS Odometry Pods.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Q&As/Redeploying Mechanisms Q&As/12-10-24 SG2 and Mechanisms Deployed at Odd Angles Clarification.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Q&As/Redeploying Mechanisms Q&As/12-10-24 SG2.a with Redeploying Mechanisms Clarification.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Software Entries/V5 Interface Board/1-14-2025 I2C Connectivity.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/V5 Interface Board/12-1-24 V5 Interface Board Construction Completed.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Strategy Entries/Match Strategy/12-10-24 Corner Camping.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/11-3-24 24in Assembly.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/12-1-24 Rebuild Criteria.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Strategy Entries/Match Strategy/5-20-24 Match Strategy -- Corner Modifiers.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Software Entries/Localization/11-04-2024 Lidar and UKF Simulation.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Localization/10-22-2024 Dead Wheel Odometry - IMU.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Localization/10-22-2024 Drive Wheel Dead Reckoning.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Localization/10-22-2024 SparkFun Optical Tracking Odometry Sensor.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Localization/10-22-2024 Robot Localization.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Localization/10-23-2024 Localization Method Selection and Plan.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Software Entries/Localization/10-22-2024 Scanning Lidar.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Match Strategy/9-23-24 NJIT Sig Game Analysis.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Software Entries/V5 Interface Board/1-22-2025 High Speed Serial to Brain.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/1-15-25 Optical Sensor Mount.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Strategy Entries/Debrief Meetings/12-16-24 Winter Break and Spring Semester Planning.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Strategy Entries/Debrief Meetings/12-15-24 Skills Competition Debriefs.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Match Strategy/1-23-25 Corners Match Strategy.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Project Management/11-6-2024 Slack List Setup.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Strategy Entries/Project Management/11-6-2024 Task Management Selection.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Software Entries/Software Onboarding/6-23-24 Software Onboarding Overhaul Discussion.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Software Entries/AI Vision Sensor/1-21-25 Fixing Distortion in the AI Vision Sensor.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/AI Vision Sensor/1-26-25 Correct Math for the AI Vision Sensor.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/AI Vision Sensor/1-23-25 Math for the AI Vision Sensor.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/10-20-24 Hook Design.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/10-25-24 Side Towers with Mounts.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/10-28-24 Conveyer Size.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/11-11-24 Conveyer Expansion Redesign.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/11-11-24 Remounting the Conveyer.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/11-5-24 Expansion Brainstorm.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/10-1-24 Custom Molded Traction Wheels.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/10-6-24 Gear Meshing Issues.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/10-8-24 Drivetrain Proof of Concept.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/6-20-24 Initial Drivetrain Expectations.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/9-30-24 Selecting a Drivetrain.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/9-23-24 Drivetrain Options.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Mobile Goal Grabber/10-16-24 Tilting Grabber Proof of Concept.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Mobile Goal Grabber/9-30-24 Grabber Requirements.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Mobile Goal Grabber/10-4-24 Grabber Brainstorming.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/10-13-24 Intake Proof of Concept.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/10-25-24 Corner Ring Arm.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/10-28-24 Corner Ring Arm Build (Slapstick).md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/10-25-24 Corner Rings.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/10-6-24 Intake Selection.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/9-29-24 Intake & Brainstorming.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/1-18-25 2Bar Wall Stake Mechanism.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/1-14-25 Wall Stake Scoring.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/1-14-25 Wall Stake Mechanisms.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Structure/1-8-25 Structural Channel Addition.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Structure/1-6-25 Structure Redesign.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Conveyer/12-28-24 Conveyor Build.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Mobile Goal Grabber/12-10-24 Goal Grabber.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Mobile Goal Grabber/12-9-24 Mobile Goal Grabber Design.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Mobile Goal Grabber/12-30-24 Locking Clamp.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Intake/1-18-25 Intake Assembly.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Drivetrain/1-18-25 Custom Omni Sizes.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Strategy Entries/Debrief Meetings/2-3-25 Framingham Competition Debrief.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/10-19-2024 Conveyer Design and Reasoning.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Intake/9-28-24 Intake Design Constraints and Goals.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Drivetrain/12-2-24 Drivetrain.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Strategy Entries/Notebook Software/5-28-24 Notebook Options.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Scoring Calculator/10-26-2024 Correct Match and Skills Scoring Calculator.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Autonomous Paths/1-14-25 Initial Auto Paths.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/24in v2/24in v2 CARBON COPY/1-23-25 Building Grazer V2.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Software Entries/Autonomous Paths/2-2-25 Framingham Autonomous Period Analysis.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test-result)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/1-16-25 Select Wall Stake Mechanism.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Conveyor/11-13-24 Conveyer Build and Test.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Software Entries/AI Vision Sensor/12-3-24 Using the AI Vision Sensor in VSCode.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Mobile Goal Grabber/1-10-25 Clamp Testing.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/11-2-24 24in Robot Requirements.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Conveyer/1-28-25 Ring Transition.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Conveyer/1-8-25 Conveyor Motor Mount.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Notebook Support Software/11-03-2024 External Notebook Generator Printing and Improvements.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Notebook Support Software/6-11-2024 Obsidian Tools.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Localization/11-8-2024 N-Pod Odometry Theory.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Localization/2-9-2025 Odometry Comparison.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Software Entries/Autonomous Paths/9-1-24 CommandController.md": {
+    "iconName": "LiZoomIn",
+    "iconColor": "var(--proc-step-context)"
+  },
+  "Entries/Hardware Entries/Robots/15in v3/2-4-25 15in v3 'Winston'.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/24in v2/24in v2 CARBON COPY/1-19-25 15in v2 Carbon Copy.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/24in v2/24in v2 CARBON COPY/1-19-25 Planning Carbon Copy.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Mobile Goal Grabber/10-6-24 Mobile Goal Grabber Selection.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/2-3-25 2Bar Pivot Trouble Shooting.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Color Sorting/1-23-25 Color Sorting Intake.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/1-18-25 2Bar Ring Compression Chamber.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Autonomous Paths/West Virginia Auto Paths.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Wall Stake Mechanism/2-9-25 Wall Stake Fixes.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Intake and Clamper Subsystem/2-18-25 Revised Color Sorting.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Intake and Clamper Subsystem/2-9-25 Intake Ideas.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Intake and Clamper Subsystem/Intake Decision.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Software Entries/Autonomous Paths/2-18-25 West Virginia Auto Paths.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Software Entries/Intake and Clamper Subsystem/2-10-25 Intake Decision.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Software Entries/Color Sorting/1-19-25 Color Sort.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Conveyer/12-28-24 Conveyor Design.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Software Entries/Intake and Clamper Subsystem/2-18-25 Color Sorting with Wallstake Mechanism LEAVE OUT OF NOTEBOOK.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Software Entries/Autonomous Skills/11-17-24 15in Skills Code.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/15in v3/2-4-25 15in v3 'Winston' LEAVE OUT WE YAPPING ABOUT IT TONIGHT.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v1/15in v1 Initial Drivetrain/10-5-24 Testing Initial Drivetrain.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Intake/1-20-25 Intake Test.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Alliance Stake/2-10-25 Alliance Stake Scoring.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Alliance Stake/2-11-25 Alliance Stake Scoring Prototype and Selection.md": {
+    "iconName": "LiMousePointerClick",
+    "iconColor": "var(--proc-step-select)"
+  },
+  "Entries/Hardware Entries/Robots/15in v2/15in v2 Alliance Stake/Alliance Stake Testing.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/1-14-2025 Final Grazer Autonomous Skills Path for 2024.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/1-14-2025 Final Junior Skills Path for 2024.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Driver Skills/2-1-25 Driver Skills Path.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/10-20-24 Autonomous Skills Path.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/10-20-24 Skills Path Group 1.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/10-20-24 Skills Path Group 2.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/10-20-24 Skills Path Group 3.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Driver Skills/10-23-24 Skills Breakdown.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/11-10-24 Autonomous Skills Planning.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Autonomous Skills/11-17-24 Autonomous Skills Planning, Ext..md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Strategy Entries/Robot Skills/Driver Skills/10-18-24 Skills Run Concepts.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Software Entries/AI Vision Sensor/Testing the AI Vision Sensor.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Software Entries/Autonomous Paths/Testing Autonomous Paths.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Software Entries/Color Sorting/1-25-25 Color Sort Test.md": {
+    "iconName": "LiClipboardList",
+    "iconColor": "var(--proc-step-test)"
+  },
+  "Entries/Hardware Entries/Robots/Software Drivetrain/2-23-25 Prototype Platform.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/24in v1 Climb/1-14-25 Changing Grazer's Hooks to be within the 15in Bound.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/24in v2/2-9-2025 Prototype Arm Grabber.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/24in v1 Climb/12-6-24 Climb Hooks.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/24in v1 Climb/12-4-24 Climb Design Ideas.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Robots/24in v1/24in v1 Climb/12-4-24 Climb Criteria.md": {
+    "iconName": "LiScanEye",
+    "iconColor": "var(--proc-step-identify)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/11-8-2024 24in Robot Rush.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/11-8-2024 15in Robot Rush.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/1-15-25 Framingham Competition Prep.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/9-13-24 Initial Hardware Timeline.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/2-3-25 Hardware Timeline Until Worlds.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Season Kickoff/Hardware Orientation Recap.md": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "var(--proc-step-update)"
+  },
+  "Entries/Hardware Entries/Hardware Season Kickoff/Project Overview.md": {
+    "iconName": "LiInfo",
+    "iconColor": "var(--brand-orange)"
+  },
+  "Entries/Hardware Entries/Hardware Season Kickoff/Hardware Split Prep.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Season Kickoff/Season Kickoff.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Season Kickoff/Initial Hardware Brainstorming.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Hardware Season Kickoff/Prioritizing Hardware Objectives For Skills.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Debrief Meetings/2-24-25 West Virginia Debrief and Timeline Re-Evaluation.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Strategy Entries/Debrief Meetings/2-19-25 RIT Competition Debrief and Timeline Re-Evaluation.md": {
+    "iconName": "LiChartPie",
+    "iconColor": "var(--proc-step-game-analysis)"
+  },
+  "Entries/Software Entries/Autonomous Skills/2-21-25 Autonomous Skills Paths for West Virginia.md": {
+    "iconName": "LiBrain",
+    "iconColor": "var(--proc-step-brainstorm)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/2-26-25 New Hardware Member Allocation.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Entries/Hardware Entries/Hardware Project Management/2-20-25 UPDATED Hardware Timeline.md": {
+    "iconName": "LiCircleEllipsis",
+    "iconColor": "var(--proc-step-other)"
+  },
+  "Final Notebook": "LiFlag"
+}

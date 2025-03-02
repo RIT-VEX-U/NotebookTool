@@ -1,0 +1,14 @@
+{
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "attachmentFolderPath": "Assets",
+  "vimMode": false,
+  "trashOption": "local",
+  "promptDelete": false,
+  "livePreview": true,
+  "alwaysUpdateLinks": true
+}

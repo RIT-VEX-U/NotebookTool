@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "rit-vexu-theme"
+  ],
+  "cssTheme": "Encore",
+  "theme": "system",
+  "baseFontSize": 16,
+  "interfaceFontFamily": "Verdana"
+}
