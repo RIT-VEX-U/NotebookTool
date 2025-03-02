@@ -47,13 +47,10 @@
 </head>
 
 <body>
-    <!-- <h3>RIT VEX U</h3>
-    <h1>{{.Notebook}} Notebook</h1>
-    <h4>{{.Date.Format "01/02/2006 03:05 PM"}}</h4> -->
 
     <div class="header-page">
         <h1>RIT VEX U Robotics</h1>
-        <h2>{{.Notebook}} Notebook</h2>
+        <h2>{{if eq .Notebook "All" }} Engineering Notebook {{else}} {{.Notebook}} Notebook {{end}}</h2>
         <h2>High Stakes 2024-2025</h2>
         <img src="Assets/rit-long.png" id="rit-long">
     </div>
@@ -229,10 +226,6 @@
                 .join(' ');
 
             span.innerText = formatted;
-
-            // if (index < processSteps.length - 1) {
-            //     span.innerText += ', ';
-            // }
         });
     });
 </script>
