@@ -19,7 +19,8 @@ type Config struct {
 	OutputPath  string
 
 	// html file that will be pasted onto the front of the PDF
-	FrontPagePath string
+	FrontPagePath      string
+	FrontmatterEntries []string
 
 	// port to serve on
 	Port              int
@@ -36,11 +37,14 @@ var StaticFiles embed.FS
 
 func ParseArgs() Config {
 	cfg := Config{
-		EntriesPath:       "",
-		AssetsPath:        "",
-		OutputPath:        "",
-		IncludeUnfinished: false,
-		MakeTemplatePath:  "",
+		EntriesPath:        "",
+		AssetsPath:         "",
+		OutputPath:         "",
+		FrontPagePath:      "",
+		FrontmatterEntries: []string{},
+		Port:               0,
+		IncludeUnfinished:  false,
+		MakeTemplatePath:   "",
 	}
 
 	flag.StringVar(&cfg.EntriesPath, "entries", "", "OS Path to the entries (following metadata all that stuff)")
@@ -52,6 +56,11 @@ func ParseArgs() Config {
 	flag.StringVar(&cfg.MakeTemplatePath, "make-template", "", "directory to place a template notebook for you to fill in")
 
 	flag.StringVar(&cfg.FrontPagePath, "front-page", "", "Path to html file that will be included as the first page")
+
+	flag.Func("frontmatter", "add a frontmatter entry. Can be repeated and will be in order of args. -frontmatter 'path/to/front1'", func(s string) error {
+		cfg.FrontmatterEntries = append(cfg.FrontmatterEntries, s)
+		return nil
+	})
 
 	flag.Parse()
 
@@ -148,8 +157,7 @@ func main() {
 
 	log.Println("Making notebooks")
 
-	makeNotebookFile(notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished, args.FrontPagePath, "notebook.html")
-
+	makeNotebookFile(notes, args.FrontmatterEntries, args.IncludeUnfinished, args.FrontPagePath, "notebook.html")
 	log.Println("Made HTML")
 
 	stopServer := startFileServing(tmpDir, args.Port)

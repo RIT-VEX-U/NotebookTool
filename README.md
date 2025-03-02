@@ -1,7 +1,7 @@
 # Usage
 
 ```sh
-go run . -entries /home/unknown/Clubs/VEX/Notebook/Entries -assets /home/unknown/Clubs/VEX/Notebook/Assets  -port 8989 -front-page frontpage.html
+go run . -entries /home/unknown/Clubs/VEX/Notebook/Entries -assets /home/unknown/Clubs/VEX/Notebook/Assets  -port 8989 -front-page frontpage.html -frontmatter "How this Notebook is Organized" -frontmatter "Meet the Team" -frontmatter "Meet the Bears Behind the Bots" -frontmatter "The Engineering Design Process"
 ```
 
 ## Web Server
