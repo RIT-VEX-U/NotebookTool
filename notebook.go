@@ -26,7 +26,7 @@ var funcMap = template.FuncMap{
 }
 var templateFile = template.Must(template.New("outputPage").Funcs(funcMap).Parse(templateFileSource))
 
-func makeNotebookFile(allNotes []Note, frontmatterWanted []string, includeUnfinished bool, frontPageFile string, outputFile string) {
+func makeNotebookFile(allNotes []Note, frontmatterWanted []string, includeUnfinished bool, frontPageFile string, muppets []MuppetPair, outputFile string) {
 
 	wanted_entries := filterFilesForThisNotebook(allNotes, includeUnfinished)
 	slices.SortFunc(wanted_entries, sortEntries)
@@ -120,7 +120,7 @@ func makeNotebookFile(allNotes []Note, frontmatterWanted []string, includeUnfini
 		}
 	}
 
-	writeNotebookHTMLToFile(outputFile, frontPageFile, orderedFrontmatterNotes, entries, focusList)
+	writeNotebookHTMLToFile(outputFile, frontPageFile, orderedFrontmatterNotes, entries, focusList, muppets)
 }
 
 func sortEntries(a, b Note) int {
@@ -163,7 +163,7 @@ func sortEntries(a, b Note) int {
 	return strings.Compare(a.Title, b.Title)
 }
 
-func writeNotebookHTMLToFile(filepath string, frontPagePath string, frontmatter []RenderedEntry, entries []RenderedEntry, focusList []FocusGroup) {
+func writeNotebookHTMLToFile(filepath string, frontPagePath string, frontmatter []RenderedEntry, entries []RenderedEntry, focusList []FocusGroup, muppets []MuppetPair) {
 	f, err := os.Create(path.Join(tmpDir, filepath))
 	must(err)
 	err = f.Truncate(0)
@@ -179,7 +179,9 @@ func writeNotebookHTMLToFile(filepath string, frontPagePath string, frontmatter 
 		frontpage = string(bs)
 	}
 
-	err = templateFile.Execute(f, Notebook{
+	var w bytes.Buffer
+
+	err = templateFile.Execute(&w, Notebook{
 		Date:        time.Now(),
 		Frontmatter: frontmatter,
 		FrontPage:   string(frontpage),
@@ -187,7 +189,12 @@ func writeNotebookHTMLToFile(filepath string, frontPagePath string, frontmatter 
 		ByFocus:     focusList,
 	})
 	must(err)
-
+	s := w.String()
+	for _, muppet := range muppets {
+		s = strings.ReplaceAll(s, muppet.From, muppet.To)
+	}
+	_, err = f.Write([]byte(s))
+	must(err)
 }
 
 func getAllFilesInDirectory(root string) []string {

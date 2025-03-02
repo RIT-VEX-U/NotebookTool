@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/signal"
 	"path"
+	"strings"
 	"syscall"
 	"time"
 )
@@ -28,6 +29,13 @@ type Config struct {
 
 	// When creating the notebook
 	MakeTemplatePath string
+
+	MuppetMappings []MuppetPair
+}
+
+type MuppetPair struct {
+	From string
+	To   string
 }
 
 var tmpDir string = "temp"
@@ -45,6 +53,7 @@ func ParseArgs() Config {
 		Port:               0,
 		IncludeUnfinished:  false,
 		MakeTemplatePath:   "",
+		MuppetMappings:     []MuppetPair{},
 	}
 
 	flag.StringVar(&cfg.EntriesPath, "entries", "", "OS Path to the entries (following metadata all that stuff)")
@@ -59,6 +68,15 @@ func ParseArgs() Config {
 
 	flag.Func("frontmatter", "add a frontmatter entry. Can be repeated and will be in order of args. -frontmatter 'path/to/front1'", func(s string) error {
 		cfg.FrontmatterEntries = append(cfg.FrontmatterEntries, s)
+		return nil
+	})
+
+	flag.Func("muppet", "add a muppet pairing to replace authors (just does a string replace on the output). -muppet 'First Last: Gonzo'", func(s string) error {
+		pairs := strings.Split(s, ",")
+		if len(pairs) < 2 {
+			return fmt.Errorf("muppet format 'First Last,Muppet'")
+		}
+		cfg.MuppetMappings = append(cfg.MuppetMappings, MuppetPair{pairs[0], pairs[1]})
 		return nil
 	})
 
@@ -157,7 +175,7 @@ func main() {
 
 	log.Println("Making notebooks")
 
-	makeNotebookFile(notes, args.FrontmatterEntries, args.IncludeUnfinished, args.FrontPagePath, "notebook.html")
+	makeNotebookFile(notes, args.FrontmatterEntries, args.IncludeUnfinished, args.FrontPagePath, args.MuppetMappings, "notebook.html")
 	log.Println("Made HTML")
 
 	stopServer := startFileServing(tmpDir, args.Port)
