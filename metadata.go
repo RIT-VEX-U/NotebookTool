@@ -263,11 +263,10 @@ func getMetadata(filepath string) (Note, error) {
 	return meta, nil
 }
 
-func filterFilesForThisNotebook(allnotes []Note, notebook string, includeUnfinished bool) []Note {
+func filterFilesForThisNotebook(allnotes []Note, includeUnfinished bool) []Note {
 	filtered := []Note{}
 	for _, n := range allnotes {
-		keep := n.Notebook == notebook || notebook == "all"
-		keep = keep && (includeUnfinished || n.Finished)
+		keep := (includeUnfinished || n.Finished)
 		if keep {
 			filtered = append(filtered, n)
 		}

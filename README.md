@@ -1,5 +1,9 @@
 # Usage
 
+```sh
+go run . -entries /home/unknown/Clubs/VEX/Notebook/Entries -assets /home/unknown/Clubs/VEX/Notebook/Assets  -port 8989 -front-page frontpage.html
+```
+
 ## Web Server
 
 ```sh

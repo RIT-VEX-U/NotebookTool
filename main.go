@@ -14,18 +14,24 @@ import (
 )
 
 type Config struct {
-	EntriesPath       string
-	AssetsPath        string
-	OutputPath        string
+	EntriesPath string
+	AssetsPath  string
+	OutputPath  string
+
+	// html file that will be pasted onto the front of the PDF
+	FrontPagePath string
+
+	// port to serve on
 	Port              int
 	IncludeUnfinished bool
 
+	// When creating the notebook
 	MakeTemplatePath string
 }
 
 var tmpDir string = "temp"
 
-//go:embed Static/*
+//go:embed static/*
 var StaticFiles embed.FS
 
 func ParseArgs() Config {
@@ -44,6 +50,9 @@ func ParseArgs() Config {
 	flag.BoolVar(&cfg.IncludeUnfinished, "includeUnfinished", false, "Include unfinished entries. By default, skip entries that do not have the finished checkbox checked")
 
 	flag.StringVar(&cfg.MakeTemplatePath, "make-template", "", "directory to place a template notebook for you to fill in")
+
+	flag.StringVar(&cfg.FrontPagePath, "front-page", "", "Path to html file that will be included as the first page")
+
 	flag.Parse()
 
 	failed := false
@@ -79,6 +88,7 @@ type FocusGroup struct {
 type Notebook struct {
 	Date        time.Time
 	Notebook    string
+	FrontPage   string
 	Frontmatter []RenderedEntry
 	Entries     []RenderedEntry
 	ByFocus     []FocusGroup
@@ -137,11 +147,8 @@ func main() {
 	setupTmpOutputDir(args)
 
 	log.Println("Making notebooks")
-	makeNotebookFile("hardware", notes, []string{"How this Notebook is Organized (Hardware)"}, args.IncludeUnfinished)
-	makeNotebookFile("software", notes, []string{"How this Notebook is Organized (Software)"}, args.IncludeUnfinished)
-	makeNotebookFile("strategy", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
 
-	makeNotebookFile("all", notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished)
+	makeNotebookFile(notes, []string{"How this Notebook is Organized", "Meet the Team", "Meet the Bears Behind the Bots", "The Engineering Design Process"}, args.IncludeUnfinished, args.FrontPagePath, "notebook.html")
 
 	log.Println("Made HTML")
 
@@ -152,20 +159,10 @@ func main() {
 	if onlyServe {
 		done := make(chan os.Signal, 1)
 		signal.Notify(done, syscall.SIGINT, syscall.SIGTERM)
-		log.Printf("Serving at http://localhost:%d, press ctrl+c to exit\n", args.Port)
+		log.Printf("Serving at http://localhost:%d/notebook.html, press ctrl+c to exit\n", args.Port)
 		<-done // Will block here until user hits ctrl+c
 	} else {
-		log.Printf("Rendering (port %d)\n", args.Port)
-		for _, notebook := range []string{"all"} {
-
-			url := fmt.Sprintf("http://localhost:%d/%s.html", args.Port, notebook)
-			err := savePageToPdf(url, path.Join(args.OutputPath, notebook))
-			if err != nil {
-				log.Fatal(err)
-			}
-			log.Println("Finished", notebook)
-		}
-		log.Println("Finished saving")
+		log.Fatalf("Notebook auto printing is broken bc chrome dies at big PDFs. Instead, omit the -output argument and open the link it gives you, press Ctrl-P, and print to PDF")
 	}
 
 }
@@ -182,14 +179,14 @@ func setupTmpOutputDir(cfg Config) {
 	must(err)
 	err = os.Symlink(cfg.AssetsPath, path.Join(tmpDir, "Assets"))
 	must(err)
-	ents, err := StaticFiles.ReadDir("Static")
+	ents, err := StaticFiles.ReadDir("static")
 	must(err)
 	for _, ent := range ents {
 		if ent.IsDir() {
 			log.Print("DONT PUT DIRECTORIES IN THE STATIC FILES DIRECTORY (or do just like, update the code to handle them)")
 			continue
 		}
-		bs, err := StaticFiles.ReadFile(path.Join("Static", ent.Name()))
+		bs, err := StaticFiles.ReadFile(path.Join("static", ent.Name()))
 		must(err)
 		err = os.WriteFile(path.Join(tmpDir, ent.Name()), bs, 0o644)
 		must(err)

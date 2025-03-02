@@ -47,15 +47,11 @@
 
 <body>
 
-    <div class="header-page">
-        <h1>RIT VEX U Robotics</h1>
-        <h2>{{if eq .Notebook "All" }} Engineering Notebook {{else}} {{.Notebook}} Notebook {{end}}</h2>
-        <h2>High Stakes 2024-2025</h2>
-        <img src="Assets/rit-long.png" id="rit-long">
-    </div>
 
-
+    {{if .FrontPage}}
+    {{.FrontPage}}
     <br class="pagebreak">
+    {{end}}
 
     {{range $fm := .Frontmatter}}
     <section id="{{.Data.Anchor}}">

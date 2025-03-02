@@ -26,9 +26,9 @@ var funcMap = template.FuncMap{
 }
 var templateFile = template.Must(template.New("outputPage").Funcs(funcMap).Parse(templateFileSource))
 
-func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []string, includeUnfinished bool) {
+func makeNotebookFile(allNotes []Note, frontmatterWanted []string, includeUnfinished bool, frontPageFile string, outputFile string) {
 
-	wanted_entries := filterFilesForThisNotebook(allNotes, notebook, includeUnfinished) // 140 include
+	wanted_entries := filterFilesForThisNotebook(allNotes, includeUnfinished)
 	slices.SortFunc(wanted_entries, sortEntries)
 
 	entries := []RenderedEntry{}
@@ -116,11 +116,11 @@ func makeNotebookFile(notebook string, allNotes []Note, frontmatterWanted []stri
 			}
 		}
 		if !found {
-			log.Printf("Couldnt find entry '%s' for %s notebook", name, notebook)
+			log.Printf("Couldnt find entry '%s' for notebook", name)
 		}
 	}
 
-	writeNotebookHTMLToFile(notebook, orderedFrontmatterNotes, entries, focusList)
+	writeNotebookHTMLToFile(outputFile, frontPageFile, orderedFrontmatterNotes, entries, focusList)
 }
 
 func sortEntries(a, b Note) int {
@@ -163,17 +163,26 @@ func sortEntries(a, b Note) int {
 	return strings.Compare(a.Title, b.Title)
 }
 
-func writeNotebookHTMLToFile(notebookName string, frontmatter []RenderedEntry, entries []RenderedEntry, focusList []FocusGroup) {
-	f, err := os.Create(path.Join(tmpDir, notebookName+".html"))
+func writeNotebookHTMLToFile(filepath string, frontPagePath string, frontmatter []RenderedEntry, entries []RenderedEntry, focusList []FocusGroup) {
+	f, err := os.Create(path.Join(tmpDir, filepath))
 	must(err)
 	err = f.Truncate(0)
 	must(err)
 	defer f.Close()
 
+	frontpage := ""
+	if frontPagePath != "" {
+		bs, err := os.ReadFile(frontPagePath)
+		if err != nil {
+			log.Fatalf("Failed to read front page path: %v", err)
+		}
+		frontpage = string(bs)
+	}
+
 	err = templateFile.Execute(f, Notebook{
 		Date:        time.Now(),
-		Notebook:    cases.Title(language.AmericanEnglish).String(notebookName),
 		Frontmatter: frontmatter,
+		FrontPage:   string(frontpage),
 		Entries:     entries,
 		ByFocus:     focusList,
 	})
