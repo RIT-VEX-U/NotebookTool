@@ -15,7 +15,6 @@
     --text-normal: #000000;
     --bold-modifier: 100;
     --font-bold: 500;
-
 }
 
 body {
@@ -79,6 +78,21 @@ td,
 thead {
     border: 1pt solid black;
     border-collapse: collapse;
+}
+
+table:has(img),
+table:has(img) th,
+table:has(img) td {
+    border: none !important;
+    border-collapse: separate;
+}
+
+table:has(img) th {
+    padding-bottom: 3px;
+}
+
+table:has(img) td {
+    padding-top: 0;
 }
 
 
@@ -292,9 +306,10 @@ h1.entry-title {
 }
 
 table img {
-    max-width: 3in;
-    height: auto;
     max-height: 4in;
+    height: 100%;
+    width: auto;
+    max-width: 3in;
     overflow: hidden;
     object-fit: cover;
     border: none;
