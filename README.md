@@ -1,23 +1,25 @@
 # Usage
 
+
+## Generate Notebook
 ```sh
-go run . -entries /home/unknown/Clubs/VEX/Notebook/Entries -assets /home/unknown/Clubs/VEX/Notebook/Assets  -port 8989 -front-page frontpage.html -frontmatter "How this Notebook is Organized" -frontmatter "Meet the Team" -frontmatter "Meet the Bears Behind the Bots" -frontmatter "The Engineering Design Process"
+./NotebookGen\
+	-path /home/unknown/Clubs/VEX/Notebook/\
+	-port 8989\
+	-front-page frontpage.html\
+	-frontmatter "How this Notebook is Organized"\
+	-frontmatter "Meet the Team"\
+	-frontmatter "Meet the Bears Behind the Bots"\
+	-frontmatter "The Engineering Design Process"
 ```
+Will think for a bit then print out a link like `localhost:8989/notebook.html`. One can then go to that website, press CTRL-P and print the notebook to a PDF
 
-## Web Server
-
+## Create Directory template
+to setup a new notebook with all requisite templates and such. 
 ```sh
-> go run . -assets <ASSET_PATH> -entries <ENTRIES_PATH>
-Log Message
-Log Message
-Serving on http://localhost:XXXXX
+./NotebookGen -make-template ./
 ```
-
-## PDFs
-
-```sh
-> go run . -assets <ASSET_PATH> -entries <ENTRIES_PATH> -output <OUTPUT_FOLDER_FOR_PDFs>
-```
+Will create a directory called Notebook in the current directory
 
 # Structure
 

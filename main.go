@@ -56,8 +56,8 @@ func ParseArgs() Config {
 		MuppetMappings:     []MuppetPair{},
 	}
 
-	flag.StringVar(&cfg.EntriesPath, "entries", "", "OS Path to the entries (following metadata all that stuff)")
-	flag.StringVar(&cfg.AssetsPath, "assets", "", "OS Path to the image assets (the directory that all the images are in)")
+	var pathString string
+	flag.StringVar(&pathString, "path", "", "OS Path to the root of the notebook")
 	flag.StringVar(&cfg.OutputPath, "output", "", "where to save the output PDFS. Leave blank to just serve for ever rather than make PDFs")
 	flag.IntVar(&cfg.Port, "port", 32124, "the port to serve on. (Dont make this 0)")
 	flag.BoolVar(&cfg.IncludeUnfinished, "includeUnfinished", false, "Include unfinished entries. By default, skip entries that do not have the finished checkbox checked")
@@ -87,7 +87,10 @@ func ParseArgs() Config {
 		// don't care about the rest of the args
 		return cfg
 	}
-	if cfg.EntriesPath == "" || cfg.AssetsPath == "" || cfg.Port == 0 {
+	cfg.EntriesPath = path.Join(pathString, "Entries")
+	cfg.AssetsPath = path.Join(pathString, "Assets")
+
+	if pathString == "" || cfg.Port == 0 {
 		failed = true
 	}
 
@@ -139,7 +142,7 @@ func parseFiles(files []string) (mds []Note, errs []error) {
 var notebook_template embed.FS
 
 func MakeTemplateAtPath(directory string) {
-	if _, err := os.Stat(directory); !errors.Is(err, os.ErrNotExist) {
+	if _, err := os.Stat(path.Join(directory, "Notebook")); !errors.Is(err, os.ErrNotExist) {
 		log.Fatalf("There is already something where you're trying to create notebook")
 	}
 
